@@ -2291,6 +2291,59 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@protokol/nameservice-api@workspace:packages/nameservice-api":
+  version: 0.0.0-use.local
+  resolution: "@protokol/nameservice-api@workspace:packages/nameservice-api"
+  dependencies:
+    "@arkecosystem/core-api": ^3.0.0-next
+    "@arkecosystem/core-database": ^3.0.0-next
+    "@arkecosystem/core-kernel": ^3.0.0-next
+    "@arkecosystem/core-state": ^3.0.0-next
+    "@arkecosystem/core-test-framework": ^3.0.0-next
+    "@arkecosystem/core-transaction-pool": ^3.0.0-next
+    "@arkecosystem/core-transactions": ^3.0.0-next
+    "@arkecosystem/crypto": ^3.0.0-next
+    "@hapi/boom": ^9.1.0
+    "@hapi/hapi": ^20.0.2
+    "@protokol/nameservice-crypto": "workspace:packages/nameservice-crypto"
+    "@protokol/nameservice-transactions": "workspace:packages/nameservice-transactions"
+    "@sindresorhus/tsconfig": ^0.8.0
+    "@types/eslint": ^7.2.5
+    "@types/eslint-plugin-prettier": ^3.1.0
+    "@types/hapi__boom": ^7.4.1
+    "@types/hapi__joi": ^17.1.6
+    "@types/is-url-superb": 3.0.0
+    "@types/jest": ^26.0.15
+    "@types/lodash.orderby": 4.6.6
+    "@types/node": ^14.14.7
+    "@types/prettier": ^2.1.5
+    "@types/rimraf": ^3.0.0
+    "@types/semver": 7.3.4
+    "@types/uuid": ^8.3.0
+    "@typescript-eslint/eslint-plugin": ^4.8.0
+    "@typescript-eslint/parser": ^4.8.0
+    codecov: ^3.8.1
+    cross-env: ^7.0.2
+    eslint: ^7.13.0
+    eslint-config-prettier: ^8.0.0
+    eslint-plugin-jest: ^24.1.3
+    eslint-plugin-prettier: ^3.1.4
+    eslint-plugin-simple-import-sort: ^7.0.0
+    got: ^11.8.0
+    jest: ^26.6.3
+    jest-extended: ^0.11.5
+    joi: ^17.3.0
+    latest-version: ^5.1.0
+    nock: ^13.0.5
+    npm-check-updates: ~11.1.0
+    prettier: ^2.1.2
+    rimraf: ^3.0.2
+    ts-jest: ~26.5.0
+    typedoc: ~0.20.0
+    typescript: ~4.1.0
+  languageName: unknown
+  linkType: soft
+
 "@protokol/nameservice-crypto@workspace:packages/nameservice-crypto":
   version: 0.0.0-use.local
   resolution: "@protokol/nameservice-crypto@workspace:packages/nameservice-crypto"
@@ -2745,6 +2798,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hapi__boom@npm:^7.4.1":
+  version: 7.4.1
+  resolution: "@types/hapi__boom@npm:7.4.1"
+  checksum: 6ca1439ec25fc5ab74ae7421b47ac9eac52a59e973f67f1aa9e5d77c48deb05d13ed67b1822750b077156302b0700a3068c2229d7953f9b26aa239083cc90a9d
+  languageName: node
+  linkType: hard
+
+"@types/hapi__joi@npm:^17.1.6":
+  version: 17.1.6
+  resolution: "@types/hapi__joi@npm:17.1.6"
+  checksum: 177258c8e24da331077d6e031060cbbfc625abf5978bf9a4f14254a43b34d5982d6459ad37bdc34ce25ecc3587c24a8eab258ecd90cb7eca0111aa3a89ee66b0
+  languageName: node
+  linkType: hard
+
 "@types/http-cache-semantics@npm:*":
   version: 4.0.0
   resolution: "@types/http-cache-semantics@npm:4.0.0"
@@ -2756,6 +2823,15 @@ __metadata:
   version: 1.0.1
   resolution: "@types/integer@npm:1.0.1"
   checksum: 9ddde7342e4d2abf55d7af6601bb32e79df4c09f3ec7a4bad899e19abddd4f30770b76467b87933dd3fbec6f98d9aaf9ddbcfe2bed998a2eafbe7e672693f4cf
+  languageName: node
+  linkType: hard
+
+"@types/is-url-superb@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@types/is-url-superb@npm:3.0.0"
+  dependencies:
+    is-url-superb: "*"
+  checksum: 268efccf4a1c19c2c1a1ab8c86f1a9a42a946186b06fca9337317e4718c6f12529116c42bbfe037ccb0ba8805d1166eb2a1da66c9b4e77571dad5046452bb90f
   languageName: node
   linkType: hard
 
@@ -2817,6 +2893,22 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 3aaf557d5b82e733d5a17b7f55af5d6be953363c3a594f006d64265790fe87c301c6e1400c0b6b1cf72add50a0ceddc25afb8231ab8302a2e5b6ebfbfac30e5d
+  languageName: node
+  linkType: hard
+
+"@types/lodash.orderby@npm:4.6.6":
+  version: 4.6.6
+  resolution: "@types/lodash.orderby@npm:4.6.6"
+  dependencies:
+    "@types/lodash": "*"
+  checksum: 5a46260df50739a677e59dd54ab8d7e4e8d72e179d15d48b11795effd0984ba05f367da25622da0a40668eb7fc9750d30bc45f5e8c31d3c97a948adf4d1bd04e
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:*":
+  version: 4.14.168
+  resolution: "@types/lodash@npm:4.14.168"
+  checksum: 9a4e25f89fc035b9f0388f1f7be85e5eff49f9e6db0d93432c9a89fce0916f8a89db4e8290415f7ea02de6b00d3573826378dcb655b7b2d20530a6e8d6dd6fd0
   languageName: node
   linkType: hard
 
@@ -2981,7 +3073,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^4.0.0":
+"@typescript-eslint/eslint-plugin@npm:^4.0.0, @typescript-eslint/eslint-plugin@npm:^4.8.0":
   version: 4.15.2
   resolution: "@typescript-eslint/eslint-plugin@npm:4.15.2"
   dependencies:
@@ -3019,7 +3111,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^4.0.0":
+"@typescript-eslint/parser@npm:^4.0.0, @typescript-eslint/parser@npm:^4.8.0":
   version: 4.15.2
   resolution: "@typescript-eslint/parser@npm:4.15.2"
   dependencies:
@@ -4618,7 +4710,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cli-table@npm:^0.3.4":
+"cli-table@npm:^0.3.5":
   version: 0.3.5
   resolution: "cli-table@npm:0.3.5"
   dependencies:
@@ -5728,7 +5820,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^24.0.0":
+"eslint-plugin-jest@npm:^24.0.0, eslint-plugin-jest@npm:^24.1.3":
   version: 24.1.5
   resolution: "eslint-plugin-jest@npm:24.1.5"
   dependencies:
@@ -5739,7 +5831,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^3.2.0":
+"eslint-plugin-prettier@npm:^3.1.4, eslint-plugin-prettier@npm:^3.2.0":
   version: 3.3.1
   resolution: "eslint-plugin-prettier@npm:3.3.1"
   dependencies:
@@ -5796,7 +5888,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:7.21.0, eslint@npm:^7.7.0, eslint@npm:latest":
+"eslint@npm:7.21.0, eslint@npm:^7.13.0, eslint@npm:^7.7.0, eslint@npm:latest":
   version: 7.21.0
   resolution: "eslint@npm:7.21.0"
   dependencies:
@@ -6733,7 +6825,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"got@npm:^11.7.0, got@npm:^11.8.1":
+"got@npm:^11.7.0, got@npm:^11.8.0, got@npm:^11.8.1":
   version: 11.8.2
   resolution: "got@npm:11.8.2"
   dependencies:
@@ -7681,6 +7773,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"is-url-superb@npm:*":
+  version: 5.0.0
+  resolution: "is-url-superb@npm:5.0.0"
+  checksum: 5aaafcea83ba19a3734e11accc0ea9c7c6fe991f0207e6f0485557f665f58a8ab459eb52e17267617b82fa56908f2e65306d4861ea6f5540a351e2ebb4c4d0d5
+  languageName: node
+  linkType: hard
+
 "is-windows@npm:^1.0.2":
   version: 1.0.2
   resolution: "is-windows@npm:1.0.2"
@@ -8337,7 +8436,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"jest@npm:^26.4.1, jest@npm:~26.6.3":
+"jest@npm:^26.4.1, jest@npm:^26.6.3, jest@npm:~26.6.3":
   version: 26.6.3
   resolution: "jest@npm:26.6.3"
   dependencies:
@@ -8364,7 +8463,20 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"joi@npm:^17.3.0, joi@npm:latest":
+"joi@npm:17.3.0":
+  version: 17.3.0
+  resolution: "joi@npm:17.3.0"
+  dependencies:
+    "@hapi/hoek": ^9.0.0
+    "@hapi/topo": ^5.0.0
+    "@sideway/address": ^4.1.0
+    "@sideway/formula": ^3.0.0
+    "@sideway/pinpoint": ^2.0.0
+  checksum: 3a2a6a8df5df408b33661d61abf6389f21d71478748daebe4edf4be2176548a70396601fcf2fd4fc0bc44fc12ab67fa72de310509db47579ad21bca0f2e0611b
+  languageName: node
+  linkType: hard
+
+"joi@npm:^17.3.0":
   version: 17.4.0
   resolution: "joi@npm:17.4.0"
   dependencies:
@@ -9631,7 +9743,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"nock@npm:^13.0.4":
+"nock@npm:^13.0.4, nock@npm:^13.0.5":
   version: 13.0.9
   resolution: "nock@npm:13.0.9"
   dependencies:
@@ -9883,13 +9995,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:^11.0.0":
-  version: 11.1.9
-  resolution: "npm-check-updates@npm:11.1.9"
+"npm-check-updates@npm:^11.0.0, npm-check-updates@npm:~11.1.0":
+  version: 11.1.10
+  resolution: "npm-check-updates@npm:11.1.10"
   dependencies:
     chalk: ^4.1.0
     cint: ^8.2.1
-    cli-table: ^0.3.4
+    cli-table: ^0.3.5
     commander: ^6.2.1
     find-up: 5.0.0
     fp-and-or: ^0.1.3
@@ -9899,10 +10011,10 @@ fsevents@~2.1.2:
     json-parse-helpfulerror: ^1.0.3
     jsonlines: ^0.1.1
     libnpmconfig: ^1.2.1
-    lodash: ^4.17.20
+    lodash: ^4.17.21
     mem: ^8.0.0
     p-map: ^4.0.0
-    pacote: ^11.2.3
+    pacote: ^11.2.7
     parse-github-url: ^1.0.2
     progress: ^2.0.3
     prompts: ^2.4.0
@@ -9916,7 +10028,7 @@ fsevents@~2.1.2:
   bin:
     ncu: bin/cli.js
     npm-check-updates: bin/cli.js
-  checksum: 16f153ba2d38dc9e71630e5d57b3d6b135fc9d4097c5bfbb3f1809511f22827b25277f3dab9c64d87ff97f83e04f5e0c698260955b2f44ca03940781bfaac39b
+  checksum: d8c23d15d235083d61334d603ad400e49e06bd5dc0e9d2275418c2a446f6ed7369dff21da30ba5715af310405631a6f94d32265d2cae248824bb584d474ecbef
   languageName: node
   linkType: hard
 
@@ -10413,7 +10525,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"pacote@npm:^11.2.3":
+"pacote@npm:^11.2.7":
   version: 11.2.7
   resolution: "pacote@npm:11.2.7"
   dependencies:
@@ -10864,7 +10976,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.2.1, prettier@npm:^2.0.5":
+"prettier@npm:2.2.1, prettier@npm:^2.0.5, prettier@npm:^2.1.2":
   version: 2.2.1
   resolution: "prettier@npm:2.2.1"
   bin:
