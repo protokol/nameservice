@@ -290,7 +290,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@pm2/io", "npm:4.3.5"],
             ["@protokol/guardian-api", "npm:1.0.0-beta.39"],
             ["@protokol/guardian-transactions", "npm:1.0.0-beta.39"],
-            ["@protokol/nameservice-crypto", "workspace:packages/nameservice-crypto"],
             ["@protokol/nameservice-transactions", "workspace:packages/nameservice-transactions"],
             ["@protokol/nft-base-api", "npm:1.0.0-beta.57"],
             ["@protokol/nft-base-transactions", "npm:1.0.0-beta.57"],
