@@ -45,7 +45,7 @@ jobs:
 
             - name: TEST
               run: |
-                  cd packages/notarization-transactions
+                  cd packages/nameservice-transactions
                   yarn test __tests__/functional/transaction-forging/nameservice/single-passphrase.test.ts --forceExit
 
     functional-nameservice-transactions-second-passphrase:
@@ -84,7 +84,7 @@ jobs:
 
             - name: TEST
               run: |
-                  cd packages/notarization-transactions
+                  cd packages/nameservice-transactions
                   yarn test __tests__/functional/transaction-forging/nameservice/second-passphrase.test.ts --forceExit
 
     functional-nameservice-transactions-multi-signature:
@@ -123,7 +123,7 @@ jobs:
 
             - name: TEST
               run: |
-                  cd packages/notarization-transactions
+                  cd packages/nameservice-transactions
                   yarn test __tests__/functional/transaction-forging/nameservice/multi-signature.test.ts --forceExit
 
     functional-nameservice-transactions-vendor-field:
@@ -162,5 +162,5 @@ jobs:
 
             - name: TEST
               run: |
-                  cd packages/notarization-transactions
+                  cd packages/nameservice-transactions
                   yarn test __tests__/functional/transaction-forging/nameservice/vendor-field.test.ts --forceExit
