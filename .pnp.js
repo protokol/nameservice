@@ -23,14 +23,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."
       },
       {
-        "name": "@protokol/nameservice",
+        "name": "@protokol/nameservice-crypto",
         "reference": "workspace:packages/nameservice-crypto"
+      },
+      {
+        "name": "@protokol/nameservice-transactions",
+        "reference": "workspace:packages/nameservice-transactions"
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
-      ["@protokol/nameservice", ["workspace:packages/nameservice-crypto"]],
+      ["@protokol/nameservice-crypto", ["workspace:packages/nameservice-crypto"]],
+      ["@protokol/nameservice-transactions", ["workspace:packages/nameservice-transactions"]],
       ["@protokol/repo-name", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -1607,6 +1612,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["strip-json-comments", "npm:3.1.1"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:0.4.0", {
+          "packageLocation": "./.yarn/cache/@eslint-eslintrc-npm-0.4.0-901e1408cc-d3f51b7419.zip/node_modules/@eslint/eslintrc/",
+          "packageDependencies": [
+            ["@eslint/eslintrc", "npm:0.4.0"],
+            ["ajv", "npm:6.12.6"],
+            ["debug", "virtual:75c807624a1c16c0a8cc2bd5d8a2e9aa1df1c544dc2bbbddf1d1c9ed191f4248eedda1a3e0b0bcacbbc5934cf664baa5da14675e8a7a6ec6490dea178cda6d6f#npm:4.3.2"],
+            ["espree", "npm:7.3.1"],
+            ["globals", "npm:12.4.0"],
+            ["ignore", "npm:4.0.6"],
+            ["import-fresh", "npm:3.3.0"],
+            ["js-yaml", "npm:3.14.1"],
+            ["minimatch", "npm:3.0.4"],
+            ["strip-json-comments", "npm:3.1.1"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["@faustbrian/remote-address", [
@@ -3041,11 +3062,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["@protokol/nameservice", [
+      ["@protokol/nameservice-crypto", [
         ["workspace:packages/nameservice-crypto", {
           "packageLocation": "./packages/nameservice-crypto/",
           "packageDependencies": [
-            ["@protokol/nameservice", "workspace:packages/nameservice-crypto"],
+            ["@protokol/nameservice-crypto", "workspace:packages/nameservice-crypto"],
             ["@arkecosystem/core-test-framework", "npm:3.0.0-next.22"],
             ["@arkecosystem/crypto", "npm:3.0.0-next.21"],
             ["@protokol/utils", "npm:1.0.0-beta.38"],
@@ -3064,9 +3085,45 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["process-es6", "npm:0.11.6"],
             ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:5627c3bb31d7cb153ca263baa518b50b7924954730b9038a270353a913ed5fca986302299430549995cf77c45071ee6f139aec22cf72f9009c743435a022d6d7#npm:26.5.1"],
-            ["typedoc", "virtual:377a4a8c75c79494b39a09ea35b7f8b8ac93dce04168852ffdf3614c4124468c6bb6de6e615100b418adc9e083b289d12637957d843323a86bef281da7970dd7#npm:0.20.28"],
+            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.20.28"],
             ["typescript", "patch:typescript@npm%3A4.1.5#builtin<compat/typescript>::version=4.1.5&hash=cc6730"],
             ["util", "npm:0.12.3"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@protokol/nameservice-transactions", [
+        ["workspace:packages/nameservice-transactions", {
+          "packageLocation": "./packages/nameservice-transactions/",
+          "packageDependencies": [
+            ["@protokol/nameservice-transactions", "workspace:packages/nameservice-transactions"],
+            ["@arkecosystem/core-database", "npm:3.0.0-next.21"],
+            ["@arkecosystem/core-kernel", "npm:3.0.0-next.21"],
+            ["@arkecosystem/core-state", "npm:3.0.0-next.21"],
+            ["@arkecosystem/core-test-framework", "npm:3.0.0-next.22"],
+            ["@arkecosystem/core-transaction-pool", "npm:3.0.0-next.22"],
+            ["@arkecosystem/core-transactions", "npm:3.0.0-next.21"],
+            ["@arkecosystem/crypto", "npm:3.0.0-next.21"],
+            ["@protokol/nameservice-crypto", "workspace:packages/nameservice-crypto"],
+            ["@sindresorhus/tsconfig", "npm:0.8.0"],
+            ["@types/eslint", "npm:7.2.6"],
+            ["@types/eslint-plugin-prettier", "npm:3.1.0"],
+            ["@types/jest", "npm:26.0.20"],
+            ["@types/node", "npm:14.14.31"],
+            ["@types/prettier", "npm:2.2.1"],
+            ["@types/rimraf", "npm:3.0.0"],
+            ["@types/semver", "npm:7.3.4"],
+            ["bip39", "npm:3.0.3"],
+            ["codecov", "npm:3.8.1"],
+            ["eslint", "npm:7.21.0"],
+            ["eslint-plugin-prettier", "virtual:bae75713501eddb6733c8e4043c37e73394f3819cd9b3db4656585fc2cd5f643ddd25785c22eca9f67f02b7d6478568768bae368d39f83a9aabf7700f04544b6#npm:3.3.1"],
+            ["jest", "npm:26.6.3"],
+            ["jest-extended", "npm:0.11.5"],
+            ["prettier", "npm:2.2.1"],
+            ["rimraf", "npm:3.0.2"],
+            ["ts-jest", "virtual:5627c3bb31d7cb153ca263baa518b50b7924954730b9038a270353a913ed5fca986302299430549995cf77c45071ee6f139aec22cf72f9009c743435a022d6d7#npm:26.5.1"],
+            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.20.28"],
+            ["typescript", "patch:typescript@npm%3A4.1.5#builtin<compat/typescript>::version=4.1.5&hash=cc6730"]
           ],
           "linkType": "SOFT",
         }]
@@ -6983,6 +7040,50 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["v8-compile-cache", "npm:2.2.0"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:7.21.0", {
+          "packageLocation": "./.yarn/cache/eslint-npm-7.21.0-2d3b5fa794-aa8fd50cdd.zip/node_modules/eslint/",
+          "packageDependencies": [
+            ["eslint", "npm:7.21.0"],
+            ["@babel/code-frame", "npm:7.12.11"],
+            ["@eslint/eslintrc", "npm:0.4.0"],
+            ["ajv", "npm:6.12.6"],
+            ["chalk", "npm:4.1.0"],
+            ["cross-spawn", "npm:7.0.3"],
+            ["debug", "virtual:75c807624a1c16c0a8cc2bd5d8a2e9aa1df1c544dc2bbbddf1d1c9ed191f4248eedda1a3e0b0bcacbbc5934cf664baa5da14675e8a7a6ec6490dea178cda6d6f#npm:4.3.2"],
+            ["doctrine", "npm:3.0.0"],
+            ["enquirer", "npm:2.3.6"],
+            ["eslint-scope", "npm:5.1.1"],
+            ["eslint-utils", "npm:2.1.0"],
+            ["eslint-visitor-keys", "npm:2.0.0"],
+            ["espree", "npm:7.3.1"],
+            ["esquery", "npm:1.4.0"],
+            ["esutils", "npm:2.0.3"],
+            ["file-entry-cache", "npm:6.0.1"],
+            ["functional-red-black-tree", "npm:1.0.1"],
+            ["glob-parent", "npm:5.1.1"],
+            ["globals", "npm:12.4.0"],
+            ["ignore", "npm:4.0.6"],
+            ["import-fresh", "npm:3.3.0"],
+            ["imurmurhash", "npm:0.1.4"],
+            ["is-glob", "npm:4.0.1"],
+            ["js-yaml", "npm:3.14.1"],
+            ["json-stable-stringify-without-jsonify", "npm:1.0.1"],
+            ["levn", "npm:0.4.1"],
+            ["lodash", "npm:4.17.21"],
+            ["minimatch", "npm:3.0.4"],
+            ["natural-compare", "npm:1.4.0"],
+            ["optionator", "npm:0.9.1"],
+            ["progress", "npm:2.0.3"],
+            ["regexpp", "npm:3.1.0"],
+            ["semver", "npm:7.3.4"],
+            ["strip-ansi", "npm:6.0.0"],
+            ["strip-json-comments", "npm:3.1.1"],
+            ["table", "npm:6.0.7"],
+            ["text-table", "npm:0.2.0"],
+            ["v8-compile-cache", "npm:2.2.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["eslint-config-prettier", [
@@ -7046,6 +7147,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/prettier", "npm:2.2.1"],
             ["eslint", "npm:7.20.0"],
             ["eslint-config-prettier", "virtual:5627c3bb31d7cb153ca263baa518b50b7924954730b9038a270353a913ed5fca986302299430549995cf77c45071ee6f139aec22cf72f9009c743435a022d6d7#npm:8.0.0"],
+            ["prettier", "npm:2.2.1"],
+            ["prettier-linter-helpers", "npm:1.0.0"]
+          ],
+          "packagePeers": [
+            "@types/eslint",
+            "@types/prettier",
+            "eslint-config-prettier",
+            "eslint",
+            "prettier"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:bae75713501eddb6733c8e4043c37e73394f3819cd9b3db4656585fc2cd5f643ddd25785c22eca9f67f02b7d6478568768bae368d39f83a9aabf7700f04544b6#npm:3.3.1", {
+          "packageLocation": "./.yarn/$$virtual/eslint-plugin-prettier-virtual-6c443ef521/0/cache/eslint-plugin-prettier-npm-3.3.1-18ce6f16c1-cf35b0f0e9.zip/node_modules/eslint-plugin-prettier/",
+          "packageDependencies": [
+            ["eslint-plugin-prettier", "virtual:bae75713501eddb6733c8e4043c37e73394f3819cd9b3db4656585fc2cd5f643ddd25785c22eca9f67f02b7d6478568768bae368d39f83a9aabf7700f04544b6#npm:3.3.1"],
+            ["@types/eslint", "npm:7.2.6"],
+            ["@types/prettier", "npm:2.2.1"],
+            ["eslint", "npm:7.21.0"],
+            ["eslint-config-prettier", null],
             ["prettier", "npm:2.2.1"],
             ["prettier-linter-helpers", "npm:1.0.0"]
           ],
@@ -15104,10 +15225,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:377a4a8c75c79494b39a09ea35b7f8b8ac93dce04168852ffdf3614c4124468c6bb6de6e615100b418adc9e083b289d12637957d843323a86bef281da7970dd7#npm:0.20.28", {
-          "packageLocation": "./.yarn/$$virtual/typedoc-virtual-24783adb0f/0/cache/typedoc-npm-0.20.28-172ae441db-c1415c3bf7.zip/node_modules/typedoc/",
+        ["virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.20.28", {
+          "packageLocation": "./.yarn/$$virtual/typedoc-virtual-1efafdf67b/0/cache/typedoc-npm-0.20.28-172ae441db-c1415c3bf7.zip/node_modules/typedoc/",
           "packageDependencies": [
-            ["typedoc", "virtual:377a4a8c75c79494b39a09ea35b7f8b8ac93dce04168852ffdf3614c4124468c6bb6de6e615100b418adc9e083b289d12637957d843323a86bef281da7970dd7#npm:0.20.28"],
+            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.20.28"],
             ["@types/typescript", null],
             ["colors", "npm:1.4.0"],
             ["fs-extra", "npm:9.1.0"],
