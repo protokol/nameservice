@@ -5,7 +5,7 @@ import { Managers, Transactions } from "@arkecosystem/crypto";
 import { NameserviceBuilder } from "../../../src/builders";
 import { NameserviceTransaction } from "../../../src/transactions";
 
-describe("NFT Burn tests", () => {
+describe("Namespace tests", () => {
     Managers.configManager.setFromPreset("testnet");
     Managers.configManager.setHeight(2);
     Transactions.TransactionRegistry.registerTransactionType(NameserviceTransaction);

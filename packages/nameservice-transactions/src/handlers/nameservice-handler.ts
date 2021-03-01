@@ -17,9 +17,6 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
     @Container.inject(Container.Identifiers.TransactionHistoryService)
     protected readonly transactionHistoryService!: Contracts.Shared.TransactionHistoryService;
 
-    @Container.inject(Container.Identifiers.BlockHistoryService)
-    private readonly blockHistoryService!: Contracts.Shared.BlockHistoryService;
-
     @Container.inject(Container.Identifiers.TransactionPoolQuery)
     protected readonly poolQuery!: Contracts.TransactionPool.Query;
 
@@ -40,7 +37,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
     }
 
     public walletAttributes(): ReadonlyArray<string> {
-        return [];
+        return ["nameservice", "nameservice.name"];
     }
 
     public dynamicFee({
@@ -64,7 +61,6 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
     public async bootstrap(): Promise<void> {
         for await (const transaction of this.transactionHistoryService.streamByCriteria(this.getDefaultCriteria())) {
             AppUtils.assert.defined<string>(transaction.senderPublicKey);
-
             AppUtils.assert.defined<NameserviceInterfaces.INameServiceAsset>(transaction.asset?.nameservice);
 
             const wallet = this.walletRepository.findByPublicKey(transaction.senderPublicKey);
@@ -94,7 +90,6 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
                 throw new StaticFeeMismatchError(staticFee.toFixed());
             }
         }
-
         AppUtils.assert.defined<NameserviceInterfaces.INameServiceAsset>(transaction.data.asset?.nameservice);
 
         const hasName = this.walletRepository
@@ -106,15 +101,15 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
         }
 
         // Wallet already has name
-        if (wallet.hasAttribute("namespace")) {
+        if (wallet.hasAttribute("nameservice")) {
             throw new WalletHasNameSpaceError();
         }
 
         return super.throwIfCannotBeApplied(transaction, wallet);
     }
 
-    public async apply(transaction: Interfaces.ITransaction): Promise<void> {
-        await super.apply(transaction);
+    public async applyToSender(transaction: Interfaces.ITransaction): Promise<void> {
+        await super.applyToSender(transaction);
 
         AppUtils.assert.defined<string>(transaction.data.senderPublicKey);
 
@@ -129,10 +124,8 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
         this.walletRepository.getIndex(namespaceWalletIndex).set(nameserviceAsset.name, wallet);
     }
 
-    public async revert(transaction: Interfaces.ITransaction): Promise<void> {
-        await super.revert(transaction);
-
-        AppUtils.assert.defined<string>(transaction.data.id);
+    public async revertForSender(transaction: Interfaces.ITransaction): Promise<void> {
+        await super.revertForSender(transaction);
         AppUtils.assert.defined<string>(transaction.data.senderPublicKey);
         AppUtils.assert.defined<NameserviceInterfaces.INameServiceAsset>(transaction.data.asset?.nameservice);
 
@@ -140,7 +133,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
 
         const senderWallet = this.walletRepository.findByPublicKey(transaction.data.senderPublicKey);
 
-        senderWallet.forgetAttribute("namespace");
+        senderWallet.forgetAttribute("nameservice");
 
         this.walletRepository.getIndex(namespaceWalletIndex).forget(nameserviceAsset.name);
     }
@@ -151,7 +144,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     public async revertForRecipient(transaction: Interfaces.ITransaction): Promise<void> {}
 
-    protected getDefaultCriteria() {
+    protected getDefaultCriteria(): { typeGroup: number | undefined; type: number | undefined } {
         return {
             typeGroup: this.getConstructor().typeGroup,
             type: this.getConstructor().type,
