@@ -1,0 +1,16 @@
+import { defaults } from "./defaults";
+
+export enum NameServiceTransactionTypes {
+    Nameservice = 0,
+}
+
+export const NameServiceTransactionGroup = defaults.nameserviceTypeGroup;
+
+// parse to string
+const namesericeStaticFee: any = defaults.nameserviceStaticFee.toString();
+
+export enum NameServiceStaticFees {
+    Nameservice = namesericeStaticFee,
+}
+
+export const NameServiceTransactionVersion = defaults.version;
