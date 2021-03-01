@@ -8,10 +8,6 @@ import { generateMnemonic } from "bip39";
 import * as support from "../__support__";
 import { NamespaceTransactionFactory } from "../__support__/transaction-factory";
 
-const notarizationAsset = {
-    hash: "hash",
-};
-
 let app: Contracts.Kernel.Application;
 beforeAll(async () => (app = await support.setUp()));
 afterAll(async () => await support.tearDown());
