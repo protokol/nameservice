@@ -1,0 +1,9 @@
+{
+	"extends": ["config:base", ":preserveSemverRanges"],
+	"packageRules": [
+		{
+			"packagePatterns": ["^@arkecosystem"],
+			"groupName": "ark packages"
+		}
+	]
+}
