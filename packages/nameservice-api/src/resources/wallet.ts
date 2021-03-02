@@ -27,7 +27,7 @@ export class WalletResource implements Contracts.Resource {
             publicKey: resource.publicKey,
             balance: resource.balance!.toFixed(),
             nonce: resource.nonce!.toFixed(),
-						name: resource.attributes.nameservice.name,
+            name: resource.attributes.attributes.nameservice.name,
         };
     }
 }

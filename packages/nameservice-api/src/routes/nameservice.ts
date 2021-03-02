@@ -50,7 +50,7 @@ export const register = (server: Hapi.Server): void => {
         options: {
             validate: {
                 params: Joi.object({
-                    id: Joi.string().hex().length(64),
+                    id: Joi.string().min(1).max(90),
                 }),
             },
         },

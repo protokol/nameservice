@@ -3,10 +3,10 @@ import Boom from "@hapi/boom";
 import Hapi from "@hapi/hapi";
 import { Enums } from "@protokol/nameservice-crypto";
 
-import { NameserviceResource } from "../resources/nameservice";
-import { BaseController } from "./base-controller";
 import { Indexers } from "../../../nameservice-transactions";
+import { NameserviceResource } from "../resources/nameservice";
 import { WalletResource } from "../resources/wallet";
+import { BaseController } from "./base-controller";
 
 @Container.injectable()
 export class NameserviceController extends BaseController {
@@ -45,7 +45,7 @@ export class NameserviceController extends BaseController {
         return this.respondWithBlockResource(transaction, request.query.transform, NameserviceResource);
     }
 
-    public async wallet(request: Hapi.Request, h: Hapi.ResponseToolkit) {
+    public async wallet(request: Hapi.Request, h: Hapi.ResponseToolkit): Promise<any> {
         let wallet: Contracts.State.Wallet;
         try {
             wallet = this.walletRepository.findByIndex(Indexers.namespaceWalletIndex, request.params.id);
