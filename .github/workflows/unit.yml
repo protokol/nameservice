@@ -28,8 +28,11 @@ jobs:
             - name: Install And Build
               run: yarn && yarn build
 
-            - name: NOTARIZATION-CRYPTO
+            - name: NAMESERVICE-CRYPTO
               run: cd packages/nameservice-crypto && yarn test:unit:coverage --coverageDirectory .coverage/unit-nameservice-crypto --maxWorkers=2
 
-            - name: NOTARIZATION-TRANSACTIONS
+            - name: NAMESERVICE-TRANSACTIONS
               run: cd packages/nameservice-transactions && yarn test:unit:coverage --coverageDirectory .coverage/unit-nameservice-transactions --maxWorkers=2
+
+            - name: NAMESERVICE-API
+              run: cd packages/nameservice-api && yarn test:unit:coverage --coverageDirectory .coverage/unit-nameservice-api --maxWorkers=2
