@@ -9,19 +9,20 @@ module.exports = {
     collectCoverage: true,
     coverageDirectory: "<rootDir>/.coverage",
     collectCoverageFrom: [
-        "src/**/{!(index|enums|defaults|interfaces),}.ts",
-        "src/**/builders/**",
-        "src/**/transactions/**",
+        "src/**/{!(index|handlers|service-provider|),}.ts",
+        "src/**/controllers/**",
+        "src/**/resources/**",
     ],
     coverageReporters: ["json", "lcov", "text", "clover", "html"],
-    coverageThreshold: {
-        global: {
-            branches: 100,
-            functions: 100,
-            lines: 100,
-            statements: 100,
-        },
-    },
+    coveragePathIgnorePatterns: ["<rootDir>/src/routes/"],
+    // coverageThreshold: {
+    //     global: {
+    //         branches: 100,
+    //         functions: 100,
+    //         lines: 100,
+    //         statements: 100,
+    //     },
+    // },
     watchman: false,
     setupFilesAfterEnv: ["jest-extended"],
 };

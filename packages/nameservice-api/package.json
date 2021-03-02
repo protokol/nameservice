@@ -34,9 +34,9 @@
     "clean": "rimraf .coverage dist tmp",
     "test": "jest",
     "test:unit": "jest __tests__/unit/** --forceExit --detectOpenHandles",
-    "test:unit:coverage": "jest __tests__/unit --coverage --detectOpenHandles",
+    "test:unit:coverage": "jest __tests__/unit --coverage --forceExit --detectOpenHandles",
     "test:integration": "jest __tests__/integration --runInBand --forceExit",
-    "test:integration:coverage": "jest __tests__/integration --coverage --runInBand --forceExit",
+    "test:integration:coverage": "jest __tests__/integration --coverage --runInBand --forceExit --detectOpenHandles",
     "publish:beta": "yarn build && yarn npm publish --tag beta --access public --tolerate-republish"
   },
   "dependencies": {
