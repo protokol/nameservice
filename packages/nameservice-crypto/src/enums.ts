@@ -7,7 +7,7 @@ export enum NameServiceTransactionTypes {
 export const NameServiceTransactionGroup = defaults.nameserviceTypeGroup;
 
 // parse to string
-const namesericeStaticFee: any = defaults.nameserviceStaticFee.toString();
+const nameserviceStaticFee: any = defaults.nameserviceStaticFee.toString();
 
 export enum NameServiceStaticFees {
     Nameservice = namesericeStaticFee,
