@@ -470,7 +470,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@arkecosystem/crypto", "npm:3.0.0-next.22"],
             ["bytebuffer", "npm:5.0.1"],
             ["fs-extra", "npm:8.1.0"],
-            ["joi", "npm:17.3.0"],
+            ["joi", "npm:17.4.0"],
             ["msgpack-lite", "npm:0.1.26"],
             ["ora", "npm:4.1.1"],
             ["pg-query-stream", "npm:3.4.2"],
@@ -9760,18 +9760,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["joi", [
-        ["npm:17.3.0", {
-          "packageLocation": "./.yarn/cache/joi-npm-17.3.0-f4df98e092-3a2a6a8df5.zip/node_modules/joi/",
-          "packageDependencies": [
-            ["joi", "npm:17.3.0"],
-            ["@hapi/hoek", "npm:9.1.1"],
-            ["@hapi/topo", "npm:5.0.0"],
-            ["@sideway/address", "npm:4.1.1"],
-            ["@sideway/formula", "npm:3.0.0"],
-            ["@sideway/pinpoint", "npm:2.0.0"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:17.4.0", {
           "packageLocation": "./.yarn/cache/joi-npm-17.4.0-cfd6f2d54c-2f6203d451.zip/node_modules/joi/",
           "packageDependencies": [
