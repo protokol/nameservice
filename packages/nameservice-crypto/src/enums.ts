@@ -10,7 +10,7 @@ export const NameServiceTransactionGroup = defaults.nameserviceTypeGroup;
 const nameserviceStaticFee: any = defaults.nameserviceStaticFee.toString();
 
 export enum NameServiceStaticFees {
-    Nameservice = namesericeStaticFee,
+    Nameservice = nameserviceStaticFee,
 }
 
 export const NameServiceTransactionVersion = defaults.version;
