@@ -31,23 +31,12 @@ export class NameserviceResource implements Contracts.Resource {
 
         return {
             id: resource.id,
-            blockId: resource.blockId,
-            version: resource.version,
-            type: resource.type,
-            typeGroup: resource.typeGroup,
-            amount: resource.amount.toFixed(),
-            fee: resource.fee.toFixed(),
             sender,
             senderPublicKey: resource.senderPublicKey,
-            recipient: resource.recipientId || sender,
-            signature: resource.signature,
-            signSignature: resource.signSignature || resource.secondSignature,
-            signatures: resource.signatures,
             vendorField: resource.vendorField,
-            asset: resource.asset,
+            nameservice: resource.asset.nameservice.name,
             timestamp:
                 typeof resource.timestamp !== "undefined" ? AppUtils.formatTimestamp(resource.timestamp) : undefined,
-            nonce: resource.nonce!.toFixed(),
         };
     }
 }
