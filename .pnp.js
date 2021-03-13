@@ -2735,7 +2735,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["joi", "npm:17.4.0"],
             ["latest-version", "npm:5.1.0"],
             ["nock", "npm:13.0.9"],
-            ["npm-check-updates", "npm:11.1.10"],
+            ["npm-check-updates", "npm:11.3.0"],
             ["prettier", "npm:2.2.1"],
             ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:26.5.2"],
@@ -8283,6 +8283,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lru-cache", "npm:6.0.0"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:4.0.0", {
+          "packageLocation": "./.yarn/cache/hosted-git-info-npm-4.0.0-98724ab476-540b4a8bd0.zip/node_modules/hosted-git-info/",
+          "packageDependencies": [
+            ["hosted-git-info", "npm:4.0.0"],
+            ["lru-cache", "npm:6.0.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["html-encoding-sniffer", [
@@ -11519,6 +11527,40 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["update-notifier", "npm:5.1.0"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:11.3.0", {
+          "packageLocation": "./.yarn/cache/npm-check-updates-npm-11.3.0-0ebdc28e5d-2499cc7183.zip/node_modules/npm-check-updates/",
+          "packageDependencies": [
+            ["npm-check-updates", "npm:11.3.0"],
+            ["chalk", "npm:4.1.0"],
+            ["cint", "npm:8.2.1"],
+            ["cli-table", "npm:0.3.5"],
+            ["commander", "npm:6.2.1"],
+            ["find-up", "npm:5.0.0"],
+            ["fp-and-or", "npm:0.1.3"],
+            ["get-stdin", "npm:8.0.0"],
+            ["globby", "npm:11.0.2"],
+            ["hosted-git-info", "npm:4.0.0"],
+            ["json-parse-helpfulerror", "npm:1.0.3"],
+            ["jsonlines", "npm:0.1.1"],
+            ["libnpmconfig", "npm:1.2.1"],
+            ["lodash", "npm:4.17.21"],
+            ["mem", "npm:8.0.0"],
+            ["minimatch", "npm:3.0.4"],
+            ["p-map", "npm:4.0.0"],
+            ["pacote", "npm:11.3.0"],
+            ["parse-github-url", "npm:1.0.2"],
+            ["progress", "npm:2.0.3"],
+            ["prompts", "npm:2.4.0"],
+            ["rc-config-loader", "npm:4.0.0"],
+            ["remote-git-tags", "npm:3.0.0"],
+            ["rimraf", "npm:3.0.2"],
+            ["semver", "npm:7.3.4"],
+            ["semver-utils", "npm:1.1.4"],
+            ["spawn-please", "npm:1.0.0"],
+            ["update-notifier", "npm:5.1.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["npm-install-checks", [
@@ -12063,6 +12105,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/pacote-npm-11.2.7-97313d2285-e4f0947b39.zip/node_modules/pacote/",
           "packageDependencies": [
             ["pacote", "npm:11.2.7"],
+            ["@npmcli/git", "npm:2.0.6"],
+            ["@npmcli/installed-package-contents", "npm:1.0.7"],
+            ["@npmcli/promise-spawn", "npm:1.3.2"],
+            ["@npmcli/run-script", "npm:1.8.3"],
+            ["cacache", "npm:15.0.5"],
+            ["chownr", "npm:2.0.0"],
+            ["fs-minipass", "npm:2.1.0"],
+            ["infer-owner", "npm:1.0.4"],
+            ["minipass", "npm:3.1.3"],
+            ["mkdirp", "npm:1.0.4"],
+            ["npm-package-arg", "npm:8.1.1"],
+            ["npm-packlist", "npm:2.1.4"],
+            ["npm-pick-manifest", "npm:6.1.0"],
+            ["npm-registry-fetch", "npm:9.0.0"],
+            ["promise-retry", "npm:2.0.1"],
+            ["read-package-json-fast", "npm:2.0.2"],
+            ["rimraf", "npm:3.0.2"],
+            ["ssri", "npm:8.0.1"],
+            ["tar", "npm:6.1.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:11.3.0", {
+          "packageLocation": "./.yarn/cache/pacote-npm-11.3.0-809eecc67f-98eaa3e1b3.zip/node_modules/pacote/",
+          "packageDependencies": [
+            ["pacote", "npm:11.3.0"],
             ["@npmcli/git", "npm:2.0.6"],
             ["@npmcli/installed-package-contents", "npm:1.0.7"],
             ["@npmcli/promise-spawn", "npm:1.3.2"],
