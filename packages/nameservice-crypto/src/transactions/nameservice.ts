@@ -62,7 +62,7 @@ export class NameserviceTransaction extends Transactions.Transaction {
 
         // name
         const nameLength: number = buf.readUint8();
-        const name: string = buf.readString(nameLength);
+        const name: string = buf.readBytes(nameLength).toBuffer().toString("utf8");
 
         const nameservice: INameServiceAsset = { name };
 
