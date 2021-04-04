@@ -19,7 +19,7 @@ export class NameserviceTransaction extends Transactions.Transaction {
     public static readonly key = "Nameservice";
     public static readonly version: number = NameServiceTransactionVersion;
 
-    protected static defaultStaticFee = Utils.BigNumber.make(NameServiceStaticFees.Nameservice);
+    protected static readonly defaultStaticFee = Utils.BigNumber.make(NameServiceStaticFees.Nameservice);
 
     public static getSchema(): Transactions.schemas.TransactionSchema {
         return schemas.extend(schemas.transactionBaseSchema, {

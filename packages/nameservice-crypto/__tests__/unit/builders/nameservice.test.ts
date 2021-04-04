@@ -49,6 +49,19 @@ describe("Nameservice tests", () => {
             expect(() => actual.build()).toThrow();
         });
 
+        it("should verify correctly fee setup", () => {
+            const actual = new NameserviceBuilder()
+                .Nameservice({
+                    name: "zan",
+                })
+                .fee("123")
+                .nonce("4")
+                .sign("clay harbor enemy utility margin pretty hub comic piece aerobic umbrella acquire");
+
+            expect(actual.build().verified).toBeTrue();
+            expect(actual.verify()).toBeTrue();
+        });
+
         it("object should remain the same if asset is undefined", () => {
             const actual = new NameserviceBuilder();
             actual.data.asset = undefined;
