@@ -1,3 +1,4 @@
+### Changelog
 #### [v1.0.0-beta.1](https://github.com/protokol/nameservice/compare/v1.0.0-beta.0...v1.0.0-beta.1)
 
 > 6 April 2021
