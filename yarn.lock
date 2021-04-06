@@ -2406,6 +2406,65 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@protokol/nameservice@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@protokol/nameservice@workspace:."
+  dependencies:
+    "@arkecosystem/core": ^3.0.0-next
+    "@arkecosystem/core-cli": ^3.0.0-next
+    "@sindresorhus/tsconfig": ^1.0.0
+    "@types/eslint": ^7.2.0
+    "@types/eslint-plugin-prettier": ^3.1.0
+    "@types/jest": ^26.0.10
+    "@types/node": ^14.6.0
+    "@types/prettier": ^2.0.2
+    "@types/rimraf": ^3.0.0
+    "@typescript-eslint/eslint-plugin": ^4.0.0
+    "@typescript-eslint/parser": ^4.0.0
+    "@yarnpkg/pnpify": ^2.1.0
+    codecov: ^3.7.2
+    cross-env: ^7.0.2
+    eslint: ^7.7.0
+    eslint-config-prettier: ^8.0.0
+    eslint-plugin-jest: ^24.0.0
+    eslint-plugin-prettier: ^3.2.0
+    eslint-plugin-simple-import-sort: ^7.0.0
+    jest: ^26.4.1
+    jest-extended: ^0.11.5
+    nock: ^13.0.4
+    npm-check-updates: ^11.0.0
+    pg: ^8.2.1
+    pg-query-stream: ^4.0.0
+    prettier: ^2.0.5
+    rimraf: ^3.0.2
+    ts-jest: ~26.5.0
+    typescript: ~4.2.3
+  dependenciesMeta:
+    "@arkecosystem/core":
+      unplugged: true
+    "@arkecosystem/core-api":
+      unplugged: true
+    "@arkecosystem/core-cli":
+      unplugged: true
+    "@arkecosystem/core-database":
+      unplugged: true
+    "@arkecosystem/core-kernel":
+      unplugged: true
+    "@arkecosystem/core-state":
+      unplugged: true
+    "@arkecosystem/core-test-framework":
+      unplugged: true
+    "@arkecosystem/core-transaction-pool":
+      unplugged: true
+    "@arkecosystem/core-transactions":
+      unplugged: true
+    "@arkecosystem/crypto":
+      unplugged: true
+    "@arkecosystem/utils":
+      unplugged: true
+  languageName: unknown
+  linkType: soft
+
 "@protokol/nft-base-api@npm:beta":
   version: 1.0.0-beta.57
   resolution: "@protokol/nft-base-api@npm:1.0.0-beta.57"
@@ -2491,67 +2550,6 @@ __metadata:
   checksum: 83bdc4f0852ba6333675139c8c50b4bc394d97b90cbcb84537e11a65033a8722f29b34567c01ae68ec6225c69e3e7931cd4421aa5a3032d43d7a34ff5df644a7
   languageName: node
   linkType: hard
-
-"@protokol/repo-name@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@protokol/repo-name@workspace:."
-  dependencies:
-    "@arkecosystem/core": ^3.0.0-next
-    "@arkecosystem/core-cli": ^3.0.0-next
-    "@sindresorhus/tsconfig": ^1.0.0
-    "@types/eslint": ^7.2.0
-    "@types/eslint-plugin-prettier": ^3.1.0
-    "@types/jest": ^26.0.10
-    "@types/node": ^14.6.0
-    "@types/prettier": ^2.0.2
-    "@types/rimraf": ^3.0.0
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    "@yarnpkg/pnpify": ^2.1.0
-    auto-changelog: ^2.2.1
-    codecov: ^3.7.2
-    cross-env: ^7.0.2
-    eslint: ^7.7.0
-    eslint-config-prettier: ^8.0.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-prettier: ^3.2.0
-    eslint-plugin-simple-import-sort: ^7.0.0
-    global: ^4.4.0
-    jest: ^26.4.1
-    jest-extended: ^0.11.5
-    nock: ^13.0.4
-    npm-check-updates: ^11.0.0
-    pg: ^8.2.1
-    pg-query-stream: ^4.0.0
-    prettier: ^2.0.5
-    rimraf: ^3.0.2
-    ts-jest: ~26.5.0
-    typescript: ~4.2.3
-  dependenciesMeta:
-    "@arkecosystem/core":
-      unplugged: true
-    "@arkecosystem/core-api":
-      unplugged: true
-    "@arkecosystem/core-cli":
-      unplugged: true
-    "@arkecosystem/core-database":
-      unplugged: true
-    "@arkecosystem/core-kernel":
-      unplugged: true
-    "@arkecosystem/core-state":
-      unplugged: true
-    "@arkecosystem/core-test-framework":
-      unplugged: true
-    "@arkecosystem/core-transaction-pool":
-      unplugged: true
-    "@arkecosystem/core-transactions":
-      unplugged: true
-    "@arkecosystem/crypto":
-      unplugged: true
-    "@arkecosystem/utils":
-      unplugged: true
-  languageName: unknown
-  linkType: soft
 
 "@protokol/utils@npm:^1.0.0-beta.37, @protokol/utils@npm:^1.0.0-beta.38":
   version: 1.0.0-beta.38
@@ -3829,22 +3827,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"auto-changelog@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "auto-changelog@npm:2.2.1"
-  dependencies:
-    commander: ^5.0.0
-    handlebars: ^4.7.3
-    lodash.uniqby: ^4.7.0
-    node-fetch: ^2.6.0
-    parse-github-url: ^1.0.2
-    semver: ^6.3.0
-  bin:
-    auto-changelog: src/index.js
-  checksum: ab592dd898dcd46f3698b9e8e339b4dee4062d4434a6ee1364b624c4ebad10ea16440b5d2573901f4de29a9098ff198b6cfda7fd6711a4262e4023c3ce515b0a
-  languageName: node
-  linkType: hard
-
 "available-typed-arrays@npm:^1.0.2":
   version: 1.0.2
   resolution: "available-typed-arrays@npm:1.0.2"
@@ -4918,13 +4900,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^5.0.0":
-  version: 5.1.0
-  resolution: "commander@npm:5.1.0"
-  checksum: d16141ea7f580945156fb8a06de2834c4647c7d9d3732ebd4534ab8e0b7c64747db301e18f2b840f28ea8fef51f7a8d6178e674b45a21931f0b65ff1c7f476b3
-  languageName: node
-  linkType: hard
-
 "commander@npm:^6.2.1":
   version: 6.2.1
   resolution: "commander@npm:6.2.1"
@@ -5516,13 +5491,6 @@ __metadata:
   dependencies:
     esutils: ^2.0.2
   checksum: 2eae469bd2889ceee9892083a67340b3622568fe5290edce620e5d5ddab23d644b2a780e9a7c68ad9c8a62716a70c5e484402ac93a398fa78b54b7505592aa7f
-  languageName: node
-  linkType: hard
-
-"dom-walk@npm:^0.1.0":
-  version: 0.1.2
-  resolution: "dom-walk@npm:0.1.2"
-  checksum: 948c7527f3798cae9d7039cc0e5dc9f013ebd701d7d99478bac79d7d9eb8b81e7b6e836526e21ed9b156466b268e30ea0f2d5b72df955fabec3ce2aa7dc0086e
   languageName: node
   linkType: hard
 
@@ -6874,16 +6842,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"global@npm:^4.4.0":
-  version: 4.4.0
-  resolution: "global@npm:4.4.0"
-  dependencies:
-    min-document: ^2.19.0
-    process: ^0.11.10
-  checksum: da0cf92ef034b63cf4d0fe5e14cb71bc4c748b8c1bbeabe4061443562ba8e9027774f8074e66543fa98f0d965da6d11e0861e3bf8c628b7ab19220e8ee18cc71
-  languageName: node
-  linkType: hard
-
 "globals@npm:^11.1.0":
   version: 11.12.0
   resolution: "globals@npm:11.12.0"
@@ -6982,7 +6940,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"handlebars@npm:^4.7.3, handlebars@npm:^4.7.7":
+"handlebars@npm:^4.7.7":
   version: 4.7.7
   resolution: "handlebars@npm:4.7.7"
   dependencies:
@@ -9127,13 +9085,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"lodash.uniqby@npm:^4.7.0":
-  version: 4.7.0
-  resolution: "lodash.uniqby@npm:4.7.0"
-  checksum: bea225431a3623f440d8a719d7f0528de7872afe62645442ff37447ace25ef5237d41ed433cd676a345e83e6826836d746b4d629839f7196cf94258dbda81503
-  languageName: node
-  linkType: hard
-
 "lodash@npm:4, lodash@npm:4.x, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:latest":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
@@ -9482,15 +9433,6 @@ fsevents@~2.1.2:
   version: 3.1.0
   resolution: "mimic-response@npm:3.1.0"
   checksum: cfbf19f66de6ad46df7481d9e8c1a7f30b6fa77dd771ad4a72a0443265041a39768182bde6d1de39001c2774168635bc74f42902e401c8ba33db55d69b773004
-  languageName: node
-  linkType: hard
-
-"min-document@npm:^2.19.0":
-  version: 2.19.0
-  resolution: "min-document@npm:2.19.0"
-  dependencies:
-    dom-walk: ^0.1.0
-  checksum: 8da883996e00a53729e867dad45a358c6d8b3b55f2473a20768c1a2b4642d0983bc61827cf29eb98c53d7290c2a1a74a5cba60873857da416bdfae09bf73bb21
   languageName: node
   linkType: hard
 
@@ -9901,7 +9843,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.2.0, node-fetch@npm:^2.6.0":
+"node-fetch@npm:^2.2.0":
   version: 2.6.1
   resolution: "node-fetch@npm:2.6.1"
   checksum: cbb171635e538162b977eac5dfe7a1e07a9a02e991924377a6435502291e2f823d306b95aabc455caebf4a118ccf836868462bc70ccc3095af02bb9da61fda37
@@ -11232,13 +11174,6 @@ fsevents@~2.1.2:
   version: 2.0.1
   resolution: "process-nextick-args@npm:2.0.1"
   checksum: ddeb0f07d0d5efa649c2c5e39d1afd0e3668df2b392d036c8a508b0034f7beffbc474b3c2f7fd3fed2dc4113cef8f1f7e00d05690df3c611b36f6c7efd7852d1
-  languageName: node
-  linkType: hard
-
-"process@npm:^0.11.10":
-  version: 0.11.10
-  resolution: "process@npm:0.11.10"
-  checksum: ed93a85e9185b40fb01788c588a87c1a9da0eb925ef7cebebbe1b8bbf0eba1802130366603a29e3b689c116969d4fe018de6aed3474bbeb5aefb3716b85d6449
   languageName: node
   linkType: hard
 

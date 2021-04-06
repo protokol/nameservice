@@ -35,9 +35,7 @@
 	},
 	"dependencies": {
 		"@arkecosystem/core": "^3.0.0-next",
-		"@arkecosystem/core-cli": "^3.0.0-next",
-		"auto-changelog": "^2.2.1",
-		"global": "^4.4.0"
+		"@arkecosystem/core-cli": "^3.0.0-next"
 	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^1.0.0",
