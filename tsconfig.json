@@ -24,7 +24,7 @@
 		"strict": true,
 		"stripInternal": true,
 		"target": "es2019",
-	  	"noPropertyAccessFromIndexSignature": false,
+		"noPropertyAccessFromIndexSignature": false
 	},
 	"exclude": ["dist", "**/*.spec.ts", "**/*.test.ts"]
 }

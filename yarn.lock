@@ -2406,6 +2406,65 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@protokol/nameservice@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@protokol/nameservice@workspace:."
+  dependencies:
+    "@arkecosystem/core": ^3.0.0-next
+    "@arkecosystem/core-cli": ^3.0.0-next
+    "@sindresorhus/tsconfig": ^1.0.0
+    "@types/eslint": ^7.2.0
+    "@types/eslint-plugin-prettier": ^3.1.0
+    "@types/jest": ^26.0.10
+    "@types/node": ^14.6.0
+    "@types/prettier": ^2.0.2
+    "@types/rimraf": ^3.0.0
+    "@typescript-eslint/eslint-plugin": ^4.0.0
+    "@typescript-eslint/parser": ^4.0.0
+    "@yarnpkg/pnpify": ^2.1.0
+    codecov: ^3.7.2
+    cross-env: ^7.0.2
+    eslint: ^7.7.0
+    eslint-config-prettier: ^8.0.0
+    eslint-plugin-jest: ^24.0.0
+    eslint-plugin-prettier: ^3.2.0
+    eslint-plugin-simple-import-sort: ^7.0.0
+    jest: ^26.4.1
+    jest-extended: ^0.11.5
+    nock: ^13.0.4
+    npm-check-updates: ^11.0.0
+    pg: ^8.2.1
+    pg-query-stream: ^4.0.0
+    prettier: ^2.0.5
+    rimraf: ^3.0.2
+    ts-jest: ~26.5.0
+    typescript: ~4.2.3
+  dependenciesMeta:
+    "@arkecosystem/core":
+      unplugged: true
+    "@arkecosystem/core-api":
+      unplugged: true
+    "@arkecosystem/core-cli":
+      unplugged: true
+    "@arkecosystem/core-database":
+      unplugged: true
+    "@arkecosystem/core-kernel":
+      unplugged: true
+    "@arkecosystem/core-state":
+      unplugged: true
+    "@arkecosystem/core-test-framework":
+      unplugged: true
+    "@arkecosystem/core-transaction-pool":
+      unplugged: true
+    "@arkecosystem/core-transactions":
+      unplugged: true
+    "@arkecosystem/crypto":
+      unplugged: true
+    "@arkecosystem/utils":
+      unplugged: true
+  languageName: unknown
+  linkType: soft
+
 "@protokol/nft-base-api@npm:beta":
   version: 1.0.0-beta.57
   resolution: "@protokol/nft-base-api@npm:1.0.0-beta.57"
@@ -2491,65 +2550,6 @@ __metadata:
   checksum: 83bdc4f0852ba6333675139c8c50b4bc394d97b90cbcb84537e11a65033a8722f29b34567c01ae68ec6225c69e3e7931cd4421aa5a3032d43d7a34ff5df644a7
   languageName: node
   linkType: hard
-
-"@protokol/repo-name@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@protokol/repo-name@workspace:."
-  dependencies:
-    "@arkecosystem/core": ^3.0.0-next
-    "@arkecosystem/core-cli": ^3.0.0-next
-    "@sindresorhus/tsconfig": ^1.0.0
-    "@types/eslint": ^7.2.0
-    "@types/eslint-plugin-prettier": ^3.1.0
-    "@types/jest": ^26.0.10
-    "@types/node": ^14.6.0
-    "@types/prettier": ^2.0.2
-    "@types/rimraf": ^3.0.0
-    "@typescript-eslint/eslint-plugin": ^4.0.0
-    "@typescript-eslint/parser": ^4.0.0
-    "@yarnpkg/pnpify": ^2.1.0
-    codecov: ^3.7.2
-    cross-env: ^7.0.2
-    eslint: ^7.7.0
-    eslint-config-prettier: ^8.0.0
-    eslint-plugin-jest: ^24.0.0
-    eslint-plugin-prettier: ^3.2.0
-    eslint-plugin-simple-import-sort: ^7.0.0
-    jest: ^26.4.1
-    jest-extended: ^0.11.5
-    nock: ^13.0.4
-    npm-check-updates: ^11.0.0
-    pg: ^8.2.1
-    pg-query-stream: ^4.0.0
-    prettier: ^2.0.5
-    rimraf: ^3.0.2
-    ts-jest: ~26.5.0
-    typescript: ~4.2.3
-  dependenciesMeta:
-    "@arkecosystem/core":
-      unplugged: true
-    "@arkecosystem/core-api":
-      unplugged: true
-    "@arkecosystem/core-cli":
-      unplugged: true
-    "@arkecosystem/core-database":
-      unplugged: true
-    "@arkecosystem/core-kernel":
-      unplugged: true
-    "@arkecosystem/core-state":
-      unplugged: true
-    "@arkecosystem/core-test-framework":
-      unplugged: true
-    "@arkecosystem/core-transaction-pool":
-      unplugged: true
-    "@arkecosystem/core-transactions":
-      unplugged: true
-    "@arkecosystem/crypto":
-      unplugged: true
-    "@arkecosystem/utils":
-      unplugged: true
-  languageName: unknown
-  linkType: soft
 
 "@protokol/utils@npm:^1.0.0-beta.37, @protokol/utils@npm:^1.0.0-beta.38":
   version: 1.0.0-beta.38
