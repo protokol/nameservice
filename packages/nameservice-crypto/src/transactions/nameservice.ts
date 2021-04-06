@@ -14,12 +14,12 @@ import { amountSchema, nameserviceSchema, vendorFieldSchema } from "./utils/name
 const { schemas } = Transactions;
 
 export class NameserviceTransaction extends Transactions.Transaction {
-    public static typeGroup: number = NameServiceTransactionGroup;
-    public static type = NameServiceTransactionTypes.Nameservice;
-    public static key = "Nameservice";
-    public static version: number = NameServiceTransactionVersion;
+    public static readonly typeGroup: number = NameServiceTransactionGroup;
+    public static readonly type = NameServiceTransactionTypes.Nameservice;
+    public static readonly key = "Nameservice";
+    public static readonly version: number = NameServiceTransactionVersion;
 
-    protected static defaultStaticFee = Utils.BigNumber.make(NameServiceStaticFees.Nameservice);
+    protected static readonly defaultStaticFee = Utils.BigNumber.make(NameServiceStaticFees.Nameservice);
 
     public static getSchema(): Transactions.schemas.TransactionSchema {
         return schemas.extend(schemas.transactionBaseSchema, {
@@ -62,7 +62,7 @@ export class NameserviceTransaction extends Transactions.Transaction {
 
         // name
         const nameLength: number = buf.readUint8();
-        const name: string = buf.readString(nameLength);
+        const name: string = buf.readBytes(nameLength).toBuffer().toString("utf8");
 
         const nameservice: INameServiceAsset = { name };
 
