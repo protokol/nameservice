@@ -1,7 +1,7 @@
 {
 	"private": true,
-	"name": "@protokol/repo-name",
-	"description": "REPO DESCRIPTION",
+	"name": "@protokol/nameservice",
+	"description": "Protokol nameserivce transaction support",
 	"engineStrict": true,
 	"engines": {
 		"node": "^12 || ^14",
@@ -35,7 +35,9 @@
 	},
 	"dependencies": {
 		"@arkecosystem/core": "^3.0.0-next",
-		"@arkecosystem/core-cli": "^3.0.0-next"
+		"@arkecosystem/core-cli": "^3.0.0-next",
+		"auto-changelog": "^2.2.1",
+		"global": "^4.4.0"
 	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^1.0.0",
