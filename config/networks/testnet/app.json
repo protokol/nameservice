@@ -32,6 +32,9 @@
 				"package": "@protokol/guardian-transactions"
 			},
 			{
+				"package": "@protokol/nameservice-transactions"
+			},
+			{
 				"package": "@arkecosystem/core-p2p"
 			},
 			{
@@ -48,6 +51,9 @@
 			},
 			{
 				"package": "@protokol/guardian-api"
+			},
+			{
+				"package": "@protokol/nameservice-api"
 			},
 			{
 				"package": "@arkecosystem/core-magistrate-api"
@@ -93,6 +99,9 @@
 				"package": "@protokol/guardian-transactions"
 			},
 			{
+				"package": "@protokol/nameservice-transactions"
+			},
+			{
 				"package": "@arkecosystem/core-p2p"
 			},
 			{
@@ -109,6 +118,9 @@
 			},
 			{
 				"package": "@protokol/guardian-api"
+			},
+			{
+				"package": "@protokol/nameservice-api"
 			},
 			{
 				"package": "@arkecosystem/core-magistrate-api"
