@@ -2334,7 +2334,7 @@ __metadata:
     jest-extended: ^0.11.5
     joi: ^17.3.0
     latest-version: ^5.1.0
-    nock: ^13.0.5
+    nock: ^13.0.9
     npm-check-updates: ~11.4.0
     prettier: ^2.1.2
     rimraf: ^3.0.2
@@ -2431,7 +2431,7 @@ __metadata:
     eslint-plugin-simple-import-sort: ^7.0.0
     jest: ^26.4.1
     jest-extended: ^0.11.5
-    nock: ^13.0.4
+    nock: ^13.0.9
     npm-check-updates: ^11.0.0
     pg: ^8.2.1
     pg-query-stream: ^4.0.0
@@ -9828,15 +9828,15 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"nock@npm:^13.0.4, nock@npm:^13.0.5":
-  version: 13.0.9
-  resolution: "nock@npm:13.0.9"
+"nock@npm:^13.0.9":
+  version: 13.0.11
+  resolution: "nock@npm:13.0.11"
   dependencies:
     debug: ^4.1.0
     json-stringify-safe: ^5.0.1
     lodash.set: ^4.3.2
     propagate: ^2.0.0
-  checksum: 20899df4a51e88f8a3d305efe98cd05707cbce398e5b4b2a9e1e45dfbbcdb5f2b6d6ae68ab8a73779435ec44b353ec5674a14f23c498841cd1aff24d395f48ce
+  checksum: 75aca1f14036e9ba6aaa03813b83d1685cd3f2268b154b30ab9f5f00719958140a9d0b1e5f4f420da4e1e6d9fa14f193fc4df68b007d49d7a749dc6fd1646071
   languageName: node
   linkType: hard
 

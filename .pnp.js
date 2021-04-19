@@ -73,7 +73,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-simple-import-sort", "virtual:c7865daf478b4f7b9272ce9552ede467b71445b21eaebfd0914aaa88609c040dc653ab1b8918a3090e66891c6e34aec0d8dec0e6ffb4f9c79c660a98a251e3c5#npm:7.0.0"],
             ["jest", "npm:26.6.3"],
             ["jest-extended", "npm:0.11.5"],
-            ["nock", "npm:13.0.9"],
+            ["nock", "npm:13.0.11"],
             ["npm-check-updates", "npm:11.1.10"],
             ["pg", "virtual:b99730336d6765a5cc1c2693ed29a397bb5ef3a89e7cb787e02c1c75dd1195ef8703401f7e975b778ff0c595d6c6227c4bdbae8d59e98e1f97c0ad218f9aac42#npm:8.5.1"],
             ["pg-query-stream", "npm:4.0.0"],
@@ -2716,7 +2716,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-simple-import-sort", "virtual:c7865daf478b4f7b9272ce9552ede467b71445b21eaebfd0914aaa88609c040dc653ab1b8918a3090e66891c6e34aec0d8dec0e6ffb4f9c79c660a98a251e3c5#npm:7.0.0"],
             ["jest", "npm:26.6.3"],
             ["jest-extended", "npm:0.11.5"],
-            ["nock", "npm:13.0.9"],
+            ["nock", "npm:13.0.11"],
             ["npm-check-updates", "npm:11.1.10"],
             ["pg", "virtual:b99730336d6765a5cc1c2693ed29a397bb5ef3a89e7cb787e02c1c75dd1195ef8703401f7e975b778ff0c595d6c6227c4bdbae8d59e98e1f97c0ad218f9aac42#npm:8.5.1"],
             ["pg-query-stream", "npm:4.0.0"],
@@ -2772,7 +2772,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-extended", "npm:0.11.5"],
             ["joi", "npm:17.4.0"],
             ["latest-version", "npm:5.1.0"],
-            ["nock", "npm:13.0.9"],
+            ["nock", "npm:13.0.11"],
             ["npm-check-updates", "npm:11.4.1"],
             ["prettier", "npm:2.2.1"],
             ["rimraf", "npm:3.0.2"],
@@ -11261,10 +11261,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["nock", [
-        ["npm:13.0.9", {
-          "packageLocation": "./.yarn/cache/nock-npm-13.0.9-38d3e53789-20899df4a5.zip/node_modules/nock/",
+        ["npm:13.0.11", {
+          "packageLocation": "./.yarn/cache/nock-npm-13.0.11-d618e2eef2-75aca1f140.zip/node_modules/nock/",
           "packageDependencies": [
-            ["nock", "npm:13.0.9"],
+            ["nock", "npm:13.0.11"],
             ["debug", "virtual:75c807624a1c16c0a8cc2bd5d8a2e9aa1df1c544dc2bbbddf1d1c9ed191f4248eedda1a3e0b0bcacbbc5934cf664baa5da14675e8a7a6ec6490dea178cda6d6f#npm:4.3.2"],
             ["json-stringify-safe", "npm:5.0.1"],
             ["lodash.set", "npm:4.3.2"],
