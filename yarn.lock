@@ -2308,7 +2308,7 @@ __metadata:
     "@protokol/nameservice-crypto": "workspace:packages/nameservice-crypto"
     "@protokol/nameservice-transactions": "workspace:packages/nameservice-transactions"
     "@sindresorhus/tsconfig": ^1.0.0
-    "@types/eslint": ^7.2.5
+    "@types/eslint": ^7.2.6
     "@types/eslint-plugin-prettier": ^3.1.0
     "@types/hapi__boom": ^7.4.1
     "@types/hapi__joi": ^17.1.6
@@ -2324,7 +2324,7 @@ __metadata:
     "@typescript-eslint/parser": ^4.8.0
     codecov: ^3.8.1
     cross-env: ^7.0.2
-    eslint: ^7.13.0
+    eslint: ^7.21.0
     eslint-config-prettier: ^8.0.0
     eslint-plugin-jest: ^24.1.3
     eslint-plugin-prettier: ^3.1.4
@@ -2385,7 +2385,7 @@ __metadata:
     "@arkecosystem/crypto": ^3.0.0-next
     "@protokol/nameservice-crypto": "workspace:packages/nameservice-crypto"
     "@sindresorhus/tsconfig": ~1.0.0
-    "@types/eslint": ^7.2.5
+    "@types/eslint": ^7.2.6
     "@types/eslint-plugin-prettier": ^3.1.0
     "@types/jest": ^26.0.20
     "@types/node": ^14.14.31
@@ -2413,7 +2413,7 @@ __metadata:
     "@arkecosystem/core": ^3.0.0-next
     "@arkecosystem/core-cli": ^3.0.0-next
     "@sindresorhus/tsconfig": ^1.0.0
-    "@types/eslint": ^7.2.0
+    "@types/eslint": ^7.2.6
     "@types/eslint-plugin-prettier": ^3.1.0
     "@types/jest": ^26.0.20
     "@types/node": ^14.14.31
@@ -2424,7 +2424,7 @@ __metadata:
     "@yarnpkg/pnpify": ^2.1.0
     codecov: ^3.7.2
     cross-env: ^7.0.2
-    eslint: ^7.7.0
+    eslint: ^7.21.0
     eslint-config-prettier: ^8.0.0
     eslint-plugin-jest: ^24.0.0
     eslint-plugin-prettier: ^3.2.0
@@ -2753,13 +2753,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:*, @types/eslint@npm:^7.2.0, @types/eslint@npm:^7.2.5":
+"@types/eslint@npm:*":
   version: 7.2.6
   resolution: "@types/eslint@npm:7.2.6"
   dependencies:
     "@types/estree": "*"
     "@types/json-schema": "*"
   checksum: 3a89e63d02c447b7182a30b80925ccfbd46661aa3e7262a61aa8de9b90d1de4b0b722f681f7473b35258e110ef726d73df406374abdac8435358dd13ca74251d
+  languageName: node
+  linkType: hard
+
+"@types/eslint@npm:^7.2.6":
+  version: 7.2.10
+  resolution: "@types/eslint@npm:7.2.10"
+  dependencies:
+    "@types/estree": "*"
+    "@types/json-schema": "*"
+  checksum: d85af4ab456fcf5d243e5a39d192d01ec71e14352b9ec803394ce6ac994fca0b876405dbdc07b97449275aee8285f9570a82117bbfeb132f97e01b8ddc35477a
   languageName: node
   linkType: hard
 
@@ -5914,7 +5924,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:7.24.0":
+"eslint@npm:7.24.0, eslint@npm:^7.21.0":
   version: 7.24.0
   resolution: "eslint@npm:7.24.0"
   dependencies:
@@ -5961,7 +5971,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.13.0, eslint@npm:^7.7.0, eslint@npm:latest":
+"eslint@npm:latest":
   version: 7.21.0
   resolution: "eslint@npm:7.21.0"
   dependencies:
