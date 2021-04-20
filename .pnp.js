@@ -2773,7 +2773,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["joi", "npm:17.4.0"],
             ["latest-version", "npm:5.1.0"],
             ["nock", "npm:13.0.9"],
-            ["npm-check-updates", "npm:11.4.1"],
+            ["npm-check-updates", "npm:11.5.0"],
             ["prettier", "npm:2.2.1"],
             ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:26.5.2"],
@@ -11585,10 +11585,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:11.4.1", {
-          "packageLocation": "./.yarn/cache/npm-check-updates-npm-11.4.1-9349f0d4d8-d6b344d451.zip/node_modules/npm-check-updates/",
+        ["npm:11.5.0", {
+          "packageLocation": "./.yarn/cache/npm-check-updates-npm-11.5.0-419cc5ca6c-6db7f8d0c6.zip/node_modules/npm-check-updates/",
           "packageDependencies": [
-            ["npm-check-updates", "npm:11.4.1"],
+            ["npm-check-updates", "npm:11.5.0"],
             ["chalk", "npm:4.1.0"],
             ["cint", "npm:8.2.1"],
             ["cli-table", "npm:0.3.6"],
