@@ -2335,7 +2335,7 @@ __metadata:
     joi: ^17.3.0
     latest-version: ^5.1.0
     nock: ^13.0.5
-    npm-check-updates: ~11.4.0
+    npm-check-updates: ~11.5.0
     prettier: ^2.1.2
     rimraf: ^3.0.2
     ts-jest: ~26.5.0
@@ -10155,9 +10155,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:~11.4.0":
-  version: 11.4.1
-  resolution: "npm-check-updates@npm:11.4.1"
+"npm-check-updates@npm:~11.5.0":
+  version: 11.5.0
+  resolution: "npm-check-updates@npm:11.5.0"
   dependencies:
     chalk: ^4.1.0
     cint: ^8.2.1
@@ -10189,7 +10189,7 @@ fsevents@~2.1.2:
   bin:
     ncu: bin/cli.js
     npm-check-updates: bin/cli.js
-  checksum: d6b344d4512bbcb85e9fe80b5b21080cb8c53086810367dcb0a3bcda5928f4c5bf17f14bb06668e5f8a92e82f52e0c137be3d415ee7b08fef9ea43a18b436f93
+  checksum: 6db7f8d0c69bc818baff99cfc06fd55404eedf6cb579761620e57c2d8b60ae9b5b8dabd79c4239f38dbdce25f129331c413c3e111ce3a0dbb557f150a16cbe09
   languageName: node
   linkType: hard
 
