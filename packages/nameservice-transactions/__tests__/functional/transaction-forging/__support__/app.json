@@ -1,6 +1,9 @@
 {
     "core": {
         "plugins": [
+		  {
+			"package": "@protokol/nameservice-transactions"
+		  },
             {
                 "package": "@arkecosystem/core-logger-pino"
             },
@@ -18,9 +21,6 @@
             },
             {
                 "package": "@arkecosystem/core-magistrate-transactions"
-            },
-            {
-                "package": "@protokol/nameservice-transactions"
             },
             {
                 "package": "@arkecosystem/core-transaction-pool"

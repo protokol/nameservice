@@ -15,6 +15,10 @@ export class ServiceProvider extends Providers.ServiceProvider {
         this.app.bind(Container.Identifiers.TransactionHandler).to(NameserviceTransactionHandler);
     }
 
+    public async bootWhen(serviceProvider?: string): Promise<boolean> {
+        return serviceProvider === "@arkecosystem/core-transactions";
+    }
+
     private registerIndexers() {
         this.app
             .bind<Contracts.State.WalletIndexerIndex>(Container.Identifiers.WalletRepositoryIndexerIndex)
