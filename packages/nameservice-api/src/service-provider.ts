@@ -1,6 +1,7 @@
 import { Identifiers, Server } from "@arkecosystem/core-api";
 import { Container, Contracts, Providers } from "@arkecosystem/core-kernel";
 
+import { defaults } from "./defaults";
 import { Handler } from "./handlers";
 
 const plugin = require("../package.json");
@@ -15,7 +16,7 @@ export class ServiceProvider extends Providers.ServiceProvider {
                 const server = this.app.get<Server>(identifier);
                 await server.register({
                     plugin: Handler,
-                    routes: { prefix: "/api/nameservice" },
+                    routes: { prefix: defaults.prefix },
                 });
             }
         }
