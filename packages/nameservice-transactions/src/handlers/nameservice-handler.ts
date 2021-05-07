@@ -69,7 +69,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
 
             wallet.setAttribute<NameserviceInterfaces.INameServiceAsset>("nameservice", nameserviceAsset);
 
-            this.walletRepository.getIndex(namespaceWalletIndex).set(nameserviceAsset.name, wallet);
+            this.walletRepository.setOnIndex(namespaceWalletIndex, nameserviceAsset.name, wallet);
         }
     }
 
@@ -92,9 +92,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
         }
         AppUtils.assert.defined<NameserviceInterfaces.INameServiceAsset>(transaction.data.asset?.nameservice);
 
-        const hasName = this.walletRepository
-            .getIndex(namespaceWalletIndex)
-            .has(transaction.data.asset.nameservice.name);
+        const hasName = this.walletRepository.hasByIndex(namespaceWalletIndex, transaction.data.asset.nameservice.name);
         // Name already registered
         if (hasName) {
             throw new NameSpaceAlreadyExistsError();
@@ -121,7 +119,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
 
         wallet.setAttribute<NameserviceInterfaces.INameServiceAsset>("nameservice", nameserviceAsset);
 
-        this.walletRepository.getIndex(namespaceWalletIndex).set(nameserviceAsset.name, wallet);
+        this.walletRepository.setOnIndex(namespaceWalletIndex, nameserviceAsset.name, wallet);
     }
 
     public async revertForSender(transaction: Interfaces.ITransaction): Promise<void> {
@@ -135,7 +133,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
 
         senderWallet.forgetAttribute("nameservice");
 
-        this.walletRepository.getIndex(namespaceWalletIndex).forget(nameserviceAsset.name);
+        this.walletRepository.forgetOnIndex(namespaceWalletIndex, nameserviceAsset.name);
     }
 
     // eslint-disable-next-line @typescript-eslint/no-empty-function

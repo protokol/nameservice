@@ -27,7 +27,7 @@ export class NameserviceResource implements Contracts.Resource {
     public transform(resource): object {
         AppUtils.assert.defined<string>(resource.senderPublicKey);
 
-        const sender: string = this.walletRepository.findByPublicKey(resource.senderPublicKey).address;
+        const sender: string = this.walletRepository.findByPublicKey(resource.senderPublicKey).getAddress();
 
         return {
             id: resource.id,

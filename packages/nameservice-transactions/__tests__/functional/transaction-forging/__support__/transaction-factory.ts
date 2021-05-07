@@ -11,11 +11,6 @@ export class NamespaceTransactionFactory extends TransactionFactory {
         return new NamespaceTransactionFactory(app);
     }
 
-    public withVendorField(vendorField: string): NamespaceTransactionFactory {
-        this.builder.vendorField(vendorField);
-        return this;
-    }
-
     public Nameservice(nameservice: Interfaces.INameServiceAsset): NamespaceTransactionFactory {
         this.builder = new Builders.NameserviceBuilder().Nameservice(nameservice);
 

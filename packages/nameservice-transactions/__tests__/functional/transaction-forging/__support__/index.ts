@@ -1,10 +1,8 @@
 import "jest-extended";
 
-import { DatabaseService } from "@arkecosystem/core-database";
-import { Container, Contracts } from "@arkecosystem/core-kernel";
-import { DatabaseInteraction, StateBuilder } from "@arkecosystem/core-state";
-import { passphrases, Sandbox } from "@arkecosystem/core-test-framework";
-import { Identities, Managers, Utils } from "@arkecosystem/crypto";
+import { Contracts } from "@arkecosystem/core-kernel";
+import { Sandbox } from "@arkecosystem/core-test-framework";
+import { Managers } from "@arkecosystem/crypto";
 
 jest.setTimeout(1200000);
 
@@ -42,35 +40,6 @@ export const setUp = async (): Promise<Contracts.Kernel.Application> => {
         Managers.configManager.getMilestone().aip11 = true;
         Managers.configManager.getMilestone().htlcEnabled = true;
         Managers.configManager.getMilestone().vendorFieldLength = 255;
-
-        const databaseService = app.get<DatabaseService>(Container.Identifiers.DatabaseService);
-        const walletRepository = app.getTagged<Contracts.State.WalletRepository>(
-            Container.Identifiers.WalletRepository,
-            "state",
-            "blockchain",
-        );
-
-        await databaseService.saveRound(
-            passphrases.map((secret, i) => {
-                const wallet = walletRepository.findByPublicKey(Identities.PublicKey.fromPassphrase(secret));
-
-                wallet.setAttribute("delegate", {
-                    username: `genesis_${i + 1}`,
-                    voteBalance: Utils.BigNumber.make("300000000000000"),
-                    forgedFees: Utils.BigNumber.ZERO,
-                    forgedRewards: Utils.BigNumber.ZERO,
-                    producedBlocks: 0,
-                    round: 1,
-                    rank: undefined,
-                });
-
-                return wallet;
-            }),
-        );
-
-        const databaseInteraction = app.get<DatabaseInteraction>(Container.Identifiers.DatabaseInteraction);
-
-        await (databaseInteraction as any).initializeActiveDelegates(1);
     });
 
     return sandbox.app;
