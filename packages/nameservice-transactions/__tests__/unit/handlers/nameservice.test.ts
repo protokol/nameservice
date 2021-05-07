@@ -96,7 +96,7 @@ describe("Nameservice tests", () => {
         });
 
         it("should throw NameSpaceAlreadyExistsError", async () => {
-            walletRepository.getIndex(namespaceWalletIndex).set("zan", senderWallet);
+            walletRepository.setOnIndex(namespaceWalletIndex, "zan", senderWallet);
 
             await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrowError(
                 NameSpaceAlreadyExistsError,
@@ -141,7 +141,7 @@ describe("Nameservice tests", () => {
 
             await expect(handler.revertForSender(actual)).toResolve();
 
-            expect(walletRepository.getIndex(namespaceWalletIndex).get("zan")).toBeUndefined();
+            expect(walletRepository.hasByIndex(namespaceWalletIndex, "zan")).toBeFalse();
             expect(senderWallet.hasAttribute("nameservice")).toBeFalsy();
         });
     });
