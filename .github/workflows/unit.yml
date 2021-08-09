@@ -33,7 +33,7 @@ jobs:
 
             - uses: codecov/codecov-action@v2
               with:
-                  directory: packages/nameservice-crypto
+                  directory: packages/nameservice-crypto/.coverage
                   flags: nameservice-crypto
                   verbose: true
 
@@ -42,7 +42,7 @@ jobs:
 
             - uses: codecov/codecov-action@v2
               with:
-                directory: packages/nameservice-transactions
+                directory: packages/nameservice-transactions/.coverage
                 flags: nameservice-transactions
                 verbose: true
 
@@ -51,6 +51,6 @@ jobs:
 
             - uses: codecov/codecov-action@v2
               with:
-                directory: packages/nameservice-api
+                directory: packages/nameservice-api/.coverage
                 flags: nameservice-api
                 verbose: true
