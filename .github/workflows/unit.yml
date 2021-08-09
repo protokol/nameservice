@@ -31,7 +31,6 @@ jobs:
             - name: NAMESERVICE-CRYPTO
               run: cd packages/nameservice-crypto && yarn test:unit:coverage --coverageDirectory .coverage/unit-nameservice-crypto --maxWorkers=2
 
-            - name: NAMESERVICE-CRYPTO-CODECOV
             - uses: codecov/codecov-action@v2
               with:
                   files: .coverage/unit-nameservice-crypto/lcov.info
@@ -40,7 +39,6 @@ jobs:
             - name: NAMESERVICE-TRANSACTIONS
               run: cd packages/nameservice-transactions && yarn test:unit:coverage --coverageDirectory .coverage/unit-nameservice-transactions --maxWorkers=2
 
-            - name: NAMESERVICE-TRANSACTIONS-CODECOV
             - uses: codecov/codecov-action@v2
               with:
                 files: .coverage/unit-nameservice-transactions/lcov.info
@@ -49,7 +47,6 @@ jobs:
             - name: NAMESERVICE-API
               run: cd packages/nameservice-api && yarn test:unit:coverage --coverageDirectory .coverage/unit-nameservice-api --maxWorkers=2
 
-            - name: NAMESERVICE-API-CODECOV
             - uses: codecov/codecov-action@v2
               with:
                 files: .coverage/unit-nameservice-api/lcov.info
