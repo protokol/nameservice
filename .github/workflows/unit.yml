@@ -34,6 +34,7 @@ jobs:
             - uses: codecov/codecov-action@v2
               with:
                   files: .coverage/unit-nameservice-crypto/lcov.info
+                  flags: nameservice-crypto
                   verbose: true
 
             - name: NAMESERVICE-TRANSACTIONS
@@ -42,6 +43,7 @@ jobs:
             - uses: codecov/codecov-action@v2
               with:
                 files: .coverage/unit-nameservice-transactions/lcov.info
+                flags: nameservice-transactions
                 verbose: true
 
             - name: NAMESERVICE-API
@@ -50,4 +52,5 @@ jobs:
             - uses: codecov/codecov-action@v2
               with:
                 files: .coverage/unit-nameservice-api/lcov.info
+                flags: nameservice-api
                 verbose: true
