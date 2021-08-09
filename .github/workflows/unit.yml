@@ -34,7 +34,7 @@ jobs:
             - name: NAMESERVICE-CRYPTO-CODECOV
             - uses: codecov/codecov-action@v2
               with:
-                  files: .coverage/unit-nameservice-crypto/clover.xml
+                  files: .coverage/unit-nameservice-crypto/lcov.info
                   verbose: true
 
             - name: NAMESERVICE-TRANSACTIONS
@@ -43,7 +43,7 @@ jobs:
             - name: NAMESERVICE-TRANSACTIONS-CODECOV
             - uses: codecov/codecov-action@v2
               with:
-                files: .coverage/unit-nameservice-transactions/clover.xml
+                files: .coverage/unit-nameservice-transactions/lcov.info
                 verbose: true
 
             - name: NAMESERVICE-API
@@ -52,5 +52,5 @@ jobs:
             - name: NAMESERVICE-API-CODECOV
             - uses: codecov/codecov-action@v2
               with:
-                files: .coverage/unit-nameservice-api/clover.xml
+                files: .coverage/unit-nameservice-api/lcov.info
                 verbose: true
