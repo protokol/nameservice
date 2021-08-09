@@ -38,7 +38,7 @@ export class NameserviceTransaction extends Transactions.Transaction {
                     },
                 },
             },
-        });
+        } as any);
     }
 
     public serialize(): ByteBuffer {
