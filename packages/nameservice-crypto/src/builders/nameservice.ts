@@ -16,7 +16,7 @@ export class NameserviceBuilder extends Transactions.TransactionBuilder<Nameserv
     }
 
     public Nameservice(nameservice: INameServiceAsset): NameserviceBuilder {
-        if (this.data.asset && this.data.asset?.nameservice) {
+        if (this.data.asset?.nameservice) {
             this.data.asset.nameservice = nameservice;
         }
         return this;
