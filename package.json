@@ -41,7 +41,7 @@
 		"@sindresorhus/tsconfig": "^1.0.0",
 		"@types/eslint": "^7.2.6",
 		"@types/eslint-plugin-prettier": "^3.1.0",
-		"@types/jest": "^26.0.20",
+		"@types/jest": "^27.0.0",
 		"@types/node": "^14.14.31",
 		"@types/prettier": "^2",
 		"@types/rimraf": "^3.0.0",
