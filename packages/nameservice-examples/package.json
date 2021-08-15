@@ -1,7 +1,7 @@
 {
     "name": "@protokol/nameservice-examples",
-  	"private": true,
-  	"version": "1.0.0-beta.2",
+    "private": true,
+    "version": "1.0.0-beta.2",
     "description": "Examples for nameservice transactions",
     "license": "CC-BY-NC-SA-4.0",
     "bugs": {
@@ -18,7 +18,7 @@
         "sdk",
         "nameservice",
         "blockchain",
-	  	"examples"
+        "examples"
     ],
     "contributors": [
         "Žan Kovač <zan@protokol.com",
@@ -35,14 +35,14 @@
         "build:watch": "yarn build -w",
         "build:docs": "typedoc --out docs src",
         "clean": "rimraf .coverage dist tmp",
-        "test": "jest",
+        "test": "jest"
     },
     "dependencies": {
         "@arkecosystem/crypto": "^3.0.0-next",
+        "@protokol/client": "^1.0.0-beta.39",
+        "@protokol/nameservice-crypto": "workspace:packages/nameservice-crypto"
     },
     "devDependencies": {
-        "@arkecosystem/core-test-framework": "^3.0.0-next",
-        "@sindresorhus/tsconfig": "~1.0.0",
         "@types/node": "^14.14.31",
         "@types/rimraf": "^3.0.0",
         "rimraf": "^3.0.2",
