@@ -28,7 +28,7 @@ describe("API - Configurations", () => {
             const response = await api.request("GET", "nameservice/configurations");
             expect(response).toBeSuccessfulResponse();
 
-            expect(response.data).toStrictEqual({
+            expect(response.data.data).toStrictEqual({
                 api: {
                     packageName: plugin.name,
                     currentVersion: plugin.version,
