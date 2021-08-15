@@ -22,16 +22,25 @@ export class ConfigurationResource implements Contracts.Resource {
      * @memberof Resource
      */
     public transform(resource): object {
-        const { packageName: name, currentVersion, latestVersion, crypto, transactions } = resource;
-
         return {
-            package: {
-                name,
-                currentVersion,
-                latestVersion,
+            api: {
+                packageName: resource.apiPackageName,
+                currentVersion: resource.currentVersion,
+                latestVersion: resource.apiLatestVersion,
+                defaults: resource.apiDefaults,
             },
-            crypto,
-            transactions,
+            transactions: {
+                packageName: "@protokol/nameservice-transactions",
+                currentVersion: resource.currentVersion,
+                latestVersion: resource.transactionsLatestVersion,
+                defaults: resource.transactionsDefaults,
+            },
+            crypto: {
+                packageName: "@protokol/nameservice-crypto",
+                currentVersion: resource.currentVersion,
+                latestVersion: resource.cryptoLatestVersion,
+                defaults: resource.cryptoDefaults,
+            },
         };
     }
 }

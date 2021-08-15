@@ -4,6 +4,9 @@ import { Contracts } from "@arkecosystem/core-kernel";
 import { ApiHelpers } from "@arkecosystem/core-test-framework";
 import latestVersion from "latest-version";
 
+import { Defaults as CryptoDefaults } from "../../../../nameservice-crypto";
+import { Defaults as TransactionsDefaults } from "../../../../nameservice-transactions";
+import { defaults } from "../../../src";
 import { setUp, tearDown } from "../__support__/setup";
 
 jest.setTimeout(30000);
@@ -25,11 +28,26 @@ describe("API - Configurations", () => {
             const response = await api.request("GET", "nameservice/configurations");
             expect(response).toBeSuccessfulResponse();
 
-            expect(response.data.data.package.name).toStrictEqual(plugin.name);
-            expect(response.data.data.package.currentVersion).toStrictEqual(plugin.version);
-            expect(response.data.data.package.latestVersion).toStrictEqual(await latestVersion(plugin.name));
-            expect(response.data.data.crypto).toBeObject();
-            expect(response.data.data.transactions).toBeObject();
+            expect(response.data.data).toStrictEqual({
+                api: {
+                    packageName: plugin.name,
+                    currentVersion: plugin.version,
+                    latestVersion: await latestVersion(plugin.name),
+                    defaults: defaults,
+                },
+                transactions: {
+                    packageName: "@protokol/nameservice-transactions",
+                    currentVersion: plugin.version,
+                    latestVersion: await latestVersion("@protokol/nameservice-transactions"),
+                    defaults: TransactionsDefaults,
+                },
+                crypto: {
+                    packageName: "@protokol/nameservice-crypto",
+                    currentVersion: plugin.version,
+                    latestVersion: await latestVersion("@protokol/nameservice-crypto"),
+                    defaults: CryptoDefaults,
+                },
+            });
         });
     });
 });
