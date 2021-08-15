@@ -11,6 +11,8 @@ import { defaults } from "../../../src";
 import { ConfigurationController } from "../../../src/controllers/configurations";
 import { initApp, ItemResponse } from "../__support__";
 
+jest.setTimeout(30000);
+
 let app: Application;
 
 let configurationsController: ConfigurationController;

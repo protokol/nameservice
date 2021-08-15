@@ -33,7 +33,7 @@ export class ConfigurationResource implements Contracts.Resource {
                 packageName: "@protokol/nameservice-transactions",
                 currentVersion: resource.currentVersion,
                 latestVersion: resource.transactionsLatestVersion,
-                defaults: resource.cryptoDefaults,
+                defaults: resource.transactionsDefaults,
             },
             crypto: {
                 packageName: "@protokol/nameservice-crypto",
