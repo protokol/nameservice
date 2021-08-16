@@ -67,6 +67,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:ae2b0c72a60b54de368c08e23084db8d1eea067964cb80a17ff1e5739f50f02c124b5fc62cb457dd3019b09925a858a819bfa3a0c05731731588f7890c972d32#npm:4.28.5"],
             ["@typescript-eslint/parser", "virtual:ae2b0c72a60b54de368c08e23084db8d1eea067964cb80a17ff1e5739f50f02c124b5fc62cb457dd3019b09925a858a819bfa3a0c05731731588f7890c972d32#npm:4.28.5"],
             ["@yarnpkg/pnpify", "npm:3.0.1"],
+            ["auto-changelog", "npm:2.3.0"],
             ["codecov", "npm:3.8.3"],
             ["cross-env", "npm:7.0.3"],
             ["eslint", "npm:7.32.0"],
@@ -2865,6 +2866,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:ae2b0c72a60b54de368c08e23084db8d1eea067964cb80a17ff1e5739f50f02c124b5fc62cb457dd3019b09925a858a819bfa3a0c05731731588f7890c972d32#npm:4.28.5"],
             ["@typescript-eslint/parser", "virtual:ae2b0c72a60b54de368c08e23084db8d1eea067964cb80a17ff1e5739f50f02c124b5fc62cb457dd3019b09925a858a819bfa3a0c05731731588f7890c972d32#npm:4.28.5"],
             ["@yarnpkg/pnpify", "npm:3.0.1"],
+            ["auto-changelog", "npm:2.3.0"],
             ["codecov", "npm:3.8.3"],
             ["cross-env", "npm:7.0.3"],
             ["eslint", "npm:7.32.0"],
@@ -4672,6 +4674,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["auto-changelog", [
+        ["npm:2.3.0", {
+          "packageLocation": "./.yarn/cache/auto-changelog-npm-2.3.0-c7db40ba68-ba7eccb78b.zip/node_modules/auto-changelog/",
+          "packageDependencies": [
+            ["auto-changelog", "npm:2.3.0"],
+            ["commander", "npm:5.1.0"],
+            ["handlebars", "npm:4.7.7"],
+            ["node-fetch", "npm:2.6.1"],
+            ["parse-github-url", "npm:1.0.2"],
+            ["semver", "npm:6.3.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["aws-sign2", [
         ["npm:0.7.0", {
           "packageLocation": "./.yarn/cache/aws-sign2-npm-0.7.0-656c6cb84d-b148b0bb07.zip/node_modules/aws-sign2/",
@@ -5884,6 +5900,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["commander", [
+        ["npm:5.1.0", {
+          "packageLocation": "./.yarn/cache/commander-npm-5.1.0-7e939e7832-0b7fec1712.zip/node_modules/commander/",
+          "packageDependencies": [
+            ["commander", "npm:5.1.0"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:6.2.1", {
           "packageLocation": "./.yarn/cache/commander-npm-6.2.1-d5b635f237-d7090410c0.zip/node_modules/commander/",
           "packageDependencies": [
