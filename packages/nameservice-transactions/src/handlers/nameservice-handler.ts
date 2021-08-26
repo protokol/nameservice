@@ -40,7 +40,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
         return ["nameservice", "nameservice.name"];
     }
 
-    public dynamicFee({
+    public override dynamicFee({
         addonBytes,
         satoshiPerByte,
         transaction,
@@ -73,11 +73,11 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
         }
     }
 
-    public emitEvents(transaction: Interfaces.ITransaction, emitter: Contracts.Kernel.EventDispatcher): void {
+    public override emitEvents(transaction: Interfaces.ITransaction, emitter: Contracts.Kernel.EventDispatcher): void {
         void emitter.dispatch(NamespaceApplicationEvents.Namespace, transaction.data);
     }
 
-    public async throwIfCannotBeApplied(
+    public override async throwIfCannotBeApplied(
         transaction: Interfaces.ITransaction,
         wallet: Contracts.State.Wallet,
     ): Promise<void> {
@@ -106,7 +106,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
         return super.throwIfCannotBeApplied(transaction, wallet);
     }
 
-    public async applyToSender(transaction: Interfaces.ITransaction): Promise<void> {
+    public override async applyToSender(transaction: Interfaces.ITransaction): Promise<void> {
         await super.applyToSender(transaction);
 
         AppUtils.assert.defined<string>(transaction.data.senderPublicKey);
@@ -122,7 +122,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
         this.walletRepository.setOnIndex(namespaceWalletIndex, nameserviceAsset.name, wallet);
     }
 
-    public async revertForSender(transaction: Interfaces.ITransaction): Promise<void> {
+    public override async revertForSender(transaction: Interfaces.ITransaction): Promise<void> {
         await super.revertForSender(transaction);
         AppUtils.assert.defined<string>(transaction.data.senderPublicKey);
         AppUtils.assert.defined<NameserviceInterfaces.INameServiceAsset>(transaction.data.asset?.nameservice);

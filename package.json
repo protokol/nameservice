@@ -11,7 +11,7 @@
 		"publish:beta": "yarn workspaces foreach -pt run publish:beta",
 		"build": "yarn workspaces foreach -pt run build",
 		"clean": "yarn workspaces foreach -pt run clean",
-	  	"changelog": "yarn auto-changelog",
+		"changelog": "yarn auto-changelog",
 		"version": "yarn workspaces foreach version",
 		"version:apply": "yarn workspaces foreach version apply",
 		"version:check": "yarn version check --interactive",
