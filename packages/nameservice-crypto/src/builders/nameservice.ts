@@ -22,7 +22,7 @@ export class NameserviceBuilder extends Transactions.TransactionBuilder<Nameserv
         return this;
     }
 
-    public getStruct(): Interfaces.ITransactionData {
+    public override getStruct(): Interfaces.ITransactionData {
         const struct: Interfaces.ITransactionData = super.getStruct();
         struct.amount = this.data.amount;
         struct.asset = this.data.asset;

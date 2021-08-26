@@ -7,7 +7,7 @@ export class NamespaceTransactionFactory extends TransactionFactory {
         super(app);
     }
 
-    public static initialize(app?: Contracts.Kernel.Application): NamespaceTransactionFactory {
+    public static override initialize(app?: Contracts.Kernel.Application): NamespaceTransactionFactory {
         return new NamespaceTransactionFactory(app);
     }
 
