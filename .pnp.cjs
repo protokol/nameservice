@@ -3124,7 +3124,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.3.2"],
             ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:c7865daf478b4f7b9272ce9552ede467b71445b21eaebfd0914aaa88609c040dc653ab1b8918a3090e66891c6e34aec0d8dec0e6ffb4f9c79c660a98a251e3c5#npm:27.0.4"],
-            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.21.4"],
+            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.22.0"],
             ["typescript", "patch:typescript@npm%3A4.4.2#~builtin<compat/typescript>::version=4.4.2&hash=32657b"]
           ],
           "linkType": "SOFT",
@@ -3149,7 +3149,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-extended", "npm:0.11.5"],
             ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:27.0.4"],
-            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.21.4"],
+            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.22.0"],
             ["typescript", "patch:typescript@npm%3A4.4.2#~builtin<compat/typescript>::version=4.4.2&hash=32657b"]
           ],
           "linkType": "SOFT",
@@ -3166,7 +3166,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:14.17.6"],
             ["@types/rimraf", "npm:3.0.1"],
             ["rimraf", "npm:3.0.2"],
-            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.21.4"],
+            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.22.0"],
             ["typescript", "patch:typescript@npm%3A4.4.2#~builtin<compat/typescript>::version=4.4.2&hash=32657b"]
           ],
           "linkType": "SOFT",
@@ -3201,7 +3201,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.4.0"],
             ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:27.0.4"],
-            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.21.4"],
+            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.22.0"],
             ["typescript", "patch:typescript@npm%3A4.4.2#~builtin<compat/typescript>::version=4.4.2&hash=32657b"]
           ],
           "linkType": "SOFT",
@@ -11688,10 +11688,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["marked", [
-        ["npm:2.1.3", {
-          "packageLocation": "./.yarn/cache/marked-npm-2.1.3-24a375700c-21a5ecd494.zip/node_modules/marked/",
+        ["npm:3.0.3", {
+          "packageLocation": "./.yarn/cache/marked-npm-3.0.3-d2ef150a15-82651af57a.zip/node_modules/marked/",
           "packageDependencies": [
-            ["marked", "npm:2.1.3"]
+            ["marked", "npm:3.0.3"]
           ],
           "linkType": "HARD",
         }]
@@ -14635,10 +14635,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["shiki", [
-        ["npm:0.9.5", {
-          "packageLocation": "./.yarn/cache/shiki-npm-0.9.5-2bf5193359-4be871421c.zip/node_modules/shiki/",
+        ["npm:0.9.10", {
+          "packageLocation": "./.yarn/cache/shiki-npm-0.9.10-8d524a5d1c-2544ee3321.zip/node_modules/shiki/",
           "packageDependencies": [
-            ["shiki", "npm:0.9.5"],
+            ["shiki", "npm:0.9.10"],
             ["json5", "npm:2.2.0"],
             ["onigasm", "npm:2.2.5"],
             ["vscode-textmate", "npm:5.2.0"]
@@ -15890,40 +15890,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["typedoc", [
-        ["npm:0.21.4", {
-          "packageLocation": "./.yarn/cache/typedoc-npm-0.21.4-be650eb020-16bbbfbe1e.zip/node_modules/typedoc/",
+        ["npm:0.22.0", {
+          "packageLocation": "./.yarn/cache/typedoc-npm-0.22.0-5b93b261f8-a82164d4f3.zip/node_modules/typedoc/",
           "packageDependencies": [
-            ["typedoc", "npm:0.21.4"]
+            ["typedoc", "npm:0.22.0"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.21.4", {
-          "packageLocation": "./.yarn/__virtual__/typedoc-virtual-0ecb0ffa01/0/cache/typedoc-npm-0.21.4-be650eb020-16bbbfbe1e.zip/node_modules/typedoc/",
+        ["virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.22.0", {
+          "packageLocation": "./.yarn/__virtual__/typedoc-virtual-2acad47c8a/0/cache/typedoc-npm-0.22.0-5b93b261f8-a82164d4f3.zip/node_modules/typedoc/",
           "packageDependencies": [
-            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.21.4"],
+            ["typedoc", "virtual:401f6ffa1ca2fd0b442bef62d2a858d6b2b252168bc6b42e34fd500f1542efe2251a39fb43f04c81240e1cb63ddd49a4b5ee9f7a36a95d5d7a08c347f5698987#npm:0.22.0"],
             ["@types/typescript", null],
             ["glob", "npm:7.1.7"],
-            ["handlebars", "npm:4.7.7"],
             ["lunr", "npm:2.3.9"],
-            ["marked", "npm:2.1.3"],
+            ["marked", "npm:3.0.3"],
             ["minimatch", "npm:3.0.4"],
-            ["progress", "npm:2.0.3"],
-            ["shiki", "npm:0.9.5"],
-            ["typedoc-default-themes", "npm:0.12.10"],
+            ["shiki", "npm:0.9.10"],
             ["typescript", "patch:typescript@npm%3A4.4.2#~builtin<compat/typescript>::version=4.4.2&hash=32657b"]
           ],
           "packagePeers": [
             "@types/typescript",
             "typescript"
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["typedoc-default-themes", [
-        ["npm:0.12.10", {
-          "packageLocation": "./.yarn/cache/typedoc-default-themes-npm-0.12.10-9e0c526e14-4c19a0fecd.zip/node_modules/typedoc-default-themes/",
-          "packageDependencies": [
-            ["typedoc-default-themes", "npm:0.12.10"]
           ],
           "linkType": "HARD",
         }]
