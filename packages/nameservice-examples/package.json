@@ -38,8 +38,8 @@
         "test": "jest"
     },
     "dependencies": {
-        "@arkecosystem/crypto": "^3.0.0-next",
-        "@protokol/client": "^1.0.0-beta.39",
+        "@arkecosystem/crypto": "^3.0.0",
+        "@protokol/client": "^1.0.0",
         "@protokol/nameservice-crypto": "workspace:packages/nameservice-crypto"
     },
     "devDependencies": {
