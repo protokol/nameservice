@@ -1,6 +1,6 @@
 {
     "name": "@protokol/nameservice-transactions",
-    "version": "1.0.0-beta.2",
+    "version": "1.0.0",
     "description": "Transaction Types For Nameservice Support",
     "license": "CC-BY-NC-SA-4.0",
     "bugs": {
@@ -37,7 +37,8 @@
         "test:unit:coverage": "jest __tests__/unit --coverage",
         "test:functional": "CORE_ENV=test jest __tests__/functional --forceExit",
         "test:functional:coverage": "CORE_ENV=test jest __tests__/functional --coverage --forceExit",
-        "publish:beta": "yarn build && yarn npm publish --tag beta --access public --tolerate-republish"
+        "publish:beta": "yarn build && yarn npm publish --tag beta --access public --tolerate-republish",
+	  	"publish": "yarn build && yarn npm publish --access public --tolerate-republish"
     },
     "dependencies": {
         "@arkecosystem/core-database": "^3.0.0",
