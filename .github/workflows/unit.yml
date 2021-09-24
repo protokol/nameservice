@@ -29,10 +29,28 @@ jobs:
               run: yarn && yarn build
 
             - name: NAMESERVICE-CRYPTO
-              run: cd packages/nameservice-crypto && yarn test:unit:coverage --coverageDirectory .coverage/unit-nameservice-crypto --maxWorkers=2
+              run: cd packages/nameservice-crypto && yarn test:unit:coverage --maxWorkers=2
+
+            - uses: codecov/codecov-action@v2
+              with:
+                  directory: packages/nameservice-crypto/.coverage
+                  flags: nameservice-crypto
+                  verbose: true
 
             - name: NAMESERVICE-TRANSACTIONS
-              run: cd packages/nameservice-transactions && yarn test:unit:coverage --coverageDirectory .coverage/unit-nameservice-transactions --maxWorkers=2
+              run: cd packages/nameservice-transactions && yarn test:unit:coverage --maxWorkers=2
+
+            - uses: codecov/codecov-action@v2
+              with:
+                directory: packages/nameservice-transactions/.coverage
+                flags: nameservice-transactions
+                verbose: true
 
             - name: NAMESERVICE-API
-              run: cd packages/nameservice-api && yarn test:unit:coverage --coverageDirectory .coverage/unit-nameservice-api --maxWorkers=2
+              run: cd packages/nameservice-api && yarn test:unit:coverage --maxWorkers=2
+
+            - uses: codecov/codecov-action@v2
+              with:
+                directory: packages/nameservice-api/.coverage
+                flags: nameservice-api
+                verbose: true

@@ -5,9 +5,6 @@
                 "package": "@arkecosystem/core-logger-pino"
             },
             {
-                "package": "@arkecosystem/core-manager"
-            },
-            {
                 "package": "@arkecosystem/core-state"
             },
             {
@@ -36,9 +33,6 @@
             },
             {
                 "package": "@arkecosystem/core-magistrate-api"
-            },
-            {
-                "package": "@protokol/nft-base-api"
             },
             {
                 "package": "@arkecosystem/core-forger"

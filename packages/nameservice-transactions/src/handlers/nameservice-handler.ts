@@ -40,7 +40,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
         return ["nameservice", "nameservice.name"];
     }
 
-    public dynamicFee({
+    public override dynamicFee({
         addonBytes,
         satoshiPerByte,
         transaction,
@@ -69,15 +69,15 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
 
             wallet.setAttribute<NameserviceInterfaces.INameServiceAsset>("nameservice", nameserviceAsset);
 
-            this.walletRepository.getIndex(namespaceWalletIndex).set(nameserviceAsset.name, wallet);
+            this.walletRepository.setOnIndex(namespaceWalletIndex, nameserviceAsset.name, wallet);
         }
     }
 
-    public emitEvents(transaction: Interfaces.ITransaction, emitter: Contracts.Kernel.EventDispatcher): void {
+    public override emitEvents(transaction: Interfaces.ITransaction, emitter: Contracts.Kernel.EventDispatcher): void {
         void emitter.dispatch(NamespaceApplicationEvents.Namespace, transaction.data);
     }
 
-    public async throwIfCannotBeApplied(
+    public override async throwIfCannotBeApplied(
         transaction: Interfaces.ITransaction,
         wallet: Contracts.State.Wallet,
     ): Promise<void> {
@@ -92,9 +92,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
         }
         AppUtils.assert.defined<NameserviceInterfaces.INameServiceAsset>(transaction.data.asset?.nameservice);
 
-        const hasName = this.walletRepository
-            .getIndex(namespaceWalletIndex)
-            .has(transaction.data.asset.nameservice.name);
+        const hasName = this.walletRepository.hasByIndex(namespaceWalletIndex, transaction.data.asset.nameservice.name);
         // Name already registered
         if (hasName) {
             throw new NameSpaceAlreadyExistsError();
@@ -108,7 +106,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
         return super.throwIfCannotBeApplied(transaction, wallet);
     }
 
-    public async applyToSender(transaction: Interfaces.ITransaction): Promise<void> {
+    public override async applyToSender(transaction: Interfaces.ITransaction): Promise<void> {
         await super.applyToSender(transaction);
 
         AppUtils.assert.defined<string>(transaction.data.senderPublicKey);
@@ -121,10 +119,10 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
 
         wallet.setAttribute<NameserviceInterfaces.INameServiceAsset>("nameservice", nameserviceAsset);
 
-        this.walletRepository.getIndex(namespaceWalletIndex).set(nameserviceAsset.name, wallet);
+        this.walletRepository.setOnIndex(namespaceWalletIndex, nameserviceAsset.name, wallet);
     }
 
-    public async revertForSender(transaction: Interfaces.ITransaction): Promise<void> {
+    public override async revertForSender(transaction: Interfaces.ITransaction): Promise<void> {
         await super.revertForSender(transaction);
         AppUtils.assert.defined<string>(transaction.data.senderPublicKey);
         AppUtils.assert.defined<NameserviceInterfaces.INameServiceAsset>(transaction.data.asset?.nameservice);
@@ -135,7 +133,7 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
 
         senderWallet.forgetAttribute("nameservice");
 
-        this.walletRepository.getIndex(namespaceWalletIndex).forget(nameserviceAsset.name);
+        this.walletRepository.forgetOnIndex(namespaceWalletIndex, nameserviceAsset.name);
     }
 
     // eslint-disable-next-line @typescript-eslint/no-empty-function

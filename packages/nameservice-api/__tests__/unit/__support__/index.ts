@@ -1,6 +1,6 @@
 import { Application, Container, Contracts, Providers, Services } from "@arkecosystem/core-kernel";
 import { Wallets } from "@arkecosystem/core-state";
-import { Handlers } from "@arkecosystem/core-transactions";
+import { Handlers, ServiceProvider } from "@arkecosystem/core-transactions";
 import { Identities, Utils } from "@arkecosystem/crypto";
 import { Handlers as NameserviceHandlers, Indexers } from "@protokol/nameservice-transactions";
 
@@ -41,9 +41,8 @@ export const buildWallet = (app: Application, passphrase: string): Contracts.Sta
     const walletRepository = app.get<Wallets.WalletRepository>(Container.Identifiers.WalletRepository);
 
     const wallet: Contracts.State.Wallet = walletRepository.createWallet(Identities.Address.fromPassphrase(passphrase));
-    wallet.address = Identities.Address.fromPassphrase(passphrase);
-    wallet.publicKey = Identities.PublicKey.fromPassphrase(passphrase);
-    wallet.balance = Utils.BigNumber.make(7527654310);
+    wallet.setPublicKey(Identities.PublicKey.fromPassphrase(passphrase));
+    wallet.setBalance(Utils.BigNumber.make(7527654310));
 
     return wallet;
 };
@@ -86,6 +85,9 @@ export const initApp = (): Application => {
         .to(Handlers.TransactionHandlerProvider)
         .inSingletonScope();
     app.bind(Container.Identifiers.TransactionHandlerRegistry).to(Handlers.Registry).inSingletonScope();
+    app.bind(Container.Identifiers.TransactionHandlerConstructors).toDynamicValue(
+        ServiceProvider.getTransactionHandlerConstructorsBinding(),
+    );
 
     app.bind(Container.Identifiers.EventDispatcherService).to(Services.Events.NullEventDispatcher).inSingletonScope();
 

@@ -14,14 +14,14 @@ import { amountSchema, nameserviceSchema, vendorFieldSchema } from "./utils/name
 const { schemas } = Transactions;
 
 export class NameserviceTransaction extends Transactions.Transaction {
-    public static typeGroup: number = NameServiceTransactionGroup;
-    public static type = NameServiceTransactionTypes.Nameservice;
-    public static key = "Nameservice";
-    public static version: number = NameServiceTransactionVersion;
+    public static override readonly typeGroup: number = NameServiceTransactionGroup;
+    public static override readonly type = NameServiceTransactionTypes.Nameservice;
+    public static override readonly key = "Nameservice";
+    public static override readonly version: number = NameServiceTransactionVersion;
 
-    protected static defaultStaticFee = Utils.BigNumber.make(NameServiceStaticFees.Nameservice);
+    protected static override readonly defaultStaticFee = Utils.BigNumber.make(NameServiceStaticFees.Nameservice);
 
-    public static getSchema(): Transactions.schemas.TransactionSchema {
+    public static override getSchema(): Transactions.schemas.TransactionSchema {
         return schemas.extend(schemas.transactionBaseSchema, {
             $id: this.key,
             required: ["asset", "typeGroup"],
@@ -38,7 +38,7 @@ export class NameserviceTransaction extends Transactions.Transaction {
                     },
                 },
             },
-        });
+        } as any);
     }
 
     public serialize(): ByteBuffer {
@@ -62,7 +62,7 @@ export class NameserviceTransaction extends Transactions.Transaction {
 
         // name
         const nameLength: number = buf.readUint8();
-        const name: string = buf.readString(nameLength);
+        const name: string = buf.readBytes(nameLength).toBuffer().toString("utf8");
 
         const nameservice: INameServiceAsset = { name };
 
@@ -71,7 +71,7 @@ export class NameserviceTransaction extends Transactions.Transaction {
         };
     }
 
-    public hasVendorField(): boolean {
+    public override hasVendorField(): boolean {
         return true;
     }
 }

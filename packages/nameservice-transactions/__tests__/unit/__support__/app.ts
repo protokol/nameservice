@@ -15,6 +15,7 @@ import {
     VerifyTransactionAction,
 } from "@arkecosystem/core-transaction-pool";
 import { Handlers } from "@arkecosystem/core-transactions";
+import { ServiceProvider } from "@arkecosystem/core-transactions";
 import { Identities, Managers, Utils } from "@arkecosystem/crypto";
 
 import { NameserviceTransactionHandler } from "../../../src/handlers";
@@ -126,6 +127,9 @@ export const initApp = (): Application => {
         .to(Handlers.TransactionHandlerProvider)
         .inSingletonScope();
     app.bind(Container.Identifiers.TransactionHandlerRegistry).to(Handlers.Registry).inSingletonScope();
+    app.bind(Container.Identifiers.TransactionHandlerConstructors).toDynamicValue(
+        ServiceProvider.getTransactionHandlerConstructorsBinding(),
+    );
 
     app.bind(Container.Identifiers.TriggerService).to(Services.Triggers.Triggers).inSingletonScope();
 
@@ -171,9 +175,8 @@ export const buildWallet = (app: Application, passphrase: string): Contracts.Sta
     const walletRepository = app.get<Wallets.WalletRepository>(Container.Identifiers.WalletRepository);
 
     const wallet: Contracts.State.Wallet = walletRepository.createWallet(Identities.Address.fromPassphrase(passphrase));
-    wallet.address = Identities.Address.fromPassphrase(passphrase);
-    wallet.publicKey = Identities.PublicKey.fromPassphrase(passphrase);
-    wallet.balance = Utils.BigNumber.make(7527654310);
+    wallet.setPublicKey(Identities.PublicKey.fromPassphrase(passphrase));
+    wallet.setBalance(Utils.BigNumber.make(7527654310));
 
     return wallet;
 };
