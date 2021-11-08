@@ -2905,7 +2905,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:c7865daf478b4f7b9272ce9552ede467b71445b21eaebfd0914aaa88609c040dc653ab1b8918a3090e66891c6e34aec0d8dec0e6ffb4f9c79c660a98a251e3c5#npm:27.0.6"],
             ["jest-extended", "npm:0.11.5"],
             ["joi", "npm:17.4.2"],
-            ["latest-version", "npm:5.1.0"],
+            ["latest-version", "npm:6.0.0"],
             ["npm-check-updates", "npm:12.0.0"],
             ["prettier", "npm:2.3.2"],
             ["rimraf", "npm:3.0.2"],
@@ -10861,6 +10861,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["package-json", "npm:6.5.0"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:6.0.0", {
+          "packageLocation": "./.yarn/cache/latest-version-npm-6.0.0-d228167147-c3f282dee4.zip/node_modules/latest-version/",
+          "packageDependencies": [
+            ["latest-version", "npm:6.0.0"],
+            ["package-json", "npm:7.0.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["leven", [
@@ -12547,6 +12555,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["registry-auth-token", "npm:4.2.1"],
             ["registry-url", "npm:5.1.0"],
             ["semver", "npm:6.3.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:7.0.0", {
+          "packageLocation": "./.yarn/cache/package-json-npm-7.0.0-d6434d1150-c03699b057.zip/node_modules/package-json/",
+          "packageDependencies": [
+            ["package-json", "npm:7.0.0"],
+            ["got", "npm:11.8.2"],
+            ["registry-auth-token", "npm:4.2.1"],
+            ["registry-url", "npm:5.1.0"],
+            ["semver", "npm:7.3.5"]
           ],
           "linkType": "HARD",
         }]
