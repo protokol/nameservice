@@ -4,12 +4,12 @@
 	"description": "Protokol nameserivce transaction support",
 	"engineStrict": true,
 	"engines": {
-		"node": "^12 || ^14",
+		"node": "^16.0.0",
 		"yarn": "^3.0.0"
 	},
 	"scripts": {
 		"publish:beta": "yarn workspaces foreach -pt run publish:beta",
-	  	"publish": "yarn workspaces foreach -pt --no-private run publish ",
+		"publish": "yarn workspaces foreach -pt --no-private run publish ",
 		"build": "yarn workspaces foreach -pt run build",
 		"clean": "yarn workspaces foreach -pt run clean",
 		"changelog": "yarn auto-changelog",
@@ -46,7 +46,7 @@
 		"@types/eslint": "^7.2.6",
 		"@types/eslint-plugin-prettier": "^3.1.0",
 		"@types/jest": "^27.0.0",
-		"@types/node": "^14.14.31",
+		"@types/node": "^16.0.0",
 		"@types/prettier": "^2",
 		"@types/rimraf": "^3.0.0",
 		"@typescript-eslint/eslint-plugin": "^5.0.0",
@@ -55,7 +55,7 @@
 		"auto-changelog": "^2.3.0",
 		"codecov": "^3.7.2",
 		"cross-env": "^7.0.2",
-		"eslint": "^8.0.0",
+		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.1.0",
 		"eslint-plugin-jest": "^25.0.0",
 		"eslint-plugin-prettier": "^4.0.0",
@@ -106,5 +106,5 @@
 	"workspaces": [
 		"packages/*"
 	],
-	"packageManager": "yarn@3.0.2"
+	"packageManager": "yarn@3.1.0"
 }
