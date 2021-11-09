@@ -38,7 +38,7 @@
         "test:integration": "jest __tests__/integration --runInBand --forceExit",
         "test:integration:coverage": "jest __tests__/integration --coverage --runInBand --forceExit",
         "publish:beta": "yarn build && yarn npm publish --tag beta --access public --tolerate-republish",
-	  	"publish": "yarn build && yarn npm publish --access public --tolerate-republish"
+        "publish": "yarn build && yarn npm publish --access public --tolerate-republish"
     },
     "dependencies": {
         "@arkecosystem/core-api": "^3.0.0",
@@ -71,7 +71,7 @@
         "@typescript-eslint/parser": "^5.0.0",
         "codecov": "^3.8.1",
         "cross-env": "^7.0.2",
-        "eslint": "^8.0.0",
+        "eslint": "^7.32.0",
         "eslint-config-prettier": "^8.1.0",
         "eslint-plugin-jest": "^25.0.0",
         "eslint-plugin-prettier": "^4.0.0",
