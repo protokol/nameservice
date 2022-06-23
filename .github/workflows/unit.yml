@@ -31,7 +31,7 @@ jobs:
             - name: NAMESERVICE-CRYPTO
               run: cd packages/nameservice-crypto && yarn test:unit:coverage --maxWorkers=2
 
-            - uses: codecov/codecov-action@v2
+            - uses: codecov/codecov-action@v3
               with:
                   directory: packages/nameservice-crypto/.coverage
                   flags: nameservice-crypto
@@ -40,7 +40,7 @@ jobs:
             - name: NAMESERVICE-TRANSACTIONS
               run: cd packages/nameservice-transactions && yarn test:unit:coverage --maxWorkers=2
 
-            - uses: codecov/codecov-action@v2
+            - uses: codecov/codecov-action@v3
               with:
                 directory: packages/nameservice-transactions/.coverage
                 flags: nameservice-transactions
@@ -49,7 +49,7 @@ jobs:
             - name: NAMESERVICE-API
               run: cd packages/nameservice-api && yarn test:unit:coverage --maxWorkers=2
 
-            - uses: codecov/codecov-action@v2
+            - uses: codecov/codecov-action@v3
               with:
                 directory: packages/nameservice-api/.coverage
                 flags: nameservice-api
