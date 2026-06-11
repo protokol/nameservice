@@ -48,7 +48,7 @@
         "@hapi/hapi": "^20.0.2",
         "@protokol/nameservice-crypto": "workspace:packages/nameservice-crypto",
         "@protokol/nameservice-transactions": "workspace:packages/nameservice-transactions",
-        "joi": "^17.4.2",
+        "joi": "^18.0.0",
         "latest-version": "^5.1.0"
     },
     "devDependencies": {
