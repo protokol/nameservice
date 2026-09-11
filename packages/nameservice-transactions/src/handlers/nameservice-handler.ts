@@ -136,10 +136,8 @@ export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
         this.walletRepository.forgetOnIndex(namespaceWalletIndex, nameserviceAsset.name);
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     public async applyToRecipient(transaction: Interfaces.ITransaction): Promise<void> {}
 
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     public async revertForRecipient(transaction: Interfaces.ITransaction): Promise<void> {}
 
     protected getDefaultCriteria(): { typeGroup: number | undefined; type: number | undefined } {
