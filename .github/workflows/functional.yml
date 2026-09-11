@@ -14,7 +14,7 @@ jobs:
         runs-on: ubuntu-latest
         services:
             postgres:
-                image: postgres:12
+                image: postgres:17
                 env:
                     POSTGRES_USER: ark
                     POSTGRES_PASSWORD: password
@@ -25,7 +25,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [ 16.x ]
+                node-version: [ 24 ]
         env:
             CORE_DB_DATABASE: ark_unitnet
             CORE_DB_USERNAME: ark
@@ -34,26 +34,28 @@ jobs:
             POSTGRES_DB: ark_unitnet
 
         steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v2
+            - uses: actions/checkout@v4
+            - uses: pnpm/action-setup@v4
+            - name: Use Node.js 24
+              uses: actions/setup-node@v4
               with:
-                  node-version: ${{ matrix.node-version }}
+                  node-version: 24
+                  cache: pnpm
 
             - name: Install and build packages
-              run: yarn && yarn build
+              run: pnpm install --frozen-lockfile && pnpm build
 
             - name: TEST
               run: |
                   cd packages/nameservice-transactions
-                  yarn test __tests__/functional/transaction-forging/nameservice/single-passphrase.test.ts --forceExit
+                  pnpm run test __tests__/functional/transaction-forging/nameservice/single-passphrase.test.ts --forceExit
 
     functional-nameservice-transactions-second-passphrase:
         name: NAMESERVICE-SECOND-PASSPHRASE
         runs-on: ubuntu-latest
         services:
             postgres:
-                image: postgres:12
+                image: postgres:17
                 env:
                     POSTGRES_USER: ark
                     POSTGRES_PASSWORD: password
@@ -64,7 +66,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [ 16.x ]
+                node-version: [ 24 ]
         env:
             CORE_DB_DATABASE: ark_unitnet
             CORE_DB_USERNAME: ark
@@ -73,26 +75,28 @@ jobs:
             POSTGRES_DB: ark_unitnet
 
         steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v2
+            - uses: actions/checkout@v4
+            - uses: pnpm/action-setup@v4
+            - name: Use Node.js 24
+              uses: actions/setup-node@v4
               with:
-                  node-version: ${{ matrix.node-version }}
+                  node-version: 24
+                  cache: pnpm
 
             - name: Install and build packages
-              run: yarn && yarn build
+              run: pnpm install --frozen-lockfile && pnpm build
 
             - name: TEST
               run: |
                   cd packages/nameservice-transactions
-                  yarn test __tests__/functional/transaction-forging/nameservice/second-passphrase.test.ts --forceExit
+                  pnpm run test __tests__/functional/transaction-forging/nameservice/second-passphrase.test.ts --forceExit
 
     functional-nameservice-transactions-multi-signature:
         name: NAMESERVICE-MULTI-SIGNATURE
         runs-on: ubuntu-latest
         services:
             postgres:
-                image: postgres:12
+                image: postgres:17
                 env:
                     POSTGRES_USER: ark
                     POSTGRES_PASSWORD: password
@@ -103,7 +107,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [ 16.x ]
+                node-version: [ 24 ]
         env:
             CORE_DB_DATABASE: ark_unitnet
             CORE_DB_USERNAME: ark
@@ -112,26 +116,28 @@ jobs:
             POSTGRES_DB: ark_unitnet
 
         steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v2
+            - uses: actions/checkout@v4
+            - uses: pnpm/action-setup@v4
+            - name: Use Node.js 24
+              uses: actions/setup-node@v4
               with:
-                  node-version: ${{ matrix.node-version }}
+                  node-version: 24
+                  cache: pnpm
 
             - name: Install and build packages
-              run: yarn && yarn build
+              run: pnpm install --frozen-lockfile && pnpm build
 
             - name: TEST
               run: |
                   cd packages/nameservice-transactions
-                  yarn test __tests__/functional/transaction-forging/nameservice/multi-signature.test.ts --forceExit
+                  pnpm run test __tests__/functional/transaction-forging/nameservice/multi-signature.test.ts --forceExit
 
     functional-nameservice-transactions-vendor-field:
         name: NAMESERVICE-VENDOR-FIELD
         runs-on: ubuntu-latest
         services:
             postgres:
-                image: postgres:12
+                image: postgres:17
                 env:
                     POSTGRES_USER: ark
                     POSTGRES_PASSWORD: password
@@ -142,7 +148,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [ 16.x ]
+                node-version: [ 24 ]
         env:
             CORE_DB_DATABASE: ark_unitnet
             CORE_DB_USERNAME: ark
@@ -151,16 +157,18 @@ jobs:
             POSTGRES_DB: ark_unitnet
 
         steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v2
+            - uses: actions/checkout@v4
+            - uses: pnpm/action-setup@v4
+            - name: Use Node.js 24
+              uses: actions/setup-node@v4
               with:
-                  node-version: ${{ matrix.node-version }}
+                  node-version: 24
+                  cache: pnpm
 
             - name: Install and build packages
-              run: yarn && yarn build
+              run: pnpm install --frozen-lockfile && pnpm build
 
             - name: TEST
               run: |
                   cd packages/nameservice-transactions
-                  yarn test __tests__/functional/transaction-forging/nameservice/vendor-field.test.ts --forceExit
+                  pnpm run test __tests__/functional/transaction-forging/nameservice/vendor-field.test.ts --forceExit
