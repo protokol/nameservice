@@ -1,5 +1,5 @@
-# Update the VARIANT arg in docker-compose.yml to pick a Node version: 10, 12, 14
-ARG VARIANT=12
+# Update the VARIANT arg in docker-compose.yml to pick a Node.js version: 22, 24
+ARG VARIANT=24
 FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:${VARIANT}
 
 # Update args in docker-compose.yaml to set the UID/GID of the "node" user.
@@ -25,6 +25,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     python \
     libpq-dev \
     jq
+RUN corepack enable
+
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10
 # RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"

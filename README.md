@@ -3,6 +3,34 @@
 [![codecov](https://codecov.io/gh/protokol/nameservice/branch/develop/graph/badge.svg?token=kksvMVWfDi)](https://codecov.io/gh/protokol/nameservice)
 # Nameservice
 
+# Development
+
+Requirements: Node.js 24 (LTS), pnpm 12 (Corepack works: `corepack enable`).
+
+    corepack enable
+    pnpm install
+
+Common commands (see `package.json`):
+
+| Command               | What it does                                    |
+|-----------------------|-------------------------------------------------|
+| `pnpm build`          | Build all workspace packages                    |
+| `pnpm test:unit`      | Run unit tests for all packages                 |
+| `pnpm lint`           | Lint sources (with fixes)                       |
+| `pnpm format`         | Lint + prettier                                 |
+| `pnpm clean`          | Remove `dist/`, `.coverage/`, `tmp/`            |
+| `pnpm publish:beta`   | Build + `pnpm publish` tagged beta (per package)|
+
+Tests needing Postgres:
+
+    # start a local postgres:17 matching CI env vars
+    cd packages/nameservice-api && pnpm run test:integration
+    cd packages/nameservice-transactions && pnpm run test:functional
+
+Versioning: bump all workspace packages with `pnpm version:patch` (or
+`pnpm version:beta` for prereleases) and tag the release manually — the
+`beta` workflow publishes on GitHub release creation.
+
 This work is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 # Contact Us For Support And Custom Development

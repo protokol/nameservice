@@ -15,7 +15,7 @@ your row when done.
 | 001  | Migrate the workspace from Yarn 3 (PnP) to pnpm | P1 | M | — | TODO |
 | 002  | Bring the toolchain to the Node 24 era (TS 5.9, Jest 30, ESLint 9 flat config, Prettier 3) | P1 | L | 001 | DONE |
 | 003  | Modernize the GitHub Actions workflows for pnpm + Node 24 | P1 | S | 001, 002 | DONE |
-| 004  | Repo hygiene — README dev instructions, scripts, devcontainer, renovate | P2 | S | 002 | TODO |
+| 004  | Repo hygiene — README dev instructions, scripts, devcontainer, renovate | P2 | S | 002 | DONE |
 
 Status values: TODO | IN PROGRESS | DONE | BLOCKED (with one-line reason) | REJECTED (with one-line rationale — finding fixed independently or approach abandoned)
 

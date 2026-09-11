@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-for dir in `find packages -mindepth 1 -maxdepth 1 -type d | sort -nr`; do
-    cd $dir
-    echo $PWD
-    yarn dlx npm-check-updates -u
-    cd ../..
+set -euo pipefail
+
+for dir in packages/*; do
+    if [ -f "$dir/package.json" ]; then
+        echo "==> $dir"
+        (cd "$dir" && pnpm dlx npm-check-updates -u)
+    fi
 done

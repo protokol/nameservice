@@ -1,9 +1,11 @@
 {
-	"extends": ["config:base", ":preserveSemverRanges"],
-	"packageRules": [
-		{
-			"packagePatterns": ["^@arkecosystem"],
-			"groupName": "ark packages"
-		}
-	]
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [":preserveSemverRanges"],
+    "lockFileMaintenance": { "enabled": true },
+    "packageRules": [
+        {
+            "matchDepPatterns": ["^@arkecosystem/"],
+            "groupName": "ark packages"
+        }
+    ]
 }
