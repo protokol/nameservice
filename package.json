@@ -2,44 +2,40 @@
 	"private": true,
 	"name": "@protokol/nameservice",
 	"description": "Protokol nameserivce transaction support",
-	"engineStrict": true,
 	"engines": {
-		"node": "^16.0.0",
-		"yarn": "^3.0.0"
+		"node": "^24.0.0",
+		"pnpm": ">=10"
 	},
 	"scripts": {
-		"publish:beta": "yarn workspaces foreach -pt run publish:beta",
-		"publish": "yarn workspaces foreach -pt --no-private run publish ",
-		"build": "yarn workspaces foreach -pt run build",
-		"clean": "yarn workspaces foreach -pt run clean",
-		"changelog": "yarn auto-changelog",
-		"version": "yarn workspaces foreach version",
-		"version:apply": "yarn workspaces foreach version apply",
-		"version:check": "yarn version check --interactive",
-		"version:beta": "yarn workspaces foreach version prerelease",
-		"version:patch": "yarn workspaces foreach version patch",
-		"format": "yarn lint && yarn prettier",
+		"publish:beta": "pnpm -r --parallel run publish:beta",
+		"publish": "pnpm -r run publish",
+		"build": "pnpm -r --parallel run build",
+		"clean": "pnpm -r --parallel run clean",
+		"changelog": "pnpm exec auto-changelog",
+		"version:patch": "pnpm -r exec npm version patch --no-git-tag-version",
+		"version:beta": "pnpm -r exec npm version prerelease --preid=beta --no-git-tag-version",
+		"format": "pnpm run lint && pnpm run prettier",
 		"lint": "eslint packages/**/src/** --ext .ts --fix",
 		"lint:tests": "eslint packages/**/__tests__/** --ext .ts --fix",
 		"prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./**/*.{ts,js,json,md}\"",
-		"test:unit": "yarn workspaces foreach -pt run test:unit",
-		"debug:forger": "node --inspect-brk yarn ark forger:run",
-		"debug:relay": "node --inspect-brk yarn ark relay:run",
-		"debug:start": "node --inspect-brk yarn ark core:run",
-		"core:devnet": "cross-env CORE_PATH_CONFIG=./config/networks/devnet yarn ark core:run --network=devnet",
-		"forger:devnet": "cross-env CORE_PATH_CONFIG=./config/networks/devnet yarn ark forger:run --network=devnet",
-		"relay:devnet": "cross-env CORE_PATH_CONFIG=./config/networks/devnet yarn ark relay:run --network=devnet",
-		"local:devnet": "cross-env CORE_PATH_CONFIG=./config/networks/devnet ark core:run --networkStart --env=test --network=devnet",
-		"core:testnet": "cross-env CORE_PATH_CONFIG=./config/networks/testnet yarn ark core:run --env=test --network=testnet",
-		"forger:testnet": "cross-env CORE_PATH_CONFIG=./config/networks/testnet yarn ark forger:run --env=test --network=testnet",
-		"relay:testnet": "cross-env CORE_PATH_CONFIG=./config/networks/testnet yarn ark relay:run --env=test --network=testnet",
-		"manager:testnet": "cross-env CORE_PATH_CONFIG=./config/networks/testnet yarn ark manager:run --env=test --network=testnet",
-		"manager:devnet": "cross-env CORE_PATH_CONFIG=./config/networks/devnet yarn ark manager:run --env=test --network=devnet",
-		"full:testnet": "cross-env CORE_PATH_CONFIG=./config/networks/testnet ark core:run --networkStart --env=test --network=testnet"
+		"test:unit": "pnpm -r --parallel run test:unit",
+		"debug:forger": "node --inspect-brk pnpm exec ark forger:run",
+		"debug:relay": "node --inspect-brk pnpm exec ark relay:run",
+		"debug:start": "node --inspect-brk pnpm exec ark core:run",
+		"core:devnet": "cross-env CORE_PATH_CONFIG=./config/networks/devnet pnpm exec ark core:run --network=devnet",
+		"forger:devnet": "cross-env CORE_PATH_CONFIG=./config/networks/devnet pnpm exec ark forger:run --network=devnet",
+		"relay:devnet": "cross-env CORE_PATH_CONFIG=./config/networks/devnet pnpm exec ark relay:run --network=devnet",
+		"local:devnet": "cross-env CORE_PATH_CONFIG=./config/networks/devnet pnpm exec ark core:run --networkStart --env=test --network=devnet",
+		"core:testnet": "cross-env CORE_PATH_CONFIG=./config/networks/testnet pnpm exec ark core:run --env=test --network=testnet",
+		"forger:testnet": "cross-env CORE_PATH_CONFIG=./config/networks/testnet pnpm exec ark forger:run --env=test --network=testnet",
+		"relay:testnet": "cross-env CORE_PATH_CONFIG=./config/networks/testnet pnpm exec ark relay:run --env=test --network=testnet",
+		"manager:testnet": "cross-env CORE_PATH_CONFIG=./config/networks/testnet pnpm exec ark manager:run --env=test --network=testnet",
+		"manager:devnet": "cross-env CORE_PATH_CONFIG=./config/networks/devnet pnpm exec ark manager:run --env=test --network=devnet",
+		"full:testnet": "cross-env CORE_PATH_CONFIG=./config/networks/testnet pnpm exec ark core:run --networkStart --env=test --network=testnet"
 	},
 	"dependencies": {
-		"@arkecosystem/core": "^3.0.0",
-		"@arkecosystem/core-cli": "^3.0.0"
+		"@arkecosystem/core": "3.0.0",
+		"@arkecosystem/core-cli": "3.0.0"
 	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^2.0.0",
@@ -51,7 +47,6 @@
 		"@types/rimraf": "^3.0.0",
 		"@typescript-eslint/eslint-plugin": "^5.0.0",
 		"@typescript-eslint/parser": "^5.0.0",
-		"@yarnpkg/pnpify": "^3.0.0",
 		"auto-changelog": "^2.3.0",
 		"codecov": "^3.7.2",
 		"cross-env": "^7.0.2",
@@ -68,43 +63,8 @@
 		"ts-jest": "~27.0.1",
 		"typescript": "~4.4.2"
 	},
-	"dependenciesMeta": {
-		"@arkecosystem/core": {
-			"unplugged": true
-		},
-		"@arkecosystem/core-api": {
-			"unplugged": true
-		},
-		"@arkecosystem/core-cli": {
-			"unplugged": true
-		},
-		"@arkecosystem/core-database": {
-			"unplugged": true
-		},
-		"@arkecosystem/core-kernel": {
-			"unplugged": true
-		},
-		"@arkecosystem/core-state": {
-			"unplugged": true
-		},
-		"@arkecosystem/core-test-framework": {
-			"unplugged": true
-		},
-		"@arkecosystem/core-transaction-pool": {
-			"unplugged": true
-		},
-		"@arkecosystem/core-transactions": {
-			"unplugged": true
-		},
-		"@arkecosystem/crypto": {
-			"unplugged": true
-		},
-		"@arkecosystem/utils": {
-			"unplugged": true
-		}
-	},
 	"workspaces": [
 		"packages/*"
 	],
-	"packageManager": "yarn@3.1.0"
+	"packageManager": "pnpm@12.3.4"
 }

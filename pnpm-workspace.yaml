@@ -1,0 +1,73 @@
+packages:
+    - packages/*
+
+allowBuilds:
+    "@parcel/watcher": false
+    argon2: false
+    bcrypto: false
+    better-sqlite3: false
+    bstring: false
+    ngrok: false
+    nsfw: false
+    protobufjs: false
+    tiny-secp256k1: false
+    unrs-resolver: false
+
+packageExtensions:
+    "@arkecosystem/core-kernel@*":
+        dependencies:
+            "@arkecosystem/core-api": latest
+            "@arkecosystem/core-blockchain": latest
+            "@arkecosystem/core-database": latest
+            "@arkecosystem/core-forger": latest
+            "@arkecosystem/core-logger-pino": latest
+            "@arkecosystem/core-magistrate-api": latest
+            "@arkecosystem/core-magistrate-transactions": latest
+            "@arkecosystem/core-p2p": latest
+            "@arkecosystem/core-snapshots": latest
+            "@arkecosystem/core-state": latest
+            "@arkecosystem/core-transaction-pool": latest
+            "@arkecosystem/core-transactions": latest
+            "@arkecosystem/core-webhooks": latest
+            "@protokol/guardian-api": beta
+            "@protokol/guardian-transactions": beta
+            "@protokol/nameservice-api": "workspace:*"
+            "@protokol/nameservice-transactions": "workspace:*"
+            "@protokol/nft-base-api": beta
+            "@protokol/nft-base-transactions": beta
+            "@protokol/nft-exchange-api": beta
+            "@protokol/nft-exchange-transactions": beta
+    "@arkecosystem/core-magistrate-api@*":
+        dependencies:
+            "@arkecosystem/crypto": latest
+    "@arkecosystem/core-snapshots@*":
+        dependencies:
+            joi: latest
+    "@arkecosystem/core-transaction-pool@*":
+        dependencies:
+            "@arkecosystem/core-magistrate-crypto": latest
+    "@arkecosystem/core@*":
+        dependencies:
+            "@oclif/errors": latest
+    "@arkecosystem/crypto@*":
+        dependencies:
+            "@types/node": latest
+    "@types/eslint-plugin-prettier@*":
+        dependencies:
+            eslint: latest
+    jest-circus@*:
+        dependencies:
+            slash: 3.0.0
+    jest-util@*:
+        dependencies:
+            jest-runner: latest
+    node-fetch@*:
+        dependencies:
+            domexception: latest
+    pg-cursor@*:
+        dependencies:
+            pg: latest
+    typeorm@*:
+        dependencies:
+            pg: latest
+            pg-query-stream: latest
