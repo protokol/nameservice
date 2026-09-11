@@ -221,7 +221,7 @@ importers:
         specifier: workspace:*
         version: link:../nameservice-transactions
       joi:
-        specifier: 17.13.7
+        specifier: ^17.4.2
         version: 17.13.7
       latest-version:
         specifier: ^5.1.0
