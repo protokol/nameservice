@@ -126,7 +126,7 @@ overrides:
   '@arkecosystem/core-transactions': 3.13.0
   '@arkecosystem/core-webhooks': 3.13.0
   '@arkecosystem/crypto': 3.13.0
-  joi: 17.13.7
+  joi: 17.13.8
   pg: 8.23.0
 
 packageExtensionsChecksum: sha256-HqbybocJ+oL6doVkegWn4GKh5CRLpG9cdrHR+ymMAYI=
@@ -221,8 +221,8 @@ importers:
         specifier: workspace:*
         version: link:../nameservice-transactions
       joi:
-        specifier: 17.13.7
-        version: 17.13.7
+        specifier: 17.13.8
+        version: 17.13.8
       latest-version:
         specifier: ^5.1.0
         version: 5.1.0
@@ -3553,8 +3553,8 @@ packages:
   jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
 
-  joi@17.13.7:
-    resolution: {integrity: sha512-MF80Dm5Y2veNy8QWVx9Bj3ui4mo7+VPSPsR1M+oaHXV0Gx6zGX9a2F+OZG3Blby9tOlzU9Rs5FUimlEhbKtfnQ==}
+  joi@17.13.8:
+    resolution: {integrity: sha512-iPKOGmiRw1jxf/JOPwxmCcUQAOdF359mdzYiP2DJ+TMX0YK2zjK3D+zYOaGjpumWxOFF/l2xVWjRVK5bGSLdEw==}
 
   joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
@@ -5665,7 +5665,7 @@ snapshots:
       '@hapi/boom': 9.1.4
       '@hapi/hapi': 20.1.5
       '@hapi/hoek': 9.2.0
-      joi: 17.13.7
+      joi: 17.13.8
       nanomatch: 1.2.13(supports-color@8.1.1)
       node-cache: 5.1.2
       qs: 6.11.2
@@ -5686,7 +5686,7 @@ snapshots:
       '@arkecosystem/core-state': 3.13.0
       '@arkecosystem/core-transactions': 3.13.0
       '@arkecosystem/crypto': 3.13.0
-      joi: 17.13.7
+      joi: 17.13.8
       xstate: 4.38.3
     transitivePeerDependencies:
       - bufferutil
@@ -5711,7 +5711,7 @@ snapshots:
       glob: 7.1.7
       got: 11.8.5
       inversify: 5.1.1
-      joi: 17.13.7
+      joi: 17.13.8
       kleur: 4.1.5
       latest-version: 5.1.0
       listr: 0.14.3
@@ -5739,7 +5739,7 @@ snapshots:
       '@arkecosystem/crypto': 3.13.0
       '@arkecosystem/utils': 1.3.1
       dayjs: 1.11.10
-      joi: 17.13.7
+      joi: 17.13.8
       pg: 8.23.0
       reflect-metadata: 0.2.1
       typeorm: 0.2.25(supports-color@8.1.1)
@@ -5755,7 +5755,7 @@ snapshots:
       '@arkecosystem/core-p2p': 3.13.0
       '@arkecosystem/core-transactions': 3.13.0
       '@arkecosystem/crypto': 3.13.0
-      joi: 17.13.7
+      joi: 17.13.8
       node-forge: 1.3.1
       wif: 2.0.6
     transitivePeerDependencies:
@@ -5796,7 +5796,7 @@ snapshots:
       import-fresh: 3.3.0
       inversify: 5.1.1
       ipaddr.js: 2.1.0
-      joi: 17.13.7
+      joi: 17.13.8
       log-process-errors: 5.1.2
       nanomatch: 1.2.13(supports-color@8.1.1)
       nsfw: 2.2.4
@@ -5814,7 +5814,7 @@ snapshots:
     dependencies:
       '@arkecosystem/core-kernel': 3.13.0(pg@8.23.0)(supports-color@8.1.1)
       chalk: 4.1.2
-      joi: 17.13.7
+      joi: 17.13.8
       pino: 8.7.0
       pino-pretty: 9.1.1
       pump: 3.0.0
@@ -5831,7 +5831,7 @@ snapshots:
       '@arkecosystem/crypto': 3.13.0
       '@hapi/boom': 9.1.4
       '@hapi/hapi': 20.1.5
-      joi: 17.13.7
+      joi: 17.13.8
 
   '@arkecosystem/core-magistrate-crypto@3.13.0':
     dependencies:
@@ -5861,7 +5861,7 @@ snapshots:
       delay: 4.4.1
       ip: 2.0.1
       ipaddr.js: 2.1.0
-      joi: 17.13.7
+      joi: 17.13.8
       pluralize: 8.0.0
       pretty-ms: 7.0.1
       protobufjs: 7.2.6
@@ -5879,7 +5879,7 @@ snapshots:
       '@arkecosystem/crypto': 3.13.0
       bytebuffer: 5.0.1
       fs-extra: 8.1.0
-      joi: 17.13.7
+      joi: 17.13.8
       msgpack-lite: 0.1.26
       ora: 4.1.1
       pg-query-stream: 3.4.2(pg@8.23.0)
@@ -5898,7 +5898,7 @@ snapshots:
       '@arkecosystem/core-transactions': 3.13.0
       '@arkecosystem/crypto': 3.13.0
       immutable: 5.0.0-beta.5
-      joi: 17.13.7
+      joi: 17.13.8
 
   '@arkecosystem/core-test-framework@3.13.0(pg@8.23.0)(pm2@4.5.6(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
@@ -5943,14 +5943,14 @@ snapshots:
       '@arkecosystem/crypto': 3.13.0
       better-sqlite3: 12.11.1
       fs-extra: 8.1.0
-      joi: 17.13.7
+      joi: 17.13.8
 
   '@arkecosystem/core-transactions@3.13.0':
     dependencies:
       '@arkecosystem/core-database': 3.13.0(supports-color@8.1.1)
       '@arkecosystem/core-kernel': 3.13.0(pg@8.23.0)(supports-color@8.1.1)
       '@arkecosystem/crypto': 3.13.0
-      joi: 17.13.7
+      joi: 17.13.8
 
   '@arkecosystem/core-webhooks@3.13.0':
     dependencies:
@@ -5959,7 +5959,7 @@ snapshots:
       '@hapi/boom': 9.0.0
       '@hapi/hapi': 20.1.5
       fs-extra: 8.1.0
-      joi: 17.13.7
+      joi: 17.13.8
       lowdb: 1.0.0
       uuid: 9.0.1
 
@@ -5989,7 +5989,7 @@ snapshots:
       env-paths: 2.2.1
       envfile: 5.2.0
       fs-extra: 8.1.0
-      joi: 17.13.7
+      joi: 17.13.8
       kleur: 4.1.5
       ngrok: 4.3.3(supports-color@8.1.1)
       pm2: 4.5.6(supports-color@8.1.1)
@@ -9672,7 +9672,7 @@ snapshots:
 
   jju@1.4.0: {}
 
-  joi@17.13.7:
+  joi@17.13.8:
     dependencies:
       '@hapi/hoek': 9.3.0
       '@hapi/topo': 5.1.0
