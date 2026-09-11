@@ -5,7 +5,6 @@
     "mtxr.sqltools",
     "mtxr.sqltools-driver-pg",
     "eamodio.gitlens",
-    "mutantdino.resourcemonitor",
-    "arcanis.vscode-zipfs"
+    "mutantdino.resourcemonitor"
   ]
 }

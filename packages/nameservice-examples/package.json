@@ -31,16 +31,16 @@
     "main": "dist/index",
     "types": "dist/index",
     "scripts": {
-        "build": "yarn clean && tsc",
-        "build:watch": "yarn build -w",
+        "build": "pnpm run clean && tsc",
+        "build:watch": "pnpm run clean && tsc -w",
         "build:docs": "typedoc --out docs src",
         "clean": "rimraf .coverage dist tmp",
         "test": "jest"
     },
     "dependencies": {
-        "@arkecosystem/crypto": "^3.0.0",
+        "@arkecosystem/crypto": "3.0.0",
         "@protokol/client": "^1.0.0",
-        "@protokol/nameservice-crypto": "workspace:packages/nameservice-crypto"
+        "@protokol/nameservice-crypto": "workspace:*"
     },
     "devDependencies": {
         "@types/node": "^16.0.0",
