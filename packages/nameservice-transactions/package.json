@@ -41,18 +41,18 @@
         "publish": "pnpm run build && pnpm publish --access public --no-git-checks"
     },
     "dependencies": {
-        "@arkecosystem/core-database": "3.0.0",
-        "@arkecosystem/core-kernel": "3.0.0",
-        "@arkecosystem/core-state": "3.0.0",
-        "@arkecosystem/core-transactions": "3.0.0",
-        "@arkecosystem/crypto": "3.0.0",
+        "@arkecosystem/core-database": "3.13.0",
+        "@arkecosystem/core-kernel": "3.13.0",
+        "@arkecosystem/core-state": "3.13.0",
+        "@arkecosystem/core-transactions": "3.13.0",
+        "@arkecosystem/crypto": "3.13.0",
         "@protokol/nameservice-crypto": "workspace:*"
     },
     "devDependencies": {
-        "@arkecosystem/core-kernel": "3.0.0",
-        "@arkecosystem/core-state": "3.0.0",
-        "@arkecosystem/core-test-framework": "3.0.0",
-        "@arkecosystem/core-transaction-pool": "3.0.0",
+        "@arkecosystem/core-kernel": "3.13.0",
+        "@arkecosystem/core-state": "3.13.0",
+        "@arkecosystem/core-test-framework": "3.13.0",
+        "@arkecosystem/core-transaction-pool": "3.13.0",
         "@types/jest": "^30.0.0",
         "@types/node": "^24.0.0",
         "bip39": "3.0.4",

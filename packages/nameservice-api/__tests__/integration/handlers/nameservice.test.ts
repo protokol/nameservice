@@ -26,8 +26,10 @@ describe("API - Nameservice", () => {
         it("should return all nameservice transactions", async () => {
             const actual = new Builders.NameserviceBuilder().Nameservice({ name: "zan" }).sign(passphrases[0]!).build();
 
-            const transactionRepository = app.get<Repositories.TransactionRepository>(
+            const transactionRepository = app.getTagged<Repositories.TransactionRepository>(
                 Container.Identifiers.DatabaseTransactionRepository,
+                "connection",
+                "api",
             );
 
             jest.spyOn(transactionRepository, "listByExpression").mockResolvedValueOnce({
@@ -46,8 +48,10 @@ describe("API - Nameservice", () => {
         it("should return specific nameservice transaction by its id", async () => {
             const actual = new Builders.NameserviceBuilder().Nameservice({ name: "zan" }).sign(passphrases[0]!).build();
 
-            const transactionRepository = app.get<Repositories.TransactionRepository>(
+            const transactionRepository = app.getTagged<Repositories.TransactionRepository>(
                 Container.Identifiers.DatabaseTransactionRepository,
+                "connection",
+                "api",
             );
 
             jest.spyOn(transactionRepository, "findManyByExpression").mockResolvedValueOnce([

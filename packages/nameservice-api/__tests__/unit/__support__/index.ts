@@ -1,6 +1,11 @@
 import { Application, Container, Contracts, Providers, Services } from "@arkecosystem/core-kernel";
 import { Wallets } from "@arkecosystem/core-state";
 import { Handlers, ServiceProvider } from "@arkecosystem/core-transactions";
+import { MempoolIndexRegistry } from "@arkecosystem/core-transaction-pool/dist/mempool-index-registry";
+import {
+    MultiSignatureVerification,
+    SecondSignatureVerification,
+} from "@arkecosystem/core-transactions/dist/verification";
 import { Identities, Utils } from "@arkecosystem/crypto";
 import { Handlers as NameserviceHandlers, Indexers } from "@protokol/nameservice-transactions";
 
@@ -94,6 +99,10 @@ export const initApp = (): Application => {
     app.bind(Container.Identifiers.CacheService).to(Services.Cache.MemoryCacheStore).inSingletonScope();
 
     app.bind(Container.Identifiers.TransactionHandler).to(NameserviceHandlers.NameserviceTransactionHandler);
+
+    app.bind(Container.Identifiers.TransactionSecondSignatureVerification).to(SecondSignatureVerification);
+    app.bind(Container.Identifiers.TransactionPoolMempoolIndexRegistry).to(MempoolIndexRegistry).inSingletonScope();
+    app.bind(Container.Identifiers.TransactionMultiSignatureVerification).to(MultiSignatureVerification);
 
     app.bind<Services.Attributes.AttributeSet>(Container.Identifiers.WalletAttributes)
         .to(Services.Attributes.AttributeSet)

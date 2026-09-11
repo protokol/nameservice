@@ -7,9 +7,11 @@ import { ResourceWithBlock } from "../resources/resource-with-block";
 @Container.injectable()
 export class BaseController extends Controller {
     @Container.inject(Container.Identifiers.TransactionHistoryService)
+    @Container.tagged("connection", "api")
     protected readonly transactionHistoryService!: Contracts.Shared.TransactionHistoryService;
 
     @Container.inject(Container.Identifiers.BlockHistoryService)
+    @Container.tagged("connection", "api")
     private readonly blockHistoryService!: Contracts.Shared.BlockHistoryService;
 
     public async paginateWithBlock(

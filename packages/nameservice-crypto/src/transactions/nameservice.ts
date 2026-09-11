@@ -1,6 +1,5 @@
 import { Transactions, Utils } from "@arkecosystem/crypto";
 import { Asserts } from "@protokol/utils";
-import ByteBuffer from "bytebuffer";
 
 import {
     NameServiceStaticFees,
@@ -41,28 +40,28 @@ export class NameserviceTransaction extends Transactions.Transaction {
         } as any);
     }
 
-    public serialize(): ByteBuffer {
+    public serialize(): Utils.ByteBuffer {
         const { data } = this;
 
         Asserts.assert.defined<INameServiceAsset>(data.asset?.nameservice);
         const nameserviceAsset: INameServiceAsset = data.asset.nameservice;
 
         const hashBuffer: Buffer = Buffer.from(nameserviceAsset.name);
-        const buffer: ByteBuffer = new ByteBuffer(1 + hashBuffer.length, true);
+        const buffer: Utils.ByteBuffer = new Utils.ByteBuffer(Buffer.alloc(1 + hashBuffer.length));
 
         // name
-        buffer.writeByte(hashBuffer.length);
-        buffer.append(hashBuffer, "hex");
+        buffer.writeUInt8(hashBuffer.length);
+        buffer.writeBuffer(hashBuffer);
 
         return buffer;
     }
 
-    public deserialize(buf: ByteBuffer): void {
+    public deserialize(buf: Utils.ByteBuffer): void {
         const { data } = this;
 
         // name
-        const nameLength: number = buf.readUint8();
-        const name: string = buf.readBytes(nameLength).toBuffer().toString("utf8");
+        const nameLength: number = buf.readUInt8();
+        const name: string = buf.readBuffer(nameLength).toString("utf8");
 
         const nameservice: INameServiceAsset = { name };
 

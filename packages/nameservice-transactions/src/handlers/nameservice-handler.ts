@@ -15,6 +15,7 @@ const pluginName = require("../../package.json").name;
 
 export class NameserviceTransactionHandler extends Handlers.TransactionHandler {
     @Container.inject(Container.Identifiers.TransactionHistoryService)
+    @Container.tagged("connection", "default")
     protected readonly transactionHistoryService!: Contracts.Shared.TransactionHistoryService;
 
     @Container.inject(Container.Identifiers.TransactionPoolQuery)
