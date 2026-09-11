@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "@protokol/nameservice",
-	"description": "Protokol nameserivce transaction support",
+	"description": "Protokol nameservice transaction support",
 	"engines": {
 		"node": "^24.0.0",
 		"pnpm": ">=10"
