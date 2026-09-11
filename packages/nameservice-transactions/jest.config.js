@@ -22,5 +22,6 @@ module.exports = {
     //     },
     // },
     watchman: false,
+    setupFiles: [require("path").join(__dirname, "jest.http-agent.js")],
     setupFilesAfterEnv: ["jest-extended/all"],
 };
