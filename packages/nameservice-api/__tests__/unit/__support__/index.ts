@@ -1,7 +1,7 @@
 import { Application, Container, Contracts, Providers, Services } from "@arkecosystem/core-kernel";
 import { Wallets } from "@arkecosystem/core-state";
-import { Handlers, ServiceProvider } from "@arkecosystem/core-transactions";
 import { MempoolIndexRegistry } from "@arkecosystem/core-transaction-pool/dist/mempool-index-registry";
+import { Handlers, ServiceProvider } from "@arkecosystem/core-transactions";
 import {
     MultiSignatureVerification,
     SecondSignatureVerification,

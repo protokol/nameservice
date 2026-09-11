@@ -15,8 +15,7 @@ import {
     VerifyTransactionAction,
 } from "@arkecosystem/core-transaction-pool";
 import { MempoolIndexRegistry } from "@arkecosystem/core-transaction-pool/dist/mempool-index-registry";
-import { Handlers } from "@arkecosystem/core-transactions";
-import { ServiceProvider } from "@arkecosystem/core-transactions";
+import { Handlers, ServiceProvider } from "@arkecosystem/core-transactions";
 import {
     MultiSignatureVerification,
     SecondSignatureVerification,
