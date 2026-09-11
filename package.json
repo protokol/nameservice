@@ -9,7 +9,7 @@
 	"scripts": {
 		"publish:beta": "pnpm -r --parallel run publish:beta",
 		"publish": "pnpm -r run publish",
-		"build": "pnpm -r --parallel run build",
+		"build": "pnpm -r run build",
 		"clean": "pnpm -r --parallel run clean",
 		"changelog": "pnpm exec auto-changelog",
 		"version:patch": "pnpm -r exec npm version patch --no-git-tag-version",
