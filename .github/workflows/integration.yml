@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:12
+        image: postgres:17
         env:
           POSTGRES_USER: ark
           POSTGRES_PASSWORD: password
@@ -25,7 +25,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [ 16.x ]
+        node-version: [ 24 ]
     env:
       CORE_DB_DATABASE: ark_unitnet
       CORE_DB_USERNAME: ark
@@ -34,16 +34,18 @@ jobs:
       POSTGRES_DB: ark_unitnet
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - name: Use Node.js 24
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 24
+          cache: pnpm
 
       - name: Install and build packages
-        run: yarn && yarn build
+        run: pnpm install --frozen-lockfile && pnpm build
 
       - name: NAMESERVICE-API
         run: |
           cd packages/nameservice-api
-          yarn test:integration:coverage --coverageDirectory .coverage/integration-nameservice-api
+          pnpm run test:integration:coverage --coverageDirectory .coverage/integration-nameservice-api

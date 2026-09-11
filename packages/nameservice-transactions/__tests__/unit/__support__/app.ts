@@ -14,8 +14,12 @@ import {
     ThrowIfCannotEnterPoolAction,
     VerifyTransactionAction,
 } from "@arkecosystem/core-transaction-pool";
-import { Handlers } from "@arkecosystem/core-transactions";
-import { ServiceProvider } from "@arkecosystem/core-transactions";
+import { MempoolIndexRegistry } from "@arkecosystem/core-transaction-pool/dist/mempool-index-registry";
+import { Handlers, ServiceProvider } from "@arkecosystem/core-transactions";
+import {
+    MultiSignatureVerification,
+    SecondSignatureVerification,
+} from "@arkecosystem/core-transactions/dist/verification";
 import { Identities, Managers, Utils } from "@arkecosystem/crypto";
 
 import { NameserviceTransactionHandler } from "../../../src/handlers";
@@ -85,6 +89,8 @@ export const initApp = (): Application => {
     app.bind(Container.Identifiers.StateStore).to(Stores.StateStore).inTransientScope();
 
     app.bind(Container.Identifiers.TransactionPoolMempool).to(Mempool).inSingletonScope();
+
+    app.bind(Container.Identifiers.TransactionPoolMempoolIndexRegistry).to(MempoolIndexRegistry).inSingletonScope();
 
     app.bind(Container.Identifiers.TransactionPoolQuery).to(Query).inSingletonScope();
 
@@ -165,6 +171,9 @@ export const initApp = (): Application => {
     app.bind(Container.Identifiers.TransactionHistoryService).toConstantValue(transactionHistoryService);
 
     app.bind(Container.Identifiers.TransactionHandler).to(NameserviceTransactionHandler);
+
+    app.bind(Container.Identifiers.TransactionSecondSignatureVerification).to(SecondSignatureVerification);
+    app.bind(Container.Identifiers.TransactionMultiSignatureVerification).to(MultiSignatureVerification);
 
     app.bind(Container.Identifiers.CacheService).to(Services.Cache.MemoryCacheStore).inSingletonScope();
 

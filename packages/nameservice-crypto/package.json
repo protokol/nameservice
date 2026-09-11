@@ -41,12 +41,12 @@
         "publish": "pnpm run build && pnpm publish --access public --no-git-checks"
     },
     "dependencies": {
-        "@arkecosystem/crypto": "3.0.0",
+        "@arkecosystem/crypto": "3.13.0",
         "@protokol/utils": "^1.0.0",
         "bytebuffer": "^5.0.1"
     },
     "devDependencies": {
-        "@arkecosystem/core-test-framework": "3.0.0",
+        "@arkecosystem/core-test-framework": "3.13.0",
         "@types/jest": "^30.0.0",
         "@types/node": "^24.0.0",
         "cross-env": "^7.0.2",

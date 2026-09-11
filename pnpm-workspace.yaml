@@ -15,6 +15,27 @@ allowBuilds:
 
 overrides:
     better-sqlite3: ^12.4.1
+    "@arkecosystem/core": 3.13.0
+    "@arkecosystem/core-api": 3.13.0
+    "@arkecosystem/core-blockchain": 3.13.0
+    "@arkecosystem/core-cli": 3.13.0
+    "@arkecosystem/core-database": 3.13.0
+    "@arkecosystem/core-forger": 3.13.0
+    "@arkecosystem/core-kernel": 3.13.0
+    "@arkecosystem/core-logger-pino": 3.13.0
+    "@arkecosystem/core-magistrate-api": 3.13.0
+    "@arkecosystem/core-magistrate-crypto": 3.13.0
+    "@arkecosystem/core-magistrate-transactions": 3.13.0
+    "@arkecosystem/core-p2p": 3.13.0
+    "@arkecosystem/core-snapshots": 3.13.0
+    "@arkecosystem/core-state": 3.13.0
+    "@arkecosystem/core-test-framework": 3.13.0
+    "@arkecosystem/core-transaction-pool": 3.13.0
+    "@arkecosystem/core-transactions": 3.13.0
+    "@arkecosystem/core-webhooks": 3.13.0
+    "@arkecosystem/crypto": 3.13.0
+    joi: 17.13.7
+    pg: 8.23.0
 
 packageExtensions:
     "bcrypto@*":
@@ -38,14 +59,8 @@ packageExtensions:
             "@arkecosystem/core-transaction-pool": latest
             "@arkecosystem/core-transactions": latest
             "@arkecosystem/core-webhooks": latest
-            "@protokol/guardian-api": beta
-            "@protokol/guardian-transactions": beta
             "@protokol/nameservice-api": "workspace:*"
             "@protokol/nameservice-transactions": "workspace:*"
-            "@protokol/nft-base-api": beta
-            "@protokol/nft-base-transactions": beta
-            "@protokol/nft-exchange-api": beta
-            "@protokol/nft-exchange-transactions": beta
     "@arkecosystem/core-magistrate-api@*":
         dependencies:
             "@arkecosystem/crypto": latest

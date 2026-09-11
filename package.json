@@ -34,8 +34,8 @@
 		"full:testnet": "cross-env CORE_PATH_CONFIG=./config/networks/testnet pnpm exec ark core:run --networkStart --env=test --network=testnet"
 	},
 	"dependencies": {
-		"@arkecosystem/core": "3.0.0",
-		"@arkecosystem/core-cli": "3.0.0"
+		"@arkecosystem/core": "3.13.0",
+		"@arkecosystem/core-cli": "3.13.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.39.0",
