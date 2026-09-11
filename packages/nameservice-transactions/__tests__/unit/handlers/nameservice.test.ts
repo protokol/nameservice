@@ -1,4 +1,4 @@
-import "jest-extended";
+import "jest-extended/all";
 
 import { Application, Container, Contracts, Providers } from "@arkecosystem/core-kernel";
 import { Wallets } from "@arkecosystem/core-state";

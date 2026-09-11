@@ -1,4 +1,4 @@
-import "jest-extended";
+import "jest-extended/all";
 
 import { Managers, Transactions } from "@arkecosystem/crypto";
 

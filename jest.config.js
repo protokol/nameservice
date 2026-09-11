@@ -5,16 +5,11 @@ module.exports = {
 	coverageDirectory: "<rootDir>/.coverage",
 	coverageReporters: ["json", "lcov", "text", "clover", "html"],
 	moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-	setupFilesAfterEnv: ["jest-extended"],
+	setupFilesAfterEnv: ["jest-extended/all"],
 	testEnvironment: "node",
 	testMatch: ["**/*.test.ts"],
 	transform: {
-		"^.+\\.tsx?$": "ts-jest",
+		"^.+\\.tsx?$": ["ts-jest", {}],
 	},
 	verbose: true,
-	globals: {
-		"ts-jest": {
-			packageJson: "./package.json",
-		},
-	},
 };
