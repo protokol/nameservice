@@ -1,0 +1,513 @@
+# OpenAPI 3.0.3 spec for @protokol/nameservice-api
+#
+# Converted from the original Insomnia collection (previously kept in
+# insomnia/nameservice-api.json) and
+# cross-checked against the route/controller/resource definitions in
+# packages/nameservice-api/src (service-provider.ts registers everything under
+# the /api/nameservice prefix).
+#
+# Preview in a browser from the repo root:
+#     pnpm api:docs            # serves Swagger UI on http://localhost:9000
+# Validate with:
+#     pnpm api:lint
+openapi: 3.0.3
+info:
+  title: Protokol Nameservice API
+  description: |
+    REST API for the Protokol Nameservice (`@protokol/nameservice-api`).
+
+    A *nameservice transaction* registers a namespace name that is bound to
+    the wallet of its sender. Every endpoint below is served by the
+    `@protokol/nameservice-api` plugin on any ARK Core node that has the
+    plugin installed.
+  contact:
+    url: https://github.com/protokol/nameservice/issues
+  license:
+    name: CC-BY-NC-SA-4.0
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  version: 1.0.0
+# The API is public - no authentication
+security: []
+servers:
+  - url: http://localhost:4003/api/nameservice
+    description: Local core node (HTTP, default port 4003)
+  - url: http://localhost:8443/api/nameservice
+    description: Local core node (HTTPS)
+tags:
+  - name: Nameservice
+    description: Nameservice transactions and namespace wallets
+  - name: Configuration
+    description: Plugin configuration and package versions
+
+paths:
+  /:
+    get:
+      operationId: listNameserviceTransactions
+      summary: List all nameservice transactions (paginated)
+      description: |
+        Returns all *nameservice register* transactions
+        (type group `9004`, type `0`), paginated.
+
+        With `transform=false` the raw transaction records of the database
+        are returned instead of the transformed ones.
+      tags:
+        - Nameservice
+      parameters:
+        - $ref: "#/components/parameters/PageParam"
+        - $ref: "#/components/parameters/LimitParam"
+        - $ref: "#/components/parameters/OffsetParam"
+        - $ref: "#/components/parameters/OrderByParam"
+        - $ref: "#/components/parameters/TransformParam"
+      responses:
+        "422":
+          $ref: "#/components/responses/ValidationError"
+        "500":
+          $ref: "#/components/responses/ServerError"
+        "200":
+          description: Paginated list of nameservice transactions
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NameserviceTransactionPage"
+              example:
+                data:
+                  - id: b20e1aebb3652c247c1d1bdc88074a819d175af20f00232d4a85bb9b5a07b637
+                    sender: APh6LfY2ZGG2ddmquAfecs1EKyusSMPcED
+                    senderPublicKey: 032ee208687fe53f2a0ad73a41f26f31e2ccee63169ea28eb8b3b2be5242e2c8b3
+                    vendorField: Official Protokol Nameservice
+                    nameservice: zan
+                    timestamp: 1629107040
+                meta:
+                  totalCountIsEstimate: false
+                  count: 1
+                  pageCount: 1
+                  totalCount: 1
+                  next: null
+                  previous: null
+                  self: /api/nameservice?page=1&limit=100
+                  first: /api/nameservice?page=1&limit=100
+                  last: /api/nameservice?page=1&limit=100
+
+  /configurations:
+    get:
+      operationId: getConfiguration
+      summary: Get nameservice plugin configuration
+      description: |
+        Returns the package name / version information and the default
+        configuration of the `nameservice-api`, `nameservice-transactions`
+        and `nameservice-crypto` packages.
+      tags:
+        - Configuration
+      responses:
+        "500":
+          $ref: "#/components/responses/ServerError"
+        "200":
+          description: Configuration data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Configuration"
+              example:
+                api:
+                  packageName: "@protokol/nameservice-api"
+                  currentVersion: 1.0.0
+                  latestVersion: 1.0.0
+                  defaults: {}
+                transactions:
+                  packageName: "@protokol/nameservice-transactions"
+                  currentVersion: 1.0.0
+                  latestVersion: 1.0.0
+                  defaults:
+                    feeType: 0
+                crypto:
+                  packageName: "@protokol/nameservice-crypto"
+                  currentVersion: 1.0.0
+                  latestVersion: 1.0.0
+                  defaults:
+                    nameserviceTypeGroup: 9004
+                    version: 2
+                    nameserviceStaticFee: 5000000000
+
+  /{id}:
+    get:
+      operationId: showNameserviceTransaction
+      summary: Show nameservice transaction by transaction id
+      description: |
+        Looks up a single *nameservice register* transaction by its
+        transaction id.
+
+        Returns 404 when no such nameservice transaction exists.
+      tags:
+        - Nameservice
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Transaction id (64 character hexadecimal string)
+          schema:
+            $ref: "#/components/schemas/TransactionId"
+          example: b20e1aebb3652c247c1d1bdc88074a819d175af20f00232d4a85bb9b5a07b637
+        - $ref: "#/components/parameters/TransformParam"
+      responses:
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "422":
+          $ref: "#/components/responses/ValidationError"
+        "500":
+          $ref: "#/components/responses/ServerError"
+        "200":
+          description: Nameservice transaction
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NameserviceTransactionResponse"
+              example:
+                data:
+                  id: b20e1aebb3652c247c1d1bdc88074a819d175af20f00232d4a85bb9b5a07b637
+                  sender: APh6LfY2ZGG2ddmquAfecs1EKyusSMPcED
+                  senderPublicKey: 032ee208687fe53f2a0ad73a41f26f31e2ccee63169ea28eb8b3b2be5242e2c8b3
+                  vendorField: Official Protokol Nameservice
+                  nameservice: zan
+                  timestamp: 1629107040
+
+  /{id}/wallet:
+    get:
+      operationId: showNameserviceWallet
+      summary: Show wallet by registered namespace name
+      description: |
+        Looks up the wallet that owns the namespace registered with the
+        given name.
+
+        Returns 404 when no wallet has registered the namespace.
+      tags:
+        - Nameservice
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Registered namespace name (1-90 characters)
+          schema:
+            $ref: "#/components/schemas/NamespaceName"
+          example: zan
+      responses:
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "422":
+          $ref: "#/components/responses/ValidationError"
+        "500":
+          $ref: "#/components/responses/ServerError"
+        "200":
+          description: Wallet holding the namespace
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NameserviceWalletResponse"
+              example:
+                data:
+                  address: APh6LfY2ZGG2ddmquAfecs1EKyusSMPcED
+                  publicKey: 032ee208687fe53f2a0ad73a41f26f31e2ccee63169ea28eb8b3b2be5242e2c8b3
+                  balance: "177000000000"
+                  nonce: "4"
+                  name: zan
+
+components:
+  parameters:
+    PageParam:
+      name: page
+      in: query
+      description: Page number of the results to be returned
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+    LimitParam:
+      name: limit
+      in: query
+      description: Number of results per page (server side default is 100)
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 100
+    OffsetParam:
+      name: offset
+      in: query
+      description: Offset for the results (overrides page)
+      schema:
+        type: integer
+        minimum: 0
+    OrderByParam:
+      name: orderBy
+      in: query
+      description: |
+        Sorting of the results as `property:direction` pairs, e.g. one of
+
+            orderBy=id:asc
+            orderBy=id:asc,timestamp:desc
+      schema:
+        type: string
+        description: Comma separated list of `property:asc|desc` pairs
+    TransformParam:
+      name: transform
+      in: query
+      description: >
+        Whether to return the transformed resource representation (`true`,
+        the default) or the raw database record (`false`).
+      schema:
+        type: boolean
+        default: true
+
+  responses:
+    NotFound:
+      description: The requested resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            statusCode: 404
+            error: Not Found
+            message: Nameservice Transaction not found
+    ValidationError:
+      description: |
+        Validation error - a query or path parameter failed validation
+        (Boom `badData`)
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            statusCode: 422
+            error: Unprocessable Entity
+            message: '"id" length must be 64 characters long'
+    ServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            statusCode: 500
+            error: Internal Server Error
+            message: Internal Server Error
+
+  schemas:
+    TransactionId:
+      type: string
+      pattern: "^[0-9a-fA-F]{64}$"
+      description: Transaction id (64 character hexadecimal string)
+    Address:
+      type: string
+      pattern: "^[A-Za-z0-9]{34}$"
+      description: ARK wallet address of the network base58 alphabet
+    HexPublicKey:
+      type: string
+      pattern: "^[0-9a-fA-F]{66}$"
+      description: Secp256k1 public key (33 bytes, hexadecimal)
+    NamespaceName:
+      type: string
+      minLength: 1
+      maxLength: 90
+      description: Registered namespace name
+    UnixTimestamp:
+      type: integer
+      description: Unix timestamp (seconds since epoch) of the block
+    BigIntString:
+      type: string
+      description: |
+        Big planet wide integer value as a string representation (token
+        units multiplied by 10^8 satoshis)
+
+    NameserviceTransaction:
+      type: object
+      description: |
+        Transformed representation of a nameservice register transaction
+        (`resource.transform`, `transform=true`)
+      properties:
+        id:
+          $ref: "#/components/schemas/TransactionId"
+        sender:
+          $ref: "#/components/schemas/Address"
+        senderPublicKey:
+          $ref: "#/components/schemas/HexPublicKey"
+        vendorField:
+          type: string
+          nullable: true
+          description: Vendor field (memo) attached to the transaction
+        nameservice:
+          $ref: "#/components/schemas/NamespaceName"
+        timestamp:
+          $ref: "#/components/schemas/UnixTimestamp"
+      required:
+        - id
+        - sender
+        - senderPublicKey
+        - nameservice
+
+    RawTransaction:
+      type: object
+      description: |
+        Raw representation of the transaction database record
+        (`transform=false`)
+      additionalProperties: true
+
+    NameserviceWallet:
+      type: object
+      description: Wallet holding a registered namespace
+      properties:
+        address:
+          $ref: "#/components/schemas/Address"
+        publicKey:
+          $ref: "#/components/schemas/HexPublicKey"
+        balance:
+          $ref: "#/components/schemas/BigIntString"
+        nonce:
+          type: string
+          description: Wallet nonce (string representation of a big integer)
+        name:
+          $ref: "#/components/schemas/NamespaceName"
+      required:
+        - address
+        - publicKey
+        - balance
+        - nonce
+        - name
+
+    Package:
+      type: object
+      description: Package configuration of one of the nameservice packages
+      properties:
+        packageName:
+          type: string
+          example: "@protokol/nameservice-api"
+        currentVersion:
+          type: string
+          example: 1.0.0
+        latestVersion:
+          type: string
+          description: Latest published version on npm
+        defaults:
+          type: object
+          description: Default plugin configuration of the package
+          additionalProperties: true
+      required:
+        - packageName
+        - currentVersion
+        - latestVersion
+        - defaults
+
+    Configuration:
+      type: object
+      properties:
+        api:
+          $ref: "#/components/schemas/Package"
+        transactions:
+          $ref: "#/components/schemas/Package"
+        crypto:
+          $ref: "#/components/schemas/Package"
+      required:
+        - api
+        - transactions
+        - crypto
+
+    PaginatedMeta:
+      type: object
+      description: Pagination metadata added by the hapi-pagination plugin
+      properties:
+        totalCountIsEstimate:
+          type: boolean
+          description: Whether `totalCount` was estimated (`estimateTotalCount` option)
+        count:
+          type: integer
+          description: Number of items on the current page
+        pageCount:
+          type: integer
+        totalCount:
+          type: integer
+        next:
+          type: string
+          nullable: true
+          description: Relative URI of the next page
+        previous:
+          type: string
+          nullable: true
+          description: Relative URI of the previous page
+        self:
+          type: string
+          description: Relative URI of the current page
+        first:
+          type: string
+          description: Relative URI of the first page
+        last:
+          type: string
+          description: Relative URI of the last page
+      required:
+        - count
+        - pageCount
+        - totalCount
+        - next
+        - previous
+        - self
+        - first
+        - last
+
+    ErrorResponse:
+      type: object
+      description: Boom error payload
+      properties:
+        statusCode:
+          type: integer
+        error:
+          type: string
+          description: Human readable HTTP error class (e.g. "Not Found")
+        message:
+          type: string
+          description: Error message
+      required:
+        - statusCode
+        - error
+        - message
+
+    NameserviceTransactionItem:
+      description: |
+        A single item of the nameservice transaction list - either
+        transformed (`transform=true`, default) or the raw transaction
+        record (`transform=false`)
+      anyOf:
+        - $ref: "#/components/schemas/NameserviceTransaction"
+        - $ref: "#/components/schemas/RawTransaction"
+
+    NameserviceTransactionPage:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/NameserviceTransactionItem"
+        meta:
+          $ref: "#/components/schemas/PaginatedMeta"
+      required:
+        - data
+        - meta
+
+    NameserviceTransactionResponse:
+      type: object
+      description: Single nameservice transaction (transformed or raw)
+      properties:
+        data:
+          description: |
+            Transformed transaction (`transform=true`, default) or the raw
+            transaction record (`transform=false`)
+          anyOf:
+            - $ref: "#/components/schemas/NameserviceTransaction"
+            - $ref: "#/components/schemas/RawTransaction"
+      required:
+        - data
+
+    NameserviceWalletResponse:
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/NameserviceWallet"
+      required:
+        - data
