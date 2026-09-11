@@ -36,7 +36,7 @@ jobs:
                   cd packages/nameservice-crypto
                   pnpm run test:unit:coverage --maxWorkers=2
 
-            - uses: codecov/codecov-action@v5
+            - uses: codecov/codecov-action@v7
               with:
                   directory: packages/nameservice-crypto/.coverage
                   flags: nameservice-crypto
@@ -46,7 +46,7 @@ jobs:
                   cd packages/nameservice-transactions
                   pnpm run test:unit:coverage --maxWorkers=2
 
-            - uses: codecov/codecov-action@v5
+            - uses: codecov/codecov-action@v7
               with:
                   directory: packages/nameservice-transactions/.coverage
                   flags: nameservice-transactions
@@ -56,7 +56,7 @@ jobs:
                   cd packages/nameservice-api
                   pnpm run test:unit:coverage --maxWorkers=2
 
-            - uses: codecov/codecov-action@v5
+            - uses: codecov/codecov-action@v7
               with:
                   directory: packages/nameservice-api/.coverage
                   flags: nameservice-api
