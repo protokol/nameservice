@@ -4,8 +4,8 @@ packages:
 allowBuilds:
     "@parcel/watcher": false
     argon2: false
-    bcrypto: false
-    better-sqlite3: false
+    bcrypto: true
+    better-sqlite3: true
     bstring: false
     ngrok: false
     nsfw: false
@@ -13,7 +13,16 @@ allowBuilds:
     tiny-secp256k1: false
     unrs-resolver: false
 
+overrides:
+    better-sqlite3: ^12.4.1
+
 packageExtensions:
+    "bcrypto@*":
+        dependencies:
+            node-gyp: latest
+    "better-sqlite3@*":
+        dependencies:
+            node-gyp: latest
     "@arkecosystem/core-kernel@*":
         dependencies:
             "@arkecosystem/core-api": latest

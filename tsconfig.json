@@ -29,5 +29,6 @@
 		"stripInternal": true,
 		"useDefineForClassFields": true
 	},
+	"files": ["jest-extended-compat.d.ts"],
 	"exclude": ["dist", "**/*.spec.ts", "**/*.test.ts"]
 }

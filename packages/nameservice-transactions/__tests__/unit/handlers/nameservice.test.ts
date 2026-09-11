@@ -90,7 +90,7 @@ describe("Nameservice tests", () => {
                 .sign(passphrases[0]!)
                 .build();
 
-            await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrowError(
+            await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrow(
                 StaticFeeMismatchError,
             );
         });
@@ -98,7 +98,7 @@ describe("Nameservice tests", () => {
         it("should throw NameSpaceAlreadyExistsError", async () => {
             walletRepository.setOnIndex(namespaceWalletIndex, "zan", senderWallet);
 
-            await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrowError(
+            await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrow(
                 NameSpaceAlreadyExistsError,
             );
         });
@@ -106,7 +106,7 @@ describe("Nameservice tests", () => {
         it("should throw WalletHasNameSpaceError", async () => {
             senderWallet.setAttribute<NameserviceInterfaces.INameServiceAsset>("nameservice", { name: "zan" });
 
-            await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrowError(
+            await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrow(
                 WalletHasNameSpaceError,
             );
         });
