@@ -19,6 +19,8 @@
 		"lint:tests": "eslint \"packages/*/__tests__/**/*.ts\" --fix",
 		"prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./**/*.{ts,js,json,md}\"",
 		"test:unit": "pnpm -r --parallel run test:unit",
+		"api:docs": "node openapi/serve.mjs",
+		"api:lint": "npx -y @redocly/cli lint openapi/nameservice-api.yaml",
 		"debug:forger": "node --inspect-brk pnpm exec ark forger:run",
 		"debug:relay": "node --inspect-brk pnpm exec ark relay:run",
 		"debug:start": "node --inspect-brk pnpm exec ark core:run",
