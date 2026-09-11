@@ -34,7 +34,7 @@ jobs:
       POSTGRES_DB: ark_unitnet
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v4
       - name: Use Node.js 24
         uses: actions/setup-node@v4
