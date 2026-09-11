@@ -3,7 +3,7 @@ module.exports = {
     bail: false,
     verbose: true,
     transform: {
-        "^.+\\.tsx?$": "ts-jest",
+        "^.+\\.tsx?$": ["ts-jest", {}],
     },
     testMatch: ["**/*.test.ts"],
     collectCoverage: true,
@@ -23,5 +23,5 @@ module.exports = {
         },
     },
     watchman: false,
-    setupFilesAfterEnv: ["jest-extended"],
+    setupFilesAfterEnv: ["jest-extended/all"],
 };

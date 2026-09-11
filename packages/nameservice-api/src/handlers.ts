@@ -1,7 +1,7 @@
 import Hapi from "@hapi/hapi";
 
-import * as Nameservice from "./routes/nameservice";
 import * as Configurations from "./routes/configurations";
+import * as Nameservice from "./routes/nameservice";
 
 export const Handler = {
     async register(server: Hapi.Server): Promise<void> {

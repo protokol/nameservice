@@ -1,4 +1,4 @@
-import "jest-extended";
+import "jest-extended/all";
 
 import { Contracts } from "@arkecosystem/core-kernel";
 import { Sandbox } from "@arkecosystem/core-test-framework";

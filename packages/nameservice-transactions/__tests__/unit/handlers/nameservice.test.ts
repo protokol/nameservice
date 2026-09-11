@@ -1,4 +1,4 @@
-import "jest-extended";
+import "jest-extended/all";
 
 import { Application, Container, Contracts, Providers } from "@arkecosystem/core-kernel";
 import { Wallets } from "@arkecosystem/core-state";
@@ -90,15 +90,13 @@ describe("Nameservice tests", () => {
                 .sign(passphrases[0]!)
                 .build();
 
-            await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrowError(
-                StaticFeeMismatchError,
-            );
+            await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrow(StaticFeeMismatchError);
         });
 
         it("should throw NameSpaceAlreadyExistsError", async () => {
             walletRepository.setOnIndex(namespaceWalletIndex, "zan", senderWallet);
 
-            await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrowError(
+            await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrow(
                 NameSpaceAlreadyExistsError,
             );
         });
@@ -106,9 +104,7 @@ describe("Nameservice tests", () => {
         it("should throw WalletHasNameSpaceError", async () => {
             senderWallet.setAttribute<NameserviceInterfaces.INameServiceAsset>("nameservice", { name: "zan" });
 
-            await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrowError(
-                WalletHasNameSpaceError,
-            );
+            await expect(handler.throwIfCannotBeApplied(actual, senderWallet)).rejects.toThrow(WalletHasNameSpaceError);
         });
     });
 

@@ -1,4 +1,4 @@
-import "jest-extended";
+import "jest-extended/all";
 
 import { Application } from "@arkecosystem/core-kernel";
 import { Generators } from "@arkecosystem/core-test-framework";
