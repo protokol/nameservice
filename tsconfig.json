@@ -1,19 +1,23 @@
 {
-	"extends": "@sindresorhus/tsconfig",
 	"compilerOptions": {
+		"target": "es2022",
+		"lib": ["es2022", "dom"],
+		"module": "commonjs",
+		"moduleResolution": "node",
 		"declaration": true,
 		"emitDecoratorMetadata": true,
 		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
 		"experimentalDecorators": true,
 		"forceConsistentCasingInFileNames": true,
-		"lib": ["es2019", "dom"],
-		"module": "commonjs",
-		"moduleResolution": "node",
 		"newLine": "lf",
 		"noEmitOnError": true,
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitAny": false,
+		"noImplicitOverride": true,
 		"noImplicitReturns": true,
+		"noUncheckedIndexedAccess": true,
+		"noPropertyAccessFromIndexSignature": false,
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"outDir": "dist",
@@ -23,8 +27,7 @@
 		"sourceMap": true,
 		"strict": true,
 		"stripInternal": true,
-		"target": "es2019",
-		"noPropertyAccessFromIndexSignature": false
+		"useDefineForClassFields": true
 	},
 	"exclude": ["dist", "**/*.spec.ts", "**/*.test.ts"]
 }
