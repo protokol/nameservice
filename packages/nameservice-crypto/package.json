@@ -35,7 +35,6 @@
         "clean": "rimraf .coverage dist tmp",
         "test": "jest",
         "test:watch": "jest --watchAll",
-        "coverage:report": "pnpm exec codecov",
         "test:unit": "jest __tests__/unit/** --forceExit",
         "test:unit:coverage": "jest __tests__/unit --coverage",
         "publish:beta": "pnpm run build && pnpm publish --tag beta --access public --no-git-checks",
@@ -53,9 +52,9 @@
         "cross-env": "^7.0.2",
         "jest": "^30.5.1",
         "jest-extended": "^7.0.0",
-        "rimraf": "^3.0.2",
+        "rimraf": "^6.0.0",
         "ts-jest": "^29.4.12",
-        "typedoc": "~0.22.0",
+        "typedoc": "~0.28.20",
         "typescript": "~5.9.3"
     },
     "publishConfig": {
