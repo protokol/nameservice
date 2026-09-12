@@ -34,7 +34,7 @@ overrides:
     "@arkecosystem/core-transactions": 3.13.0
     "@arkecosystem/core-webhooks": 3.13.0
     "@arkecosystem/crypto": 3.13.0
-    joi: 17.13.7
+    joi: 18.2.9
     pg: 8.23.0
 
 packageExtensions:
