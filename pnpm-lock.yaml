@@ -300,8 +300,8 @@ importers:
         specifier: 3.13.0
         version: 3.13.0
       '@types/hapi__boom':
-        specifier: ^7.4.1
-        version: 7.4.1
+        specifier: ^9.0.0
+        version: 9.0.1
       '@types/hapi__joi':
         specifier: ^17.1.6
         version: 17.1.15
@@ -1341,8 +1341,9 @@ packages:
   '@types/estree@1.0.9':
     resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
 
-  '@types/hapi__boom@7.4.1':
-    resolution: {integrity: sha512-x/ZK824GomII7Yoei/nMoB46NQcSfGe0iVpZK3uUivxIAfUUSzRvu8RQO7ZkKapIgzgshHZc+GR+z/BQ8l2VLg==}
+  '@types/hapi__boom@9.0.1':
+    resolution: {integrity: sha512-TSqwgnTmNNp3/9uOpV16S8IVJv+QDmZLEImSuQrzGLCzmuK5P3bx3wdaXGXxfWLlN09Qqnd27POLrEAKhVCM5g==}
+    deprecated: Deprecated
 
   '@types/hapi__joi@17.1.15':
     resolution: {integrity: sha512-Ehq/YQB0ZqZGObrGngztxtThTiShrG0jlqyUSsNK3cebJSoyYgE/hdZvYt6lH4Wimi28RowDwnr87XseiemqAg==}
@@ -7181,7 +7182,9 @@ snapshots:
 
   '@types/estree@1.0.9': {}
 
-  '@types/hapi__boom@7.4.1': {}
+  '@types/hapi__boom@9.0.1':
+    dependencies:
+      '@hapi/boom': 9.1.4
 
   '@types/hapi__joi@17.1.15': {}
 
