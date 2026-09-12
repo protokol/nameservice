@@ -43,7 +43,7 @@
         "@protokol/nameservice-crypto": "workspace:*"
     },
     "devDependencies": {
-        "@types/node": "^24.0.0",
+        "@types/node": "^26.0.0",
         "rimraf": "^6.0.0",
         "typedoc": "~0.28.20",
         "typescript": "~5.9.3"
