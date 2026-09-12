@@ -45,7 +45,7 @@
         "@arkecosystem/core-kernel": "3.13.0",
         "@arkecosystem/crypto": "3.13.0",
         "@hapi/boom": "^9.1.0",
-        "@hapi/hapi": "^20.0.2",
+        "@hapi/hapi": "^21.0.0",
         "@protokol/nameservice-crypto": "workspace:*",
         "@protokol/nameservice-transactions": "workspace:*",
         "joi": "^17.4.2",
