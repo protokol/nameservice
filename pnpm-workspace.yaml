@@ -14,7 +14,7 @@ allowBuilds:
     unrs-resolver: false
 
 overrides:
-    better-sqlite3: ^12.4.1
+    better-sqlite3: ^13.0.0
     "@arkecosystem/core": 3.13.0
     "@arkecosystem/core-api": 3.13.0
     "@arkecosystem/core-blockchain": 3.13.0
