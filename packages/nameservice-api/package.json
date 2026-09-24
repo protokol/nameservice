@@ -58,7 +58,7 @@
         "@arkecosystem/core-test-framework": "3.13.0",
         "@arkecosystem/core-transaction-pool": "3.13.0",
         "@arkecosystem/core-transactions": "3.13.0",
-        "@types/hapi__boom": "^7.4.1",
+        "@types/hapi__boom": "^9.0.0",
         "@types/hapi__joi": "^17.1.6",
         "@types/jest": "^30.0.0",
         "@types/node": "^24.0.0",
