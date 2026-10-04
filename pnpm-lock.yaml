@@ -183,7 +183,7 @@ overrides:
   '@arkecosystem/core-transactions': 3.13.0
   '@arkecosystem/core-webhooks': 3.13.0
   '@arkecosystem/crypto': 3.13.0
-  joi: 17.13.8
+  joi: 18.2.9
   pg: 8.23.0
 
 packageExtensionsChecksum: sha256-HqbybocJ+oL6doVkegWn4GKh5CRLpG9cdrHR+ymMAYI=
@@ -278,8 +278,8 @@ importers:
         specifier: workspace:*
         version: link:../nameservice-transactions
       joi:
-        specifier: 17.13.8
-        version: 17.13.8
+        specifier: 18.2.9
+        version: 18.2.9
       latest-version:
         specifier: ^5.1.0
         version: 5.1.0
@@ -777,6 +777,10 @@ packages:
   '@hapi/accept@5.0.2':
     resolution: {integrity: sha512-CmzBx/bXUR8451fnZRuZAJRlzgm0Jgu5dltTX/bszmR2lheb9BpyN47Q1RbaGTsvFzn0PXAEs+lXDKfshccYZw==}
 
+  '@hapi/address@5.1.1':
+    resolution: {integrity: sha512-A+po2d/dVoY7cYajycYI43ZbYMXukuopIsqCjh5QzsBCipDtdofHntljDlpccMjIfTy6UOkg+5KPriwYch2bXA==}
+    engines: {node: '>=14.0.0'}
+
   '@hapi/ammo@5.0.1':
     resolution: {integrity: sha512-FbCNwcTbnQP4VYYhLNGZmA76xb2aHg9AMPiy18NZyWMG310P5KdFGyA9v2rm5ujrIny77dEEIkMOwl0Xv+fSSA==}
 
@@ -818,6 +822,9 @@ packages:
   '@hapi/file@2.0.0':
     resolution: {integrity: sha512-WSrlgpvEqgPWkI18kkGELEZfXr0bYLtr16iIN4Krh9sRnzBZN6nnWxHFxtsnP684wueEySBbXPDg/WfA9xJdBQ==}
 
+  '@hapi/formula@3.0.2':
+    resolution: {integrity: sha512-hY5YPNXzw1He7s0iqkRQi+uMGh383CGdyyIGYtB+W5N3KHPXoqychklvHhKCC9M3Xtv0OCs/IHw+r4dcHtBYWw==}
+
   '@hapi/hapi@20.1.5':
     resolution: {integrity: sha512-BhJ5XFR9uWPUBj/z5pPqXSk8OnvQQU/EbQjwpmjZy0ymNEiq7kIhXkAmzXcntbBHta9o7zpW8XMeXnfV4wudXw==}
     engines: {node: '>=12.0.0'}
@@ -851,6 +858,9 @@ packages:
   '@hapi/pez@5.1.0':
     resolution: {integrity: sha512-YfB0btnkLB3lb6Ry/1KifnMPBm5ZPfaAHWFskzOMAgDgXgcBgA+zjpIynyEiBfWEz22DBT8o1e2tAaBdlt8zbw==}
 
+  '@hapi/pinpoint@2.0.1':
+    resolution: {integrity: sha512-EKQmr16tM8s16vTT3cA5L0kZZcTMU5DUOZTuvpnY738m+jyP3JIUj+Mm1xc1rsLkGBQ/gVnfKYPwOmPg1tUR4Q==}
+
   '@hapi/podium@4.1.3':
     resolution: {integrity: sha512-ljsKGQzLkFqnQxE7qeanvgGj4dejnciErYd30dbrYzUOF/FyS/DOF97qcrT3bhoVwCYmxa6PEMhxfCPlnUcD2g==}
 
@@ -881,8 +891,15 @@ packages:
     resolution: {integrity: sha512-1oPx9AE5TIv+V6Ih54RP9lTZBso3rP8j4Xhb6iSVwPXtAM+sDopl5TFMv5Paw73UnpZJ9gjcrTE1BXrWt9eQrg==}
     engines: {node: '>=12.0.0'}
 
+  '@hapi/tlds@1.1.7':
+    resolution: {integrity: sha512-MgNjRwy9Ti92yVAixLmDc8dd1bJIKwO9qlWCfFQRwRmUEDPQHYn4G6hwPFvFGUTzAa0FsS+inMjLin7GnyBRhA==}
+    engines: {node: '>=14.0.0'}
+
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
+
+  '@hapi/topo@6.0.2':
+    resolution: {integrity: sha512-KR3rD5inZbGMrHmgPxsJ9dbi6zEK+C3ZwUwTa+eMwWLz7oijWUTWD2pMSNNYJAU6Qq+65NkxXjqHr/7LM2Xkqg==}
 
   '@hapi/validate@1.1.3':
     resolution: {integrity: sha512-/XMR0N0wjw0Twzq2pQOzPBZlDzkekGcoCtzO314BpIEsbXdYGthQUbxgkGDf4nhk1+IPDAsXqWjMohRQYO06UA==}
@@ -1331,15 +1348,6 @@ packages:
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
 
-  '@sideway/address@4.1.5':
-    resolution: {integrity: sha512-IqO/DUQHUkPeixNQ8n0JA6102hT9CmaljNTPmQ1u8MEhBo/R4Q8eKLN/vGZxuebwOroDB4cbpjheD4+/sKFK4Q==}
-
-  '@sideway/formula@3.0.1':
-    resolution: {integrity: sha512-/poHZJJVjx3L+zVD6g9KgHfYnb443oi7wLu/XKojDviHy6HOEOA6z1Trk5aR1dGcmPenJEgb2sK2I80LeS3MIg==}
-
-  '@sideway/pinpoint@2.0.0':
-    resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
-
   '@sinclair/typebox@0.34.52':
     resolution: {integrity: sha512-XiMQh7qqVlxZzcVD+kkGMNGMzcTrDMLWI7S4x7z1MkCkbDPrekpZXEUK0eZqZFMuHQg2a2DZOcDIh9o5v3Gonw==}
 
@@ -1356,6 +1364,9 @@ packages:
 
   '@sinonjs/fake-timers@15.4.0':
     resolution: {integrity: sha512-DsG+8/LscQIQg68J6Ef3dv10u6nVyetYn923s3/sus5eaGfTo1of5WMZSLf0UJc9KDuKPilPH0UDJCjvNbDNCA==}
+
+  '@standard-schema/spec@1.1.0':
+    resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
   '@szmarczak/http-timer@1.1.2':
     resolution: {integrity: sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==}
@@ -1440,8 +1451,8 @@ packages:
   '@types/node@24.13.4':
     resolution: {integrity: sha512-YJ7EqCstVTzIr0fMr7qul/977en+pQHrfmuKIo6Zr9i75Be21dr3MovcfvGtyvi2HAUrRerWps5sMO9I7WaxDw==}
 
-  '@types/node@26.6.3':
-    resolution: {integrity: sha512-dsqMQQoeTLqu9wynDD00q573mNzso3IdQOAfHRJqLCcmCFPoGo9A1bDpUcv/9tnKpErQWv9uKeGfl37EIS02Yg==}
+  '@types/node@26.6.4':
+    resolution: {integrity: sha512-ldVPDCzj7fsaGZrLB0NuHuTvJcsNasysBAqMolr/cgxrLd1xbqxIr3XJiPnHHJUCxj5sNF1vnRj9aWnrVh5Jcg==}
 
   '@types/node@8.10.66':
     resolution: {integrity: sha512-tktOkFUA4kXx2hhhrB8bIFb5TbwzS4uOhKEmwiD+NoiL0qtP2OQ9mFldbgD4dV1djrlBYP6eBuQZiWjuHUpqFw==}
@@ -3692,8 +3703,9 @@ packages:
   jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
 
-  joi@17.13.8:
-    resolution: {integrity: sha512-iPKOGmiRw1jxf/JOPwxmCcUQAOdF359mdzYiP2DJ+TMX0YK2zjK3D+zYOaGjpumWxOFF/l2xVWjRVK5bGSLdEw==}
+  joi@18.2.9:
+    resolution: {integrity: sha512-2mD929bUVKUhOLQQEVhlf6EZ0Mlo0DeRb5MO7cViR9AXLtBauuccEtB1py9Ocxpo/P7ucnh442iY/iOwrh3IQw==}
+    engines: {node: '>= 20'}
 
   joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
@@ -4195,8 +4207,8 @@ packages:
     resolution: {integrity: sha512-dPEtOeMvF9VMcYV/1Wb8CPoVAXtp6MKMlcbAt4ddqmGqUJ6fQZFXkNZNkNlfevtNkGtaSoXf/vNNNSvgrdXwtA==}
     engines: {node: '>= 6.13.0'}
 
-  node-gyp@13.0.2:
-    resolution: {integrity: sha512-SXTvw3PxznpowYhJSOD9mVQBgDaCTWXffX+wQZsQ7PbcTV86TsXCUcSZhHnskFQvrvn/OdSzJPMsptT2pIj9ww==}
+  node-gyp@13.1.0:
+    resolution: {integrity: sha512-FpNzOLFACKG0oRBYbZ5WOeWD1EqRTIWX90MaRIWTO18lVYPx8fqIjrdS3pihjnCkSmgop6zVGkSqg1vXZLksuw==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
     hasBin: true
 
@@ -5785,7 +5797,7 @@ snapshots:
       '@hapi/boom': 9.1.4
       '@hapi/hapi': 20.1.5
       '@hapi/hoek': 9.2.0
-      joi: 17.13.8
+      joi: 18.2.9
       nanomatch: 1.2.13(supports-color@8.1.1)
       node-cache: 5.1.2
       qs: 6.11.2
@@ -5806,7 +5818,7 @@ snapshots:
       '@arkecosystem/core-state': 3.13.0
       '@arkecosystem/core-transactions': 3.13.0
       '@arkecosystem/crypto': 3.13.0
-      joi: 17.13.8
+      joi: 18.2.9
       xstate: 4.38.3
     transitivePeerDependencies:
       - bufferutil
@@ -5831,7 +5843,7 @@ snapshots:
       glob: 7.1.7
       got: 11.8.5
       inversify: 5.1.1
-      joi: 17.13.8
+      joi: 18.2.9
       kleur: 4.1.5
       latest-version: 5.1.0
       listr: 0.14.3
@@ -5859,7 +5871,7 @@ snapshots:
       '@arkecosystem/crypto': 3.13.0
       '@arkecosystem/utils': 1.3.1
       dayjs: 1.11.10
-      joi: 17.13.8
+      joi: 18.2.9
       pg: 8.23.0
       reflect-metadata: 0.2.1
       typeorm: 0.2.25(supports-color@8.1.1)
@@ -5875,7 +5887,7 @@ snapshots:
       '@arkecosystem/core-p2p': 3.13.0
       '@arkecosystem/core-transactions': 3.13.0
       '@arkecosystem/crypto': 3.13.0
-      joi: 17.13.8
+      joi: 18.2.9
       node-forge: 1.3.1
       wif: 2.0.6
     transitivePeerDependencies:
@@ -5916,7 +5928,7 @@ snapshots:
       import-fresh: 3.3.0
       inversify: 5.1.1
       ipaddr.js: 2.1.0
-      joi: 17.13.8
+      joi: 18.2.9
       log-process-errors: 5.1.2
       nanomatch: 1.2.13(supports-color@8.1.1)
       nsfw: 2.2.4
@@ -5934,7 +5946,7 @@ snapshots:
     dependencies:
       '@arkecosystem/core-kernel': 3.13.0(pg@8.23.0)(supports-color@8.1.1)
       chalk: 4.1.2
-      joi: 17.13.8
+      joi: 18.2.9
       pino: 8.7.0
       pino-pretty: 9.1.1
       pump: 3.0.0
@@ -5951,7 +5963,7 @@ snapshots:
       '@arkecosystem/crypto': 3.13.0
       '@hapi/boom': 9.1.4
       '@hapi/hapi': 20.1.5
-      joi: 17.13.8
+      joi: 18.2.9
 
   '@arkecosystem/core-magistrate-crypto@3.13.0':
     dependencies:
@@ -5981,7 +5993,7 @@ snapshots:
       delay: 4.4.1
       ip: 2.0.1
       ipaddr.js: 2.1.0
-      joi: 17.13.8
+      joi: 18.2.9
       pluralize: 8.0.0
       pretty-ms: 7.0.1
       protobufjs: 7.2.6
@@ -5999,7 +6011,7 @@ snapshots:
       '@arkecosystem/crypto': 3.13.0
       bytebuffer: 5.0.1
       fs-extra: 8.1.0
-      joi: 17.13.8
+      joi: 18.2.9
       msgpack-lite: 0.1.26
       ora: 4.1.1
       pg-query-stream: 3.4.2(pg@8.23.0)
@@ -6018,7 +6030,7 @@ snapshots:
       '@arkecosystem/core-transactions': 3.13.0
       '@arkecosystem/crypto': 3.13.0
       immutable: 5.0.0-beta.5
-      joi: 17.13.8
+      joi: 18.2.9
 
   '@arkecosystem/core-test-framework@3.13.0(pg@8.23.0)(pm2@4.5.6(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
@@ -6063,14 +6075,14 @@ snapshots:
       '@arkecosystem/crypto': 3.13.0
       better-sqlite3: 13.0.3
       fs-extra: 8.1.0
-      joi: 17.13.8
+      joi: 18.2.9
 
   '@arkecosystem/core-transactions@3.13.0':
     dependencies:
       '@arkecosystem/core-database': 3.13.0(supports-color@8.1.1)
       '@arkecosystem/core-kernel': 3.13.0(pg@8.23.0)(supports-color@8.1.1)
       '@arkecosystem/crypto': 3.13.0
-      joi: 17.13.8
+      joi: 18.2.9
 
   '@arkecosystem/core-webhooks@3.13.0':
     dependencies:
@@ -6079,7 +6091,7 @@ snapshots:
       '@hapi/boom': 9.0.0
       '@hapi/hapi': 20.1.5
       fs-extra: 8.1.0
-      joi: 17.13.8
+      joi: 18.2.9
       lowdb: 1.0.0
       uuid: 9.0.1
 
@@ -6109,7 +6121,7 @@ snapshots:
       env-paths: 2.2.1
       envfile: 5.2.0
       fs-extra: 8.1.0
-      joi: 17.13.8
+      joi: 18.2.9
       kleur: 4.1.5
       ngrok: 4.3.3(supports-color@8.1.1)
       pm2: 4.5.6(supports-color@8.1.1)
@@ -6139,7 +6151,7 @@ snapshots:
       '@arkecosystem/crypto-identities': 1.2.0
       '@arkecosystem/crypto-networks': 2.0.2
       '@arkecosystem/utils': 1.3.1
-      '@types/node': 26.6.3
+      '@types/node': 26.6.4
       ajv: 6.12.6
       ajv-keywords: 3.4.1(ajv@6.12.6)
       bcrypto: 5.5.2
@@ -6430,6 +6442,10 @@ snapshots:
       '@hapi/boom': 9.1.4
       '@hapi/hoek': 9.2.0
 
+  '@hapi/address@5.1.1':
+    dependencies:
+      '@hapi/hoek': 11.0.7
+
   '@hapi/ammo@5.0.1':
     dependencies:
       '@hapi/hoek': 9.2.0
@@ -6483,6 +6499,8 @@ snapshots:
       '@hapi/boom': 9.1.4
 
   '@hapi/file@2.0.0': {}
+
+  '@hapi/formula@3.0.2': {}
 
   '@hapi/hapi@20.1.5':
     dependencies:
@@ -6564,6 +6582,8 @@ snapshots:
       '@hapi/hoek': 9.2.0
       '@hapi/nigel': 4.0.2
 
+  '@hapi/pinpoint@2.0.1': {}
+
   '@hapi/podium@4.1.3':
     dependencies:
       '@hapi/hoek': 9.2.0
@@ -6613,9 +6633,15 @@ snapshots:
 
   '@hapi/teamwork@5.1.1': {}
 
+  '@hapi/tlds@1.1.7': {}
+
   '@hapi/topo@5.1.0':
     dependencies:
       '@hapi/hoek': 9.3.0
+
+  '@hapi/topo@6.0.2':
+    dependencies:
+      '@hapi/hoek': 11.0.7
 
   '@hapi/validate@1.1.3':
     dependencies:
@@ -7258,14 +7284,6 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
-  '@sideway/address@4.1.5':
-    dependencies:
-      '@hapi/hoek': 9.3.0
-
-  '@sideway/formula@3.0.1': {}
-
-  '@sideway/pinpoint@2.0.0': {}
-
   '@sinclair/typebox@0.34.52': {}
 
   '@sindresorhus/is@0.14.0': {}
@@ -7279,6 +7297,8 @@ snapshots:
   '@sinonjs/fake-timers@15.4.0':
     dependencies:
       '@sinonjs/commons': 3.0.1
+
+  '@standard-schema/spec@1.1.0': {}
 
   '@szmarczak/http-timer@1.1.2':
     dependencies:
@@ -7331,7 +7351,7 @@ snapshots:
 
   '@types/hapi__boom@9.0.1':
     dependencies:
-      '@hapi/boom': 9.1.4
+      '@hapi/boom': 10.0.1
 
   '@types/hapi__joi@17.1.15': {}
 
@@ -7375,7 +7395,7 @@ snapshots:
     dependencies:
       undici-types: 7.18.2
 
-  '@types/node@26.6.3':
+  '@types/node@26.6.4':
     dependencies:
       undici-types: 8.9.0
 
@@ -7816,18 +7836,18 @@ snapshots:
     dependencies:
       bufio: 1.0.7
       loady: 0.0.5
-      node-gyp: 13.0.2
+      node-gyp: 13.1.0
 
   bcrypto@5.5.2:
     dependencies:
       bufio: 1.0.7
       loady: 0.0.5
-      node-gyp: 13.0.2
+      node-gyp: 13.1.0
 
   better-sqlite3@13.0.3:
     dependencies:
       node-addon-api: 8.9.2
-      node-gyp: 13.0.2
+      node-gyp: 13.1.0
 
   binary-extensions@2.3.0: {}
 
@@ -10015,13 +10035,15 @@ snapshots:
 
   jju@1.4.0: {}
 
-  joi@17.13.8:
+  joi@18.2.9:
     dependencies:
-      '@hapi/hoek': 9.3.0
-      '@hapi/topo': 5.1.0
-      '@sideway/address': 4.1.5
-      '@sideway/formula': 3.0.1
-      '@sideway/pinpoint': 2.0.0
+      '@hapi/address': 5.1.1
+      '@hapi/formula': 3.0.2
+      '@hapi/hoek': 11.0.7
+      '@hapi/pinpoint': 2.0.1
+      '@hapi/tlds': 1.1.7
+      '@hapi/topo': 6.0.2
+      '@standard-schema/spec': 1.1.0
 
   joycon@3.1.1: {}
 
@@ -10574,7 +10596,7 @@ snapshots:
 
   node-forge@1.3.1: {}
 
-  node-gyp@13.0.2:
+  node-gyp@13.1.0:
     dependencies:
       env-paths: 2.2.1
       exponential-backoff: 3.1.3
