@@ -49,7 +49,7 @@
         "@protokol/nameservice-crypto": "workspace:*",
         "@protokol/nameservice-transactions": "workspace:*",
         "joi": "^17.4.2",
-        "latest-version": "^5.1.0"
+        "latest-version": "^9.0.0"
     },
     "devDependencies": {
         "@arkecosystem/core-database": "3.13.0",
