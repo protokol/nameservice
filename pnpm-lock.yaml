@@ -441,8 +441,8 @@ importers:
         specifier: ^24.0.0
         version: 24.19.1
       bip39:
-        specifier: 3.1.0
-        version: 3.1.0
+        specifier: 3.1.2
+        version: 3.1.2
       jest:
         specifier: ^30.5.1
         version: 30.5.2(@types/node@24.19.1)(supports-color@8.1.1)
@@ -1814,8 +1814,8 @@ packages:
   bip39@3.0.4:
     resolution: {integrity: sha512-YZKQlb752TrUWqHWj7XAwCSjYEgGAk+/Aas3V7NyjQeZYsztO8JnQUaCWhcnL4T+jL8nvB8typ2jRPzTlgugNw==}
 
-  bip39@3.1.0:
-    resolution: {integrity: sha512-c9kiwdk45Do5GL0vJMe7tS95VjCii65mYAH7DfWl3uW8AVzXKQVUm64i3hzVybBDMp9r7j9iNxR85+ul8MdN/A==}
+  bip39@3.1.2:
+    resolution: {integrity: sha512-inxKLEH+Weos8f5rBYNKuOrpOIcNWtKnrLur9x72s4Cb8w4Mm0jJktUPkev7+1pQuivxFqkiut9+AcrwunLHxA==}
 
   blessed@0.1.81:
     resolution: {integrity: sha512-LoF5gae+hlmfORcG1M5+5XZi4LBmvlXTzwJWzUlPryN/SJdSflZvROM2TwkT0GMpq7oqT48NRd4GS7BiVBc5OQ==}
@@ -7077,7 +7077,7 @@ snapshots:
       pbkdf2: 3.1.7
       randombytes: 2.1.0
 
-  bip39@3.1.0:
+  bip39@3.1.2:
     dependencies:
       '@noble/hashes': 1.8.0
 
